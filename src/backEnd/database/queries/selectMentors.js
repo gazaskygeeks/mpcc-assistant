@@ -1,13 +1,10 @@
 const dbConnection = require('../dbConnection');
 
-const selectMentors = (cb) => {
+const selectMentors = cb => {
   const query = {
     text: 'select * from mentors'
   };
-  dbConnection.query(query, (err, res) => {
-    if (err) return cb(err);
-    return cb(null, res);
-  });
+  dbConnection.query(query, cb);
 };
 
 module.exports = selectMentors;
