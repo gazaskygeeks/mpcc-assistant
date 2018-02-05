@@ -57,6 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
-# additional
+# additional:
 bundle.js
 package-lock.json
