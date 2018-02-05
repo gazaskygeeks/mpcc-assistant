@@ -10,6 +10,7 @@
     "watch:server": "NODE_ENV=development nodemon -x 'npm start'",
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
     "build": "webpack",
+    "db-build": "node src/backEnd/database/dbBuild.js",
     "lint": "eslint --ext .jsx --ext .js .",
     "start:dev": "webpack-dev-server"
   },
