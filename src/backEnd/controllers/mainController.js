@@ -1,6 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
+const getMentors = require('./getMentors');
 
 const getEmail = require('./getEmail');
 const getSingleMentor = require('./getSingleMentor');
@@ -9,6 +10,7 @@ const updateMentorField = require('./updateMentorField');
 const postDocStatus = require('./postDocStatus');
 
 router.get('/', (req, res) => res.send({ app: 'A' }));
+router.get('/get-mentors', getMentors);
 
 router.get('/dashboard/mentor-panel/:mentorSelector', getSingleMentor);
 router.get('/dashboard/mentor-panel/:mentorSelector/sendEmail/:someEmail', getEmail);
