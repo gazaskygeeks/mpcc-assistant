@@ -7,53 +7,49 @@
     "test": "tape ./src/backEnd/tests/tests.js | tap-spec",
     "pretest": "node src/backEnd/database/dbBuild.js",
     "start": "node ./src/backEnd/server.js",
-    "watch:client": "webpack --watch",
-    "watch:server": "NODE_ENV=development nodemon -x 'npm start'",
-    "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
-    "build": "webpack",
-    "db-build": "node src/backEnd/database/dbBuild.js",
-    "lint": "eslint --ext .jsx --ext .js .",
-    "start:dev": "webpack-dev-server"
+    "dev:build": "webpack",
+    "dev:start": "nodemon --exec babel-node ./src/backEnd/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gazaskygeeks/MPCC-Assistant.git"
+    "url": "git+https://github.com/gazaskygeeks/mpcc-assistant.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gazaskygeeks/MPCC-Assistant/issues"
+    "url": "https://github.com/gazaskygeeks/mpcc-assistant/issues"
   },
-  "homepage": "https://github.com/gazaskygeeks/gazaskygeeks/MPCC-Assistant#readme",
+  "homepage": "https://github.com/gazaskygeeks/mpcc-assistant#readme",
   "dependencies": {
-    "aws-sdk": "^2.94.0",
-    "babel-core": "^6.25.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-react": "^6.24.1",
-    "body-parser": "^1.18.2",
-    "bootstrap-nav": "0.0.1",
     "env2": "^2.2.0",
     "express": "^4.15.3",
-    "node-fetch": "^1.7.3",
-    "nodemon": "^1.11.0",
+    "file-loader": "^1.1.5",
     "pg": "^7.4.1",
-    "playstore-api": "^1.0.1",
-    "react": "^15.6.1",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.5",
-    "react-router": "^4.2.0",
+    "prop-types": "^15.6.0",
+    "radium": "^0.21.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-icons": "^2.2.7",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
-    "react-transition-group": "^2.0.2",
+    "react-transition-group": "^2.2.1",
     "reactstrap": "^4.8.0",
-    "redux": "^3.7.0",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.78.2",
     "serve-favicon": "^2.4.5",
-    "webpack": "^2.6.1"
+    "style-loader": "^0.19.0",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.28.7",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.6.0"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
@@ -67,6 +63,6 @@
     "supertest": "^3.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0",
-    "webpack-dev-server": "^2.10.1"
+    "nodemon": "^1.12.1"
   }
 }

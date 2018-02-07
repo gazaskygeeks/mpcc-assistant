@@ -1,4 +1,3 @@
-// specify action type in here:
-
-// export const someActionType = 'SOME_ACTION_TYPE';
-//
+export const DATA_FETCH_START = Symbol('DATA_FETCH_START');
+export const DATA_FETCH_SUCCESS = Symbol('DATA_FETCH_SUCCESS');
+export const DATA_FETCH_FAILURE = Symbol('DATA_FETCH_FAILURE');
