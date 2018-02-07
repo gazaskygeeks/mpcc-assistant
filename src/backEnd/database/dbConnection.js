@@ -7,7 +7,7 @@ if (!dbUrl) throw new Error('Ereror connecting to database');
 
 const pool = new Pool({
   connectionString: dbUrl,
-  ssl: true,
+  ssl: true
 });
 
 module.exports = pool;

@@ -1,9 +1,15 @@
 const { selectMentorsTest } = require('./database/selectMentors');
-
 const { getMentorsTest } = require('./controllers/getMentors');
-
-// const { updateMentorTest } =require('./database/updateMentor');
+const { selectSingleMentorTest } = require('./database/selectSingleMentor');
+const { getSingleMentorTest } = require('./controllers/getSingleMentor');
+const { getEmailTest } = require('./controllers/getEmail');
+const { updateMentorQueryTest } = require('./database/updateMentor');
+const { updateMentorTest } = require('./controllers/updateMentor');
 
 selectMentorsTest();
 getMentorsTest();
-// updateMentorTest();
+selectSingleMentorTest();
+getSingleMentorTest();
+getEmailTest();
+updateMentorQueryTest();
+updateMentorTest();

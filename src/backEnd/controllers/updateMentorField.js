@@ -4,18 +4,18 @@ const selectSingleMentor = require('../database/queries/selectSingleMentor');
 module.exports = (req, res, next) => {
   const mentorId = req.params.mentorSelector.split('-')[2];
   const fieldType = req.params.fieldType;
+  req.bio = 'new bio';
   selectSingleMentor(mentorId, (err, data) => {
     if (err) return next(err);
     const mentorData = data.rows[0];
-    // console.log(mentorData);
-    const info = JSON.parse(mentorData.info);
+    const info = mentorData.info;
     if (fieldType === 'bio') {
-      info.bio = req.body.bio;
+      info.bio = req.bio;
     } else if (fieldType === 'purpose_of_visit') {
-      info.pov = req.body.pov;
+      info.pov = req.purpose_of_visit;
     }
     mentorData.info = JSON.stringify(info);
-    updateMentor(mentorData, (error, result) => {
+    updateMentor(mentorData, error => {
       if (error) return next(error);
 
       return res.send({ msg: 'MENTOR_UPDATED' });

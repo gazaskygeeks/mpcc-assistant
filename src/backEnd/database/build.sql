@@ -18,13 +18,13 @@ CREATE TABLE mentors (
   date_of_arrival DATE NOT NULL,
   date_of_birth DATE,
   current_stage VARCHAR NOT NULL,
-  info VARCHAR
+  info JSON
 );
 
 CREATE TABLE forms (
   id SERIAL PRIMARY KEY,
-  form_name VARCHAR NOT NULL,
-  vars VARCHAR
+  form_name json NOT NULL,
+  vars json
 );
 
 COMMIT;

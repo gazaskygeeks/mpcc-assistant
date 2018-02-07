@@ -1,0 +1,9 @@
+{
+"permitEmail": {
+    "content": "Hi #mentor#, #newline# #newline#  We are really excited that you’ve chosen to come mentor at Gaza Sky Geeks! #newline#      We would like to start the process of applying for a permit right away. The Israeli Gaza entry permit typically takes 4 weeks to obtain but can take longer. Please send the following ASAP so we can have your permit application ready to submit: #newline# #newline#      A color scan (or good picture) of your passport #newline#      NB: all permits are issued based on the passport details you send me, so you need to cross using the same passport. Any changes to the current passport should be reported to me immediately.​ #newline#      Fill out this Google form with all info required (this will take 5 minutes) #newline#      A color headshot photo with white background. #newline#      Since things in Gaza are always subject to change and we cannot guarantee that your permit will be granted. We have almost always been able to secure permits, but it is very common that we don’t find out until days before your trip. #newline#      I will be in contact shortly with detailed information on visiting Gaza, security information, mentorship/workshop content. I remain available for any questions you may have in the meantime! #newline# #newline#      Thanks, #newline#      Sara",
+    "subject": "#mentor-name#, Time to Apply for Your Permit!",
+    "to":"#mentor-email#",
+    "cc": "#cc-email#",
+    "bcc": "#bcc-email#"
+}
+}
