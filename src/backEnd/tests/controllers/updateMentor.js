@@ -27,28 +27,3 @@ const updateMentorTest = () => {
 module.exports = {
   updateMentorTest
 };
-
-const postSignup500 = () => {
-  test('test post /signup', t => {
-    supertest(app)
-      .post('/signup')
-      .send({
-        username: 'salam',
-        password: 'Salam123',
-        email: 'salam@gmail.com'
-      })
-      .set('Accept', 'application/json, text/plain, */*')
-      .set('Content-Type', 'application/json')
-      .expect(500)
-      .end((err, res) => {
-        if (err) {
-          console.log(err);
-          t.end();
-        }
-        t.equal(res.statusCode, 500, 'should return with statusCode 500');
-        t.equal(res.res.statusMessage, 'Internal Server Error', 'should return statusMessage Internal Server Error');
-        t.equal(res.type, '', 'should return res.type \'\'');
-        t.end();
-      });
-  });
-};

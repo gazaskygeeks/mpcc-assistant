@@ -10,7 +10,7 @@ const updateMentorQueryTest = () => {
       email: 'Smart@smart',
       date_of_arrival: '17/12/2015',
       current_stage: 'ALMOST',
-      info: '{"mothers_name": "anything", "bio":"salam", "purpose_of_visit":"dalloul", "signed_waiver": false}'
+      info: '{"mothers_name": "anything", "bio":"anything", "purpose_of_visit":"purpose", "signed_waiver": false}'
     };
     updateMentor(mentorData, (err, res) => {
       if (err) {
