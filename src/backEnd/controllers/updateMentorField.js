@@ -4,7 +4,6 @@ const selectSingleMentor = require('../database/queries/selectSingleMentor');
 module.exports = (req, res, next) => {
   const mentorId = req.params.mentorSelector.split('-')[2];
   const fieldType = req.params.fieldType;
-  req.bio = 'new bio';
   selectSingleMentor(mentorId, (err, data) => {
     if (err) return next(err);
     const mentorData = data.rows[0];
