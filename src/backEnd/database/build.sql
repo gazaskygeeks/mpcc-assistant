@@ -18,7 +18,7 @@ CREATE TABLE mentors (
   date_of_arrival DATE NOT NULL,
   date_of_birth DATE,
   current_stage VARCHAR NOT NULL,
-  info VARCHAR
+  info JSON
 );
 
 CREATE TABLE forms (
