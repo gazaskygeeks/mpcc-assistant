@@ -7,6 +7,7 @@
     "test": "tape ./src/backEnd/tests/tests.js | tap-spec",
     "pretest": "node src/backEnd/database/dbBuild.js",
     "start": "node ./src/backEnd/server.js",
+    "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
     "dev:build": "webpack",
     "dev:start": "nodemon --exec babel-node ./src/backEnd/server.js"
   },
