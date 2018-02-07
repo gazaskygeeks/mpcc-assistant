@@ -9,6 +9,6 @@ router.get('/', (req, res) => res.send({ app: 'A' }));
 router.get('/get-mentors', getMentors);
 
 router.get('/dashboard/mentor-panel/:mentorSelector', getSingleMentor);
-router.get('/dashboard/mentor-panel/:mentorSelector/send-email/:someEmail', getEmail);
+router.get('/dashboard/mentor-panel/:mentorSelector/send-email/:emailType', getEmail);
 
 module.exports = router;
