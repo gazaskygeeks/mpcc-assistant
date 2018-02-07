@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   selectSingleMentor(mentorId, (err, data) => {
     if (err) return next(err);
     const mentorData = data.rows[0];
-    const info = JSON.parse(mentorData.info);
+    const info = mentorData.info;
     switch (docType) {
       case 'singned_waver':
         info.singned_waver = !info.singned_waver;

@@ -5,6 +5,7 @@ const { getSingleMentorTest } = require('./controllers/getSingleMentor');
 const { getEmailTest } = require('./controllers/getEmail');
 const { updateMentorQueryTest } = require('./database/updateMentor');
 const { updateMentorTest } = require('./controllers/updateMentor');
+const { postDocStatusTest } = require('./controllers/postDocStatus');
 
 selectMentorsTest();
 getMentorsTest();
@@ -13,3 +14,4 @@ getSingleMentorTest();
 getEmailTest();
 updateMentorQueryTest();
 updateMentorTest();
+postDocStatusTest();
