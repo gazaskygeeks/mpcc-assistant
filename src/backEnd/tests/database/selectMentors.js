@@ -2,7 +2,7 @@ const test = require('tape');
 const selectMentors = require('../../database/queries/selectMentors');
 
 const selectMentorsTest = () => {
-  test('test selectMentors query', (t) => {
+  test('test selectMentors query', t => {
     selectMentors((err, res) => {
       if (err) {
         t.fail();
