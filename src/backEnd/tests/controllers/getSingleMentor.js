@@ -10,11 +10,13 @@ const getSingleMentorTest = () => {
       .end((err, res) => {
         if (err) {
           t.fail();
-          t.end();
+
+          return t.end();
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
-        t.end();
+
+        return t.end();
       });
   });
 };

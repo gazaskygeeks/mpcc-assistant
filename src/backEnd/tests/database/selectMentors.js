@@ -6,11 +6,13 @@ const selectMentorsTest = () => {
     selectMentors((err, res) => {
       if (err) {
         t.fail();
-        t.end();
+
+        return t.end();
       }
       t.equal(res.rowCount, 1, 'rowCount should equal 1');
       t.deepEqual(res.rows[0].id, 1, 'id should equal 1');
-      t.end();
+
+      return t.end();
     });
   });
 };

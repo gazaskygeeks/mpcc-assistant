@@ -10,9 +10,9 @@ module.exports = (req, res, next) => {
     const mentorData = data.rows[0];
     const info = mentorData.info;
     if (fieldType === 'bio') {
-      info.bio = req.bio;
+      info.bio = req.body.bio;
     } else if (fieldType === 'purpose_of_visit') {
-      info.pov = req.purpose_of_visit;
+      info.pov = req.body.purpose_of_visit;
     }
     mentorData.info = JSON.stringify(info);
     updateMentor(mentorData, error => {

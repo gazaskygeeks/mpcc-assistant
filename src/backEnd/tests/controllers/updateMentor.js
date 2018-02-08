@@ -14,13 +14,15 @@ const updateMentorTest = () => {
       .expect(200)
       .end((err, res) => {
         if (err) {
-          console.log(err);
-          t.end();
+          t.fail();
+
+          return t.end();
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
         t.equal(res.body.msg, 'MENTOR_UPDATED', 'should return MENTOR_UPDATED');
-        t.end();
+
+        return t.end();
       });
   });
 };
