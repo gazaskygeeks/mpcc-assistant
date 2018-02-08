@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './dashboard.css';
 import { Button, Card, Image } from 'semantic-ui-react';
@@ -9,7 +10,7 @@ class Home extends Component {
   }
 
   render() {
-    const { mentors, isFetching } = this.props;
+    const { mentors } = this.props;
 
     return (
       <div className='wrapper'>
@@ -43,5 +44,10 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  mentors: PropTypes.array,
+  getAllMentors: PropTypes.func
+};
 
 export default Home;
