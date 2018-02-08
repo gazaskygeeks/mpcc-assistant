@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
     if (err) return next(err);
 
     return res.status(200).send({
-      data: data.rows
+      mentors: data.rows
     });
   });
 };

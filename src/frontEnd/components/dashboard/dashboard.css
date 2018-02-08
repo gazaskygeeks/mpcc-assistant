@@ -6,3 +6,23 @@
 body {
   background-color: #3E5771
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 35px;
+  background: whitesmoke;
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+  padding: 30px;
+}
+
+.mentors-container {
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.mentor-card {
+  max-width: 90%
+}

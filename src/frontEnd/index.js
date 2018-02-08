@@ -1,24 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import configureStore from './store.js';
+import { Provider } from 'react-redux';
 
-import Navbar from './components/navbar/Navbar';
-import Dashboard from './components/dashboard/dashboard';
+import store from './store';
 
-// const store = configureStore();
+import App from './components/App.js';
 
 ReactDOM.render(
-  // <Provider store={store}>
-  <BrowserRouter>
-    <div className='app' style={{ width: '100%' }}>
-      <Navbar />
-      <Switch>
-        <Route exact path='/dashboard' component={Dashboard} />
-      </Switch>
-    </div>
-  </BrowserRouter>
-  // </Provider>
-  , document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 );
