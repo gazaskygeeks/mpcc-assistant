@@ -15,10 +15,10 @@ CREATE TABLE mentors (
   first_name VARCHAR NOT NULL,
   last_name VARCHAR NOT NULL,
   email VARCHAR NOT NULL,
-  date_of_arrival DATE NOT NULL,
-  date_of_birth DATE,
+  date_of_arrival VARCHAR NOT NULL,
+  date_of_birth VARCHAR,
   current_stage VARCHAR NOT NULL,
-  info VARCHAR
+  info JSON
 );
 
 CREATE TABLE forms (
