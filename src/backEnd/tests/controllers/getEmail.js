@@ -9,13 +9,15 @@ const getEmailTest = () => {
       .expect(200)
       .end((err, res) => {
         if (err) {
-          console.log(err);
-          t.end();
+          t.fail();
+
+          return t.end();
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
         t.equal(res.body.data.subject, '#mentor-name#, Time to Apply for Your Permit!', 'respose body subject should be #mentor-name#, Time to Apply for Your Permit!');
-        t.end();
+
+        return t.end();
       });
   });
 
@@ -25,13 +27,15 @@ const getEmailTest = () => {
       .expect(200)
       .end((err, res) => {
         if (err) {
-          console.log(err);
-          t.end();
+          t.fail();
+
+          return t.end();
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
         t.deepEqual(res.body, {} , 'respose should be empty');
-        t.end();
+
+        return t.end();
       });
   });
 };
