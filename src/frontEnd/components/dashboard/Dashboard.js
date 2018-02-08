@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './dashboard.css';
-import { Button, Card, Image } from 'semantic-ui-react';
+import { Button, Card, Image, Icon, Message } from 'semantic-ui-react';
 
 class Home extends Component {
   componentDidMount() {
@@ -10,12 +10,24 @@ class Home extends Component {
   }
 
   render() {
-    const { mentors } = this.props;
+    const { mentors, error, isFetching } = this.props;
 
     return (
       <div className='wrapper'>
         <h2>Hello Sarah, Have A Good Hunt!</h2>
         <Card.Group className='mentors-container'>
+          {isFetching && (
+            <Message icon>
+              <Icon name='circle notched' loading />
+              <Message.Content>
+                <Message.Header>Just one second</Message.Header>
+                We are fetching that content for you.
+              </Message.Content>
+            </Message>
+          )}
+          {error && (
+            <Message color='red'>{error}</Message>
+          )}
           {mentors[0] && (
             mentors.map((mentor, index) => (
               <Card key={index}>
@@ -47,7 +59,9 @@ class Home extends Component {
 
 Home.propTypes = {
   mentors: PropTypes.array,
-  getAllMentors: PropTypes.func
+  getAllMentors: PropTypes.func,
+  error: PropTypes.object,
+  isFetching: PropTypes.boolean
 };
 
 export default Home;
