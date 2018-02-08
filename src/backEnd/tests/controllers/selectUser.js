@@ -15,6 +15,7 @@ const selectUser = () => {
       .expect(200)
       .end((err, res) => {
         if (err) {
+          console.log('asdasdasdasd', err);
           t.fail();
 
           return t.end();
