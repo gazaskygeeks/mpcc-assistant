@@ -22,8 +22,8 @@ CREATE TABLE mentors (
 
 CREATE TABLE forms (
   id SERIAL PRIMARY KEY,
-  form_name json NOT NULL,
-  vars json
+  form_name JSON NOT NULL,
+  vars JSON
 );
 
 COMMIT;
