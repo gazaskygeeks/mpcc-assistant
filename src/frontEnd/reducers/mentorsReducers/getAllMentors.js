@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isFetching: false,
-  mentors: {}
+  mentors: []
 };
 
 export default (state = initialState, action) => {
