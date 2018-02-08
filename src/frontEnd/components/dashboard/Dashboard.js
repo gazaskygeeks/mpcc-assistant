@@ -61,7 +61,7 @@ Home.propTypes = {
   mentors: PropTypes.array,
   getAllMentors: PropTypes.func,
   error: PropTypes.object,
-  isFetching: PropTypes.boolean
+  isFetching: PropTypes.bool
 };
 
 export default Home;
