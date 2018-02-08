@@ -3,9 +3,11 @@ const { getMentorsTest } = require('./controllers/getMentors');
 const { selectSingleMentorTest } = require('./database/selectSingleMentor');
 const { getSingleMentorTest } = require('./controllers/getSingleMentor');
 const { getEmailTest } = require('./controllers/getEmail');
+const { insertSingleMentorTest } = require('./database/insertSingleMentor')
 
 selectMentorsTest();
 getMentorsTest();
 selectSingleMentorTest();
 getSingleMentorTest();
 getEmailTest();
+insertSingleMentorTest();

@@ -1,16 +1,19 @@
-const updateMentor = require('../database/queries/updateMentor');
-const insertMentor = require('.database/queries/insertMentor');
+const updateSingleMentor = require('../database/queries/updateSingleMentor');
+const insertSingleMentor = require('../database/queries/insertSingleMentor');
 
 module.exports = (req, res, next) => {
-  if (req.mentorData.existing) {
-    updateMentor(req.mentorData, (dbErr, dbRes) => {
-      if (dbErr) throw new Error('Error updating mentor');
-      res.send(dbRes);
-    });
-  } else {
-    insertMentor(req.mentorData, (dbErr, dbRes) => {
-      if (dbErr) throw new Error('Error updating mentor');
-      res.send(dbRes);
-    })
-  }
+  const { mentorData } = req.body;
+  if (mentorData) {
+    if (mentorData.existing) {
+      updateSingleMentor(mentorData, (dbErr, dbRes) => {
+        if (dbErr) throw new Error('Error updating mentor');
+        res.send(dbRes);
+      });
+    } else {
+      insertSingleMentor(mentorData, (dbErr, dbRes) => {
+        if (dbErr) throw new Error('Error updating mentor');
+        res.send(dbRes);
+      });
+    }
+  } else res.send('Mentor\'s data missing from request');
 };
