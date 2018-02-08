@@ -10,7 +10,13 @@ class Navbar extends React.Component {
         <div className='nav-right'>
           <ul className='list'>
             <li><a href='/dashboard'><i className='fa fa-home fa-2x wi'></i></a></li>
-            <li><a href='#'><i className='fa fa-plus fa-2x wi'></i></a></li>
+            <li><a href='#'><i className='fa fa-plus fa-2x wi'>
+            </i></a>
+            </li>
+            <ul className='drop-down hr-drop'>
+              <li>Host new mentor</li>
+              <li>Sechedule with existing</li>
+            </ul>
           </ul>
         </div>
       </nav>
