@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isFetching: false,
-  mentors: {}
+  mentors: []
 };
 
 export default (state = initialState, action) => {
@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        mentors: action.payload.data
+        mentors: action.payload.mentors
       };
     case GET_ALL_MENTORS_FAILURE:
       return {
