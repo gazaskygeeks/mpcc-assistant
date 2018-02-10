@@ -1,17 +1,18 @@
-const updateSingleMentor = require('../database/queries/updateSingleMentor');
+const updateMentor = require('../database/queries/updateMentor');
 const insertSingleMentor = require('../database/queries/insertSingleMentor');
 
 module.exports = (req, res, next) => {
-  const { mentorData } = JSON.parse(req.body);
+  const { mentorData } = req.body;
+  console.log(mentorData);
   if (mentorData) {
     if (mentorData.existing) {
-      updateSingleMentor(mentorData, (dbErr, dbRes) => {
-        if (dbErr) throw new Error('Error updating mentor');
+      updateMentor(mentorData, (dbErr, dbRes) => {
+        if (dbErr) throw new Error('Error updating mentor: ', dbErr);
         res.send(dbRes);
       });
     } else {
       insertSingleMentor(mentorData, (dbErr, dbRes) => {
-        if (dbErr) throw new Error('Error updating mentor');
+        if (dbErr) throw new Error(dbErr);
         res.send(dbRes);
       });
     }

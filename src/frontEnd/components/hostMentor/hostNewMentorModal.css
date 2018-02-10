@@ -1,0 +1,31 @@
+.new-mentor-modal {
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    z-index: 100;
+    display: flex;
+    position: fixed;
+    transition: all 1s;
+    position: absolute;
+    flex-direction: column;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.new-mentor-modal * {
+  margin: 5px 10px;
+  padding: 10px 20px;
+}
+
+.new-mentor-modal label {
+  margin: 0;
+}
+
+.new-mentor-modal:not(.active) {
+  top: -200%;
+  transition: all 1s;
+}
+
+.fas.fa-times {
+  float: right;
+}
