@@ -13,7 +13,6 @@ class Navbar extends React.Component {
   }
 
   toggleDrop() {
-    console.log(this.state);
     this.setState({ active: this.state.active === '' ? 'active' : '' });
   }
 

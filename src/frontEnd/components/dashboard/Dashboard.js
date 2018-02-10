@@ -10,12 +10,7 @@ class Home extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const { mentors } = this.props;
-    console.log('mmmm', mentors);
-=======
     const { mentors, error, isFetching } = this.props;
->>>>>>> 69f757d8eb3babf6f846b688864e152b07a90978
 
     return (
       <div className='wrapper'>

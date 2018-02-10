@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { getAllMentors } from '../../actions/mentorsActions/getAllMentors';
+import { hideUpdateMentorModal } from '../../actions/updateMentorModalActions';
 
 import './hostExistingMentorModal.css';
 
@@ -35,11 +36,12 @@ class ExistingMentor extends Component {
   }
 
   render() {
-    console.log('aabsa', this.state);
-
     return (
-      <div className={`existing-mentor-modal ${this.state.modalState}`}>
-        <h1>Rescedule Visit</h1>
+      <div className={`existing-mentor-modal ${this.props.modalStatus}`}>
+        <h1>
+          Rescedule Visit
+          <span onClick={this.props.hideUpdateMentorModal} className='fas fa-times'></span>
+        </h1>
         <label>Name</label>
         <select>
           Loop me here***
@@ -51,12 +53,10 @@ class ExistingMentor extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('modalstate = ', state.modalState);
-
   return {
-    modalStatus: state.modalState.modalState,
+    modalStatus: state.updateMentor.modalState,
     mentors: state.getAllMentors.mentors
   };
 };
 console.log('mentors', getAllMentors);
-export default connect(mapStateToProps, { getAllMentors })(ExistingMentor);
+export default connect(mapStateToProps, { getAllMentors, hideUpdateMentorModal })(ExistingMentor);
