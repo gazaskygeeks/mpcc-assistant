@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     else if (data.rowCount === 0) {
       return res.send({ msg: 'USER_NOT_FOUND', loggedin: false });
     }
-    bcrypt.comparePasswords(password, data.rows[0].password, (errorComparing, result) => {
+    bcrypt.comparePasswords(password, data.rows[0].password, errorComparing => {
       if (errorComparing) return next(errorComparing);
       const payload = {
         id: data.rows[0].id,
