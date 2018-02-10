@@ -5,7 +5,7 @@ import { GET_ALL_MENTORS_IN_PROGRESS,
 
 const initialState = {
   isFetching: false,
-  mentors: {}
+  mentors: []
 };
 
 export default (state = initialState, action) => {

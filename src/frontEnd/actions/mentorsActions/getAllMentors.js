@@ -30,7 +30,6 @@ export const getAllMentors = () => dispatch => {
       }
     })
     .catch(err => {
-      console.error(err);
-      dispatch(getAllMentorsFailure(err));
+      dispatch(getAllMentorsFailure(err.message));
     });
 };
