@@ -1,5 +1,4 @@
-import {
-  GET_ALL_MENTORS_IN_PROGRESS,
+import { GET_ALL_MENTORS_IN_PROGRESS,
   GET_ALL_MENTORS_SUCCESS,
   GET_ALL_MENTORS_FAILURE
 } from '../../constants/actionTypes.js';

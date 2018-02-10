@@ -11,6 +11,7 @@ class Home extends Component {
 
   render() {
     const { mentors } = this.props;
+    console.log('mmmm', mentors);
 
     return (
       <div className='wrapper'>
