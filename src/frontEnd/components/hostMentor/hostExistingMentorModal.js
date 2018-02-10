@@ -36,6 +36,8 @@ class ExistingMentor extends Component {
   }
 
   render() {
+    console.log('myprps', this.props.mentors);
+
     return (
       <div className={`existing-mentor-modal ${this.props.modalStatus}`}>
         <h1>
@@ -44,7 +46,13 @@ class ExistingMentor extends Component {
         </h1>
         <label>Name</label>
         <select>
-          Loop me here***
+          {this.props.mentors.map((mentor, index) => {
+            return (
+              <option key={index} value={mentor.first_name + mentor.last_name}>
+                {mentor.first_name + mentor.last_name}
+              </option>
+            )
+          })}
         </select>
         <button type='submit' onClick={this.submit}>Submit</button>
       </div>
