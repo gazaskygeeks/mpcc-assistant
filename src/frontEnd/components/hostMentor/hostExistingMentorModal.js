@@ -24,20 +24,17 @@ class ExistingMentor extends Component {
 
   submit(e) {
     e.preventDefault();
-    console.log('Im sending!!');
     axios.post('/dashboard/host-mentor', {
       mentorData: {
-        firstName:     document.querySelector('').value,
-        lastName :     document.querySelector('').value,
-        dateOfArrival: document.querySelector('').value,
-        email:         document.querySelector('').value
+        firstName:     this.props.mentors[0].first_name.value,
+        lastName :     this.props.mentors[0].last_name.value,
+        dateOfArrival: this.props.mentors[0].date_of_arrival.value,
+        email:         this.props.mentors[0].email.value
       }
     });
   }
 
   render() {
-    console.log('myprps', this.props.mentors);
-
     return (
       <div className={`existing-mentor-modal ${this.props.modalStatus}`}>
         <h1>
@@ -45,13 +42,13 @@ class ExistingMentor extends Component {
           <span onClick={this.props.hideUpdateMentorModal} className='fas fa-times'></span>
         </h1>
         <label>Name</label>
-        <select>
+        <select id='ummdm'>
           {this.props.mentors.map((mentor, index) => {
             return (
-              <option key={index} value={mentor.first_name + mentor.last_name}>
-                {mentor.first_name + mentor.last_name}
+              <option key={index} value={`${mentor.first_name} ${mentor.last_name}`}>
+                {`${mentor.first_name} ${mentor.last_name}`}
               </option>
-            )
+            );
           })}
         </select>
         <button type='submit' onClick={this.submit}>Submit</button>
@@ -66,5 +63,4 @@ const mapStateToProps = state => {
     mentors: state.getAllMentors.mentors
   };
 };
-console.log('mentors', getAllMentors);
 export default connect(mapStateToProps, { getAllMentors, hideUpdateMentorModal })(ExistingMentor);

@@ -13,7 +13,13 @@ class Navbar extends React.Component {
   }
 
   toggleDrop() {
-    this.setState({ active: this.state.active === '' ? 'active' : '' });
+    if (this.props.modalStatus) {
+      this.setState({ active: '' });
+      this.props.hideCreateMentorDrop();
+    } else {
+      this.setState({ active: 'active' });
+      this.props.showCreateMentorDrop();
+    }
   }
 
   render() {
@@ -36,15 +42,15 @@ class Navbar extends React.Component {
   }
 }
 
-const mapStateToProps = ({ modalState }) => {
+const mapStateToProps = ({ dropState }) => {
   return {
-    modalStatus: modalState.modalState
+    modalStatus: dropState.modalState
   };
 };
 
 export default connect(mapStateToProps,
-  { showCreateMentorDrop,
+  { showCreateMentorDrop ,
+    hideCreateMentorDrop ,
     showCreateMentorModal,
-    hideCreateMentorDrop,
     showUpdateMentorModal
   })(Navbar);

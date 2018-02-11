@@ -4,7 +4,6 @@
     width: 50%;
     z-index: 100;
     display: flex;
-    position: fixed;
     transition: all 1s;
     position: absolute;
     flex-direction: column;
