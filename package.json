@@ -40,6 +40,7 @@
     "file-loader": "^1.1.5",
     "jsonwebtoken": "^8.1.1",
     "nodemailer": "^4.4.2",
+    "nodemailer-smtp-transport": "^2.7.4",
     "pg": "^7.4.1",
     "prop-types": "^15.6.0",
     "radium": "^0.21.2",
