@@ -15,7 +15,7 @@ router.get('/dashboard/mentor-panel/:mentorSelector', getSingleMentor);
 router.get('/dashboard/mentor-panel/:mentorSelector/check/:docType', postDocStatus);
 router.get('/dashboard/mentor-panel/:mentorSelector/send-email/:emailType', getEmail);
 router.post('/dashboard/mentor-panel/:mentorSelector/edit/:fieldType', updateMentorField);
-router.post('/dashboard/mentor-panel/:mentorSelector/sendEmail/:emailTypel/confirm', sendEmail);
+router.post('/dashboard/mentor-panel/confirm', sendEmail);
 router.post('/login', postLogin);
 
 module.exports = router;
