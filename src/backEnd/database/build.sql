@@ -9,7 +9,6 @@ CREATE TABLE users (
   email VARCHAR NOT NULL,
   role VARCHAR NOT NULL
 );
-
 CREATE TABLE mentors (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR NOT NULL,
@@ -23,8 +22,8 @@ CREATE TABLE mentors (
 
 CREATE TABLE forms (
   id SERIAL PRIMARY KEY,
-  form_name VARCHAR NOT NULL,
-  vars VARCHAR
+  form_name JSON NOT NULL,
+  vars JSON
 );
 
 COMMIT;
