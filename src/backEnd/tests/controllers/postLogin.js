@@ -44,7 +44,7 @@ const postLogin = () => {
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
-        t.equal(res.body.msg, 'USER_NOT_FOUND', 'should return USER_NOT_FOUND');
+        t.equal(res.body.msg, 'USERNAME/PASSWORD is Incorrect', 'should return USERNAME/PASSWORD is Incorrect');
 
         return t.end();
       });
@@ -67,7 +67,7 @@ const postLogin = () => {
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
-        t.equal(res.body.msg, 'PASSWORD_INCORRECT', 'should return PASSWORD_INCORRECT');
+        t.equal(res.body.msg, 'USERNAME/PASSWORD is Incorrect', 'should return USERNAME/PASSWORD is Incorrect');
 
         return t.end();
       });
