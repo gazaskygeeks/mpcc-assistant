@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Button, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
@@ -20,22 +19,23 @@ class Login extends Component {
   }
 
   render() {
-    const { loginResult, error } = this.props;
+    const { loginResult } = this.props;
 
     return (
       <div className='login'>
+
         <Form className='form-signin'>
           <Form.Field>
-            <label>First Name</label>
+            <label>Username:</label>
             <Form.Input type='text'
               name='username'
               onChange={this._handleInputChange}
-              placeholder='First Name'/>
+              placeholder='username'/>
           </Form.Field>
           <Form.Field>
-            <label>Password</label>
+            <label>Password:</label>
             <Form.Input type='text' onChange={this._handleInputChange}
-              name='password' placeholder='Last Name'/>
+              name='password' type='password' placeholder='password'/>
           </Form.Field>
           {!loginResult.loggedin &&
             <div className='err-msg'>
