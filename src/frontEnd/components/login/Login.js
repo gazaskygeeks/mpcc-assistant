@@ -46,7 +46,7 @@ class Login extends Component {
             onClick={this._handleSubmit}
             type='submit'>Submit</Button>
         </Form>
-        {loginResult.loggedin? window.location.pathname = '/dashboard':null}
+        {loginResult.loggedin? this.props.history.push('/dashboard'):null}
       </div>
     );
   }
@@ -59,7 +59,8 @@ Login.propTypes = {
   password: PropTypes.string.isRequired,
   isFetching: PropTypes.bool,
   loginResult: PropTypes.object,
-  error: PropTypes.object
+  error: PropTypes.object,
+  history: PropTypes.object
 };
 
 export default Login;
