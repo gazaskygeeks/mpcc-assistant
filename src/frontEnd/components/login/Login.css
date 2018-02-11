@@ -1,10 +1,14 @@
 .login {
   flex: 1;
   display: flex;
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.ui.form {
+    width: 500px;
+    margin-top: 20vh;
 }
 
 .input {
@@ -13,7 +17,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .header {
    text-align: center;
@@ -24,10 +27,16 @@
 .button {
   background-color: red;
 }
+
 .form-signin {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0,0,0,0.1);
+}
+
+.err-msg {
+  color: red;
+  margin-bottom: 10px;
 }

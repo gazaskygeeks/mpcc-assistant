@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Form } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 import './Login.css';
 class Login extends Component {
@@ -19,7 +20,8 @@ class Login extends Component {
   }
 
   render() {
-    const { isFetching, loginResult, username, password, error } = this.props;
+    console.log(this.props);
+    const { loginResult, error } = this.props;
 
     return (
       <div className='login'>
@@ -36,18 +38,29 @@ class Login extends Component {
             <Form.Input type='text' onChange={this._handleInputChange}
               name='password' placeholder='Last Name'/>
           </Form.Field>
-          {error &&
-          <div>
-            <span>error.message</span>
-          </div>}
+          {!loginResult.loggedin &&
+            <div className='err-msg'>
+              <span>{loginResult.msg}</span>
+            </div>
+          }
           <Button
             onClick={this._handleSubmit}
             type='submit'>Submit</Button>
         </Form>
-        {status? window.location.pathname = '/dashboard':null}
+        {loginResult.loggedin? window.location.pathname = '/dashboard':null}
       </div>
     );
   }
 }
+
+Login.propTypes = {
+  handleInputChange: PropTypes.func,
+  postLogin: PropTypes.func,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  isFetching: PropTypes.bool,
+  loginResult: PropTypes.object,
+  error: PropTypes.object
+};
 
 export default Login;

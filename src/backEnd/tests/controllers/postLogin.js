@@ -2,20 +2,19 @@ const supertest = require('supertest');
 const app = require('../../app');
 const test = require('tape');
 
-const selectUser = () => {
+const postLogin = () => {
   test('test post /login', t => {
     supertest(app)
       .post('/login')
       .send({
         username: 'Someone',
-        password: '$2a$08$WsD9bqU5GQdcjk4.eC0JkeCOhdRaVJL5x2gU0OF/vG/pKzeSAExy6'
+        password: '123456'
       })
       .set('Accept', 'application/json, text/plain, */*')
       .set('Content-Type', 'application/json')
       .expect(200)
       .end((err, res) => {
         if (err) {
-          console.log('asdasdasdasd', err);
           t.fail();
 
           return t.end();
@@ -32,7 +31,7 @@ const selectUser = () => {
       .post('/login')
       .send({
         username: 'notUSer',
-        password: '$2a$08$WsD9bqU5GQdcjk4.eC0JkeCOhdRaVJL5x2gU0OF/vG/pKzeSAExy6'
+        password: '123456'
       })
       .set('Accept', 'application/json, text/plain, */*')
       .set('Content-Type', 'application/json')
@@ -50,7 +49,30 @@ const selectUser = () => {
         return t.end();
       });
   });
+  test('test post /login for incorrect password', t => {
+    supertest(app)
+      .post('/login')
+      .send({
+        username: 'Someone',
+        password: 'incorrectpassword'
+      })
+      .set('Accept', 'application/json, text/plain, */*')
+      .set('Content-Type', 'application/json')
+      .expect(200)
+      .end((err, res) => {
+        if (err) {
+          t.fail();
+
+          return t.end();
+        }
+        t.equal(res.statusCode, 200, 'statusCode should equal 200');
+        t.equal(res.type, 'application/json', 'should return res.type application/json');
+        t.equal(res.body.msg, 'PASSWORD_INCORRECT', 'should return PASSWORD_INCORRECT');
+
+        return t.end();
+      });
+  });
 };
 module.exports = {
-  selectUser
+  postLogin
 };
