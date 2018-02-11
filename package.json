@@ -8,8 +8,9 @@
     "pretest": "node src/backEnd/database/dbBuild.js",
     "start": "node ./src/backEnd/server.js",
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
-    "dev:build": "webpack --watch",
-    "dev:start": "nodemon --exec babel-node ./src/backEnd/server.js"
+    "dev:build": "webpack",
+    "dev:start": "nodemon --exec babel-node ./src/backEnd/server.js",
+    "watch": "nodemon ./src/backEnd/server.js"
   },
   "repository": {
     "type": "git",
@@ -31,11 +32,13 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bcryptjs": "^2.4.3",
     "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
     "env2": "^2.2.0",
     "express": "^4.15.3",
     "file-loader": "^1.1.5",
+    "jsonwebtoken": "^8.1.1",
     "pg": "^7.4.1",
     "prop-types": "^15.6.0",
     "radium": "^0.21.2",

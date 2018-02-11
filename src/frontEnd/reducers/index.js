@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 import getAllMentors from './mentorsReducers/getAllMentors';
+import postLogin from './usersReducers/postLogin';
 
 export default combineReducers({
-  getAllMentors
+  getAllMentors,
+  postLogin
 });

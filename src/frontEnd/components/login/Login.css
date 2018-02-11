@@ -1,0 +1,26 @@
+.login {
+  flex: 1;
+  display: flex;
+  background-color: yellow;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header {
+   text-align: center;
+   font-size: 15px;
+   color: blue;
+}
+
+.button {
+  background-color: red;
+}

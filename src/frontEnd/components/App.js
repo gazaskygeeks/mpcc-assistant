@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navbar from './navbar/Navbar';
 import Dashboard from '../containers/Dashboard';
+import Login from '../containers/Login';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/login' component={Login} />
           </Switch>
         </div>
       </BrowserRouter>
