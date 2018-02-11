@@ -14,7 +14,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
-
-// <Connect>
-//   <Dashboard {...mapStateToProps} {...mapDispatchToProps} />
-// </Connect>
