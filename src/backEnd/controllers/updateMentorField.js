@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
       info.pov = req.body.purpose_of_visit;
     }
     mentorData.info = JSON.stringify(info);
-    updateMentor(mentorData, (error, result) => {
+    updateMentor(mentorData, error => {
       if (error) return next(error);
 
       return res.send({ msg: 'MENTOR_UPDATED' });

@@ -21,7 +21,6 @@ class NewMentor extends React.Component {
 
   submit(e) {
     e.preventDefault();
-    console.log('Im sending!!');
     axios.post('/dashboard/host-mentor', {
       mentorData: {
         firstName:     document.querySelector('#fname').value,
