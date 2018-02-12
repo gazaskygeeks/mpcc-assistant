@@ -12,10 +12,6 @@ class NewMentor extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       mentorData: {
-        firstName:     '',
-        lastName :     '',
-        dateOfArrival: '',
-        email:         '',
         existing: false
       }
     };
@@ -31,10 +27,10 @@ class NewMentor extends React.Component {
         email:         this.state.mentorData.email
       }
     });
+    console.log('request sent');
   }
 
   handleChange(e) {
-    console.log('props::: ', this.props);
     const mentorData = Object.assign({}, this.state.mentorData);
     mentorData[e.target.name] = e.target.value;
     this.setState({ mentorData });
@@ -84,7 +80,12 @@ class NewMentor extends React.Component {
               onChange={this.handleChange}
             />
           </Form.Field>
-          <Form.Button positive type="submit">Submit</Form.Button>
+          <Form.Button
+            positive
+            onClick={this.submit}
+            type="submit"
+          >Submit
+          </Form.Button>
         </Form>
       </Modal>
     );
