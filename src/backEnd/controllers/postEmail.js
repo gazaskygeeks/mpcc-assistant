@@ -2,9 +2,8 @@ const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 require('env2')('./config.env');
 
-//{ mentorSelector: 'mentorSelector', emailTypel: 'emailTypel' }
 module.exports = (req, res) => {
-  const emailInfo = JSON.parse(req.body).emailInfo;
+  const emailInfo = req.body.emailInfo;
   const message = {
     from: `"alan claynce" ${process.env.MAIL_EMAIL}`,
     to: emailInfo.to,
@@ -29,11 +28,10 @@ module.exports = (req, res) => {
   }));
   transporter.sendMail(message, error => {
     if (error) {
-      // res.status(500).json({ message: error.message });
+      res.status(500).json({ message: 'ErrorSendingEmail' });
     } else {
       transporter.close();
-      console.log('sent');
-      // res.json({ message: 'Email sent successfully' });
+      res.json({ message: 'EmailSentSuccessfully' });
     }
   });
 };

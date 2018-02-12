@@ -9,7 +9,6 @@ const postDocStatus = require('./postDocStatus');
 const getSingleMentor = require('./getSingleMentor');
 const updateMentorField = require('./updateMentorField');
 
-router.get('/', (req, res) => res.send({ app: 'A' }));
 router.get('/get-mentors', getMentors);
 router.get('/dashboard/mentor-panel/:mentorSelector', getSingleMentor);
 router.get('/dashboard/mentor-panel/:mentorSelector/check/:docType', postDocStatus);
