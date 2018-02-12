@@ -38,11 +38,8 @@
     "env2": "^2.2.0",
     "express": "^4.15.3",
     "file-loader": "^1.1.5",
-<<<<<<< HEAD
     "nodemailer": "^4.4.2",
-=======
     "jsonwebtoken": "^8.1.1",
->>>>>>> 3957410c9714c6b3048a969c99997a21ad6eed6b
     "pg": "^7.4.1",
     "prop-types": "^15.6.0",
     "radium": "^0.21.2",
