@@ -20,3 +20,4 @@ selectUserTest();
 postLogin();
 updateMentorTest();
 postDocStatusTest();
+updateMentorQueryTest();
