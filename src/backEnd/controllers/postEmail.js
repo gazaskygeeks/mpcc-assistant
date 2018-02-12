@@ -1,7 +1,5 @@
 const nodemailer = require('nodemailer');
-const emails = require('../database/emails.json');
 const smtpTransport = require('nodemailer-smtp-transport');
-const selectMentors = require('../database/queries/selectMentors');
 require('env2')('./config.env');
 
 //{ mentorSelector: 'mentorSelector', emailTypel: 'emailTypel' }
