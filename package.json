@@ -68,9 +68,9 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-standard": "^2.1.1",
+    "nodemon": "^1.12.1",
     "supertest": "^3.0.0",
     "tap-spec": "^4.1.1",
-    "tape": "^4.8.0",
-    "nodemon": "^1.12.1"
+    "tape": "^4.8.0"
   }
 }

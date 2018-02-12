@@ -1,59 +1,66 @@
+import { hideUpdateMentorModal } from '../../actions/updateMentorModalActions';
+import { getAllMentors } from '../../actions/mentorsActions/getAllMentors';
+import { Dropdown, Button, Form, Modal } from 'semantic-ui-react'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getAllMentors } from '../../actions/mentorsActions/getAllMentors';
-import { hideUpdateMentorModal } from '../../actions/updateMentorModalActions';
-
-import './hostExistingMentorModal.css';
 
 class ExistingMentor extends Component {
   constructor(props) {
     super(props);
     this.submit = this.submit.bind(this);
+    this.update = this.update.bind(this);
     this.state = {
       mentorData: {
-        firstName:     '',
-        lastName :     '',
-        dateOfArrival: '',
-        email:         '',
+        first_name: '',
+        last_name: '',
+        date_of_arrival: '',
+        email: '',
         existing: true
       },
-      modalState: ''
     };
   }
 
   submit(e) {
     e.preventDefault();
-    const mentor = this.props.mentors[0];
-    axios.post('/dashboard/host-mentor', {
-      mentorData: {
-        firstName:     mentor.first_name.value,
-        lastName :     mentor.last_name.value,
-        dateOfArrival: mentor.date_of_arrival.value,
-        email:         mentor.email.value
-      }
+    axios.post('/dashboard/host-mentor', this.state.mentorData);
+  }
+  update(e, o) {
+    const choice = o.options.filter((mentor) => {
+      return `${mentor.first_name} ${mentor.last_name}` === o.value;
+    })[0];
+    this.setState({
+      first_name: choice.first_name,
+      last_name: choice.last_name,
+      email: choice.email,
+      date_of_arrival: choice.date_of_arrival,
     });
   }
 
   render() {
     return (
-      <div className={`existing-mentor-modal ${this.props.modalStatus}`}>
-        <h1>
-          Rescedule Visit
-          <span onClick={this.props.hideUpdateMentorModal} className='fas fa-times'></span>
-        </h1>
-        <label>Name</label>
-        <select id='ummdm'>
-          {this.props.mentors.map((mentor, index) => {
-            return (
-              <option key={index} value={`${mentor.first_name} ${mentor.last_name}`}>
-                {`${mentor.first_name} ${mentor.last_name}`}
-              </option>
-            );
-          })}
-        </select>
-        <button type='submit' onClick={this.submit}>Submit</button>
-      </div>
+      <Modal
+        open={this.props.modalStatus}
+        onClose={this.props.hideUpdateMentorModal}
+        closeOnRootNodeClick
+        closeIcon
+      >
+        <Dropdown
+          placeholder="Select mentor"
+          fluid
+          selection
+          onChange={this.update}
+          options={this.props.mentors.map((mentor) => {
+          return ({
+            ...mentor,
+            key: mentor.id,
+            text: `${mentor.first_name} ${mentor.last_name}`,
+            value: `${mentor.first_name} ${mentor.last_name}`
+          });
+        })}
+        />
+        <Button positive type="submit" onClick={this.submit}>Submit</Button>
+      </Modal>
     );
   }
 }

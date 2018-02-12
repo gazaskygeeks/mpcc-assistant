@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { Button, Form, Modal } from 'semantic-ui-react'
 import { hideCreateMentorModal } from '../../actions/createMentorModalActions';
 import './hostNewMentorModal.css';
 
@@ -8,6 +9,7 @@ class NewMentor extends React.Component {
   constructor(props) {
     super(props);
     this.submit = this.submit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       mentorData: {
         firstName:     '',
@@ -23,27 +25,68 @@ class NewMentor extends React.Component {
     e.preventDefault();
     axios.post('/dashboard/host-mentor', {
       mentorData: {
-        firstName:     document.querySelector('#fname').value,
-        lastName :     document.querySelector('#lname').value,
-        dateOfArrival: document.querySelector('#doarr').value,
-        email:         document.querySelector('#email').value
+        firstName:     this.state.mentorData.firstName,
+        lastName:      this.state.mentorData.lastName,
+        dateOfArrival: this.state.mentorData.dateOfArrival,
+        email:         this.state.mentorData.email
       }
     });
   }
 
+  handleChange(e) {
+    console.log('props::: ', this.props);
+    const mentorData = Object.assign({}, this.state.mentorData);
+    mentorData[e.target.name] = e.target.value;
+    this.setState({ mentorData });
+  }
+
+
   render() {
     return (
-      <div className={`new-mentor-modal ${this.props.modalStatus}`}>
-        <h1>
-        Host New Mentor
-          <span onClick={this.props.hideCreateMentorModal} className='fas fa-times'></span>
-        </h1>
-        <label>First Name</label>       <input type='text' id='fname'/>
-        <label>Last Name</label>        <input type='text' id='lname'/>
-        <label>Date Of Arrival</label>  <input type='date' id='doarr'/>
-        <label>Email</label>            <input type='text' id='email'/>
-        <button type='submit' onClick={this.submit}>Submit</button>
-      </div>
+      <Modal
+        open={this.props.modalStatus}
+        onClose={this.props.hideCreateMentorModal}
+        closeOnRootNodeClick
+        closeIcon>
+        <Form>
+          <Form.Group widths="equal">
+            <Form.Field required>
+              <Form.Input
+                fluid
+                name="firstName"
+                label="First name"
+                placeholder="First name"
+                onChange={this.handleChange}
+              />
+            </Form.Field>
+            <Form.Input
+              fluid
+              name="lastName"
+              label="Last name"
+              placeholder="Last name"
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Field>
+            <Form.Input
+              fluid
+              name="email"
+              type="email"
+              label="Email"
+              placeholder="Email"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              fluid
+              name="dateOfArrival"
+              type="date"
+              label="Date of arrival"
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Button positive type="submit">Submit</Form.Button>
+        </Form>
+      </Modal>
     );
   }
 }
@@ -55,3 +98,11 @@ const mapStateToProps = ({ modalState }) => {
 };
 
 export default connect(mapStateToProps, { hideCreateMentorModal })(NewMentor);
+
+// <Form.Select
+//   fluid
+//   name="gender"
+//   label="Gender"
+//   options={[{ text: 'male', value: 'male' }, { text: 'female', value: 'female' }]}
+//   placeholder="Gender"
+//   onChange={this.handleChange}/>

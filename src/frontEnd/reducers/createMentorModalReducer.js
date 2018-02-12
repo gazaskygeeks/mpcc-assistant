@@ -4,7 +4,7 @@ import {
 } from '../constants/actionTypes';
 
 const intialState = {
-  modalState: ''
+  modalState: false
 };
 
 export default (state = intialState, { type }) => {
@@ -12,12 +12,12 @@ export default (state = intialState, { type }) => {
     case SHOW_CREATE_MENTOR_MODAL:
       return {
         ...state,
-        modalState: 'active'
+        modalState: true
       };
     case HIDE_CREATE_MENTOR_MODAL:
       return {
         ...state,
-        modalState: ''
+        modalState: false
       };
     default:
       return state;
