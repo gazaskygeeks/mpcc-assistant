@@ -59,8 +59,6 @@ typings/
 config.env
 
 # additional:
-/public/js/bundle.js
-/public/bundle.js
-/public/bundle.js.map
+bundle.js
 package-lock.json
-.eslintrc.json
+bundle.js.map
