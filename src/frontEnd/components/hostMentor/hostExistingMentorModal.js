@@ -24,12 +24,13 @@ class ExistingMentor extends Component {
 
   submit(e) {
     e.preventDefault();
+    const mentor = this.props.mentors[0];
     axios.post('/dashboard/host-mentor', {
       mentorData: {
-        firstName:     this.props.mentors[0].first_name.value,
-        lastName :     this.props.mentors[0].last_name.value,
-        dateOfArrival: this.props.mentors[0].date_of_arrival.value,
-        email:         this.props.mentors[0].email.value
+        firstName:     mentor.first_name.value,
+        lastName :     mentor.last_name.value,
+        dateOfArrival: mentor.date_of_arrival.value,
+        email:         mentor.email.value
       }
     });
   }
