@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   isFetching: false,
-  status: {},
+  loginResult: {},
   password: '',
   username: ''
 };
@@ -24,13 +24,13 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isFetching: false,
-        status: payload.loggedin
+        loginResult: payload
       };
     case POST_LOGIN_BAD:
       return {
         ...state,
         isFetching: false,
-        status: payload.loggedin
+        loginResult: payload
       };
     case POST_LOGIN_FAILURE:
       return {
@@ -39,7 +39,6 @@ export default (state = initialState, { type, payload }) => {
         error: payload
       };
     case HANDLE_INPUT_CHANGE: {
-      console.log(payload);
 
       return {
         ...state,

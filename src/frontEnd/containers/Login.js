@@ -7,7 +7,7 @@ import { handleInputChange } from '../actions/usersActions/handleInputChangeActi
 
 const mapStateToProps = state => ({
   isFetching: state.postLogin.isFetching,
-  status: state.postLogin.status,
+  loginResult: state.postLogin.loginResult,
   username: state.postLogin.username,
   password: state.postLogin.password
 });
