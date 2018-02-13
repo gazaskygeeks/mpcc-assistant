@@ -8,7 +8,7 @@
     "pretest": "node src/backEnd/database/dbBuild.js",
     "start": "node ./src/backEnd/server.js",
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
-    "dev:build": "webpack",
+    "dev:build": "webpack --watch",
     "dev:start": "nodemon --exec babel-node ./src/backEnd/server.js",
     "watch": "nodemon ./src/backEnd/server.js"
   },
@@ -39,11 +39,14 @@
     "express": "^4.15.3",
     "file-loader": "^1.1.5",
     "jsonwebtoken": "^8.1.1",
+    "nodemailer": "^4.4.2",
+    "nodemailer-smtp-transport": "^2.7.4",
     "pg": "^7.4.1",
     "prop-types": "^15.6.0",
     "radium": "^0.21.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-dropzone": "^4.2.8",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -67,9 +70,9 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-standard": "^2.1.1",
+    "nodemon": "^1.14.12",
     "supertest": "^3.0.0",
     "tap-spec": "^4.1.1",
-    "tape": "^4.8.0",
-    "nodemon": "^1.12.1"
+    "tape": "^4.8.0"
   }
 }

@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navbar from './navbar/Navbar';
 import Dashboard from '../containers/Dashboard';
+import HostNewMentorModal from './hostMentor/hostNewMentorModal';
+import UpdateMentorModal from './hostMentor/hostExistingMentorModal';
 import Login from '../containers/Login';
 import Waiver from '../containers/Waiver';
 
@@ -12,10 +14,13 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Navbar />
+          <HostNewMentorModal/>
+          <UpdateMentorModal/>
           <Switch>
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/' component={Dashboard} />
             <Route exact path='/login' component={Login} />
-            <Route exact path='/submit/signed-waiver' component={Waiver} />
+            <Route exact path='/waiver' component={Waiver} />
+            <Route exact path='/dashboard' component={Dashboard} />
           </Switch>
         </div>
       </BrowserRouter>
