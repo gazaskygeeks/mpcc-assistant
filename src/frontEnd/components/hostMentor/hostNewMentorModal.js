@@ -1,8 +1,9 @@
+import { hideCreateMentorModal } from '../../actions/createMentorModalActions';
+import { Form, Modal } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 import React from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
-import { Button, Form, Modal } from 'semantic-ui-react'
-import { hideCreateMentorModal } from '../../actions/createMentorModalActions';
+
 import './hostNewMentorModal.css';
 
 class NewMentor extends React.Component {
@@ -21,10 +22,10 @@ class NewMentor extends React.Component {
     e.preventDefault();
     axios.post('/dashboard/host-mentor', {
       mentorData: {
-        firstName:     this.state.mentorData.firstName,
-        lastName:      this.state.mentorData.lastName,
-        dateOfArrival: this.state.mentorData.dateOfArrival,
-        email:         this.state.mentorData.email
+        date_of_arrival: this.state.mentorData.dateOfArrival,
+        first_name: this.state.mentorData.firstName,
+        last_name: this.state.mentorData.lastName,
+        email: this.state.mentorData.email
       }
     });
   }
