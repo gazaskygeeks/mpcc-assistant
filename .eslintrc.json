@@ -24,7 +24,6 @@
     "max-lines": [1, 200],
     "max-depth": [2, 5],
     "max-len": [1, {"code": 100, "tabWidth": 2, "ignoreUrls": true}],
-    "newline-before-return": 2,
     "no-underscore-dangle": 0,
     "no-use-before-define": [2, "nofunc"],
     "no-duplicate-imports": 2,
