@@ -7,6 +7,8 @@ const { selectUserTest } = require('./database/selectUserTest');
 const { postLogin } = require('./controllers/postLogin');
 const { updateMentorTest } = require('./controllers/updateMentor');
 const { postDocStatusTest } = require('./controllers/postDocStatus');
+const { postFlightInfo } = require('./controllers/postFlightInfo');
+const { sselectMentorByEmailTest } = require('./database/selectMentorByEmail');
 
 selectMentorsTest();
 getMentorsTest();
@@ -17,3 +19,5 @@ selectUserTest();
 postLogin();
 updateMentorTest();
 postDocStatusTest();
+postFlightInfo();
+sselectMentorByEmailTest();
