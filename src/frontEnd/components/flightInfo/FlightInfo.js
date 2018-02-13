@@ -67,6 +67,7 @@ class FlightInfo extends Component {
             onClick={this._handleSubmit}
             type='submit'>Submit</Button>
         </Form>
+        {flightInfoResult.update? window.location.reload():null}
       </div>
     );
   }
