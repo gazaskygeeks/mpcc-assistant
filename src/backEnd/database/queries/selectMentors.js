@@ -2,7 +2,7 @@ const dbConnection = require('../dbConnection');
 
 const selectMentors = cb => {
   const query = {
-    text: 'select * from mentors'
+    text: 'SELECT * FROM mentors'
   };
   dbConnection.query(query, cb);
 };

@@ -10,13 +10,13 @@ import {
 export const postLoginInProgress = () => ({
   type: POST_LOGIN_IN_PROGRESS
 });
-export const postLoginSuccess = status => ({
+export const postLoginSuccess = loginResult => ({
   type: POST_LOGIN_SUCCESS,
-  payload: status
+  payload: loginResult
 });
-export const postLoginBad = status => ({
+export const postLoginBad = loginResult => ({
   type: POST_LOGIN_BAD,
-  payload: status
+  payload: loginResult
 });
 export const postLoginFailure = err => ({
   type: POST_LOGIN_FAILURE,
@@ -30,10 +30,13 @@ export const postLogin = (username, password) => dispatch => {
     password
   })
     .then(response => {
-      console.log(response);
+      const loginResult = response.data;
+      if (loginResult.loggedin === false) {
+        return dispatch(postLoginBad(loginResult));
+      }
+      dispatch(postLoginSuccess(loginResult));
     })
     .catch(err => {
-      console.log(err);
       dispatch(postLoginFailure(err));
     });
 };
