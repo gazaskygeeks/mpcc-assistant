@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Header, Icon, Image, Modal, Form } from 'semantic-ui-react';
+import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react';
 
 class SendEmail extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
 import SendEmail from '../sendEmail/SendEmail';
+import PropTypes from 'prop-types';
 
 class StageHead extends Component {
   render() {
@@ -18,4 +18,7 @@ class StageHead extends Component {
   }
 }
 
+StageHead.propTypes = {
+  headTitle: PropTypes.string
+};
 export default StageHead;

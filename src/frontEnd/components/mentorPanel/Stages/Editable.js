@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { Button, Modal, Form, Header, Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 class Editable extends Component {
 
   render() {
-    const { stepHeader, defaultContent } = this.props;
+    const { editableTitle, defaultContent } = this.props;
 
     return (
       <div className='stage-box'>
         <div className='head-box'>
           <div className='stage-top'>
             <i className='fa fa-circle mr-5'></i>
-            <h3 className='sub-title'>{'editableTitle'}</h3>
+            <h3 className='sub-title'>{editableTitle}</h3>
           </div>
           <Modal trigger={
             <Button className='ml-5 small bg-red' size='small'>
@@ -20,10 +21,10 @@ class Editable extends Component {
             <Modal.Header>Edit:</Modal.Header>
             <Modal.Content>
               <Modal.Description>
-                <Header>{'editableTitle'}</Header>
+                <Header>{editableTitle}</Header>
                 <Form className='se-f'>
                   <Form.Group className='se-gf'>
-                    <Form.TextArea fluid defaultValue='{defaultContent}' />
+                    <Form.TextArea fluid defaultValue={defaultContent} />
                   </Form.Group>
                 </Form>
               </Modal.Description>
@@ -36,10 +37,14 @@ class Editable extends Component {
           </Modal>
         </div>
         <div className='ml-5 sticky-divider'></div>
-        <p className='ml-5 para'>{'defaultContent'}</p>
+        <p className='ml-5 para'>{defaultContent}</p>
       </div>
     );
   }
 }
 
+Editable.propTypes = {
+  editableTitle: PropTypes.string,
+  defaultContent: PropTypes.string
+};
 export default Editable;
