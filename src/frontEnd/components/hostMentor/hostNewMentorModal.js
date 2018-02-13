@@ -27,7 +27,6 @@ class NewMentor extends React.Component {
         email:         this.state.mentorData.email
       }
     });
-    console.log('request sent');
   }
 
   handleChange(e) {
@@ -99,11 +98,3 @@ const mapStateToProps = ({ modalState }) => {
 };
 
 export default connect(mapStateToProps, { hideCreateMentorModal })(NewMentor);
-
-// <Form.Select
-//   fluid
-//   name="gender"
-//   label="Gender"
-//   options={[{ text: 'male', value: 'male' }, { text: 'female', value: 'female' }]}
-//   placeholder="Gender"
-//   onChange={this.handleChange}/>
