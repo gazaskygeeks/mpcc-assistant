@@ -3,7 +3,6 @@ const insertSingleMentor = require('../database/queries/insertSingleMentor');
 
 module.exports = (req, res, next) => {
   const { mentorData } = req.body;
-  console.log(mentorData);
   if (mentorData) {
     if (mentorData.existing) {
       updateMentor(mentorData, (dbErr, dbRes) => {
