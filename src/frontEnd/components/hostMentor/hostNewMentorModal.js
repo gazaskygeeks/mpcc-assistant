@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Button, Form, Modal } from 'semantic-ui-react'
+import { Form, Modal } from 'semantic-ui-react';
 import { hideCreateMentorModal } from '../../actions/createMentorModalActions';
 import './hostNewMentorModal.css';
 
@@ -35,7 +35,6 @@ class NewMentor extends React.Component {
     this.setState({ mentorData });
   }
 
-
   render() {
     return (
       <Modal
@@ -44,45 +43,45 @@ class NewMentor extends React.Component {
         closeOnRootNodeClick
         closeIcon>
         <Form>
-          <Form.Group widths="equal">
+          <Form.Group widths='equal'>
             <Form.Field required>
               <Form.Input
                 fluid
-                name="firstName"
-                label="First name"
-                placeholder="First name"
+                name='firstName'
+                label='First name'
+                placeholder='First name'
                 onChange={this.handleChange}
               />
             </Form.Field>
             <Form.Input
               fluid
-              name="lastName"
-              label="Last name"
-              placeholder="Last name"
+              name='lastName'
+              label='Last name'
+              placeholder='Last name'
               onChange={this.handleChange}
             />
           </Form.Group>
           <Form.Field>
             <Form.Input
               fluid
-              name="email"
-              type="email"
-              label="Email"
-              placeholder="Email"
+              name='email'
+              type='email'
+              label='Email'
+              placeholder='Email'
               onChange={this.handleChange}
             />
             <Form.Input
               fluid
-              name="dateOfArrival"
-              type="date"
-              label="Date of arrival"
+              name='dateOfArrival'
+              type='date'
+              label='Date of arrival'
               onChange={this.handleChange}
             />
           </Form.Field>
           <Form.Button
             positive
             onClick={this.submit}
-            type="submit"
+            type='submit'
           >Submit
           </Form.Button>
         </Form>
