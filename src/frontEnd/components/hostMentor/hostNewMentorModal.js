@@ -1,8 +1,9 @@
-import { hideCreateMentorModal } from '../../actions/createMentorModalActions';
-import { Form, Modal } from 'semantic-ui-react';
-import { connect } from 'react-redux';
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { Form, Modal } from 'semantic-ui-react';
+import { hideCreateMentorModal } from '../../actions/createMentorModalActions';
+
 import './hostNewMentorModal.css';
 
 class NewMentor extends React.Component {
