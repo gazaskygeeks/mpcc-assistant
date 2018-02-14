@@ -1,0 +1,44 @@
+.flightInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-signin {
+  display: flex;
+  max-width: 70%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.ui.form {
+  width: 500px;
+  margin-top: 8vh;
+}
+
+.ui.form .inline.field>input,
+.ui.form .inline.field>select,
+.ui.form .inline.fields .field>input,
+.ui.form .inline.fields .field>select{
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.title{
+  color: #3E5771;
+}
+
+.ui.button {
+  margin-top: 5vh;
+}

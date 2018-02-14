@@ -1,38 +1,40 @@
 import {
-  POST_LOGIN_IN_PROGRESS,
-  POST_LOGIN_SUCCESS,
-  POST_LOGIN_BAD,
-  POST_LOGIN_FAILURE,
+  POST_FLIGHT_INFO_IN_PROGRESS,
+  POST_FLIGHT_INFO_SUCCESS,
+  POST_FLIGHT_INFO_FAILURE,
+  POST_FLIGHT_INFO_BAD,
   HANDLE_INPUT_CHANGE
 } from '../../constants/actionTypes.js';
 
 const initialState = {
   isFetching: false,
-  loginResult: {},
-  password: '',
-  username: ''
+  flightInfoResult: {},
+  mentor_email: '',
+  date_of_arrival: '',
+  time_of_arrival: '',
+  flight_number: ''
 };
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case POST_LOGIN_IN_PROGRESS:
+    case POST_FLIGHT_INFO_IN_PROGRESS:
       return {
         ...state,
         isFetching: true
       };
-    case POST_LOGIN_SUCCESS:
+    case POST_FLIGHT_INFO_SUCCESS:
       return {
         ...state,
         isFetching: false,
-        loginResult: payload
+        flightInfoResult: payload
       };
-    case POST_LOGIN_BAD:
+    case POST_FLIGHT_INFO_BAD:
       return {
         ...state,
         isFetching: false,
-        loginResult: payload
+        flightInfoResult: payload
       };
-    case POST_LOGIN_FAILURE:
+    case POST_FLIGHT_INFO_FAILURE:
       return {
         ...state,
         isFetching: false,
