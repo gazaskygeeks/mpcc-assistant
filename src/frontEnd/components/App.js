@@ -7,6 +7,7 @@ import HostNewMentorModal from './hostMentor/hostNewMentorModal';
 import UpdateMentorModal from './hostMentor/hostExistingMentorModal';
 import Login from '../containers/Login';
 import Waiver from '../containers/Waiver';
+import FlightInfo from '../containers/FlightInfo';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path='/' component={Dashboard} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/waiver' component={Waiver} />
+            <Route path='/submit/flight-info' component={FlightInfo} />
             <Route exact path='/dashboard' component={Dashboard} />
           </Switch>
         </div>
