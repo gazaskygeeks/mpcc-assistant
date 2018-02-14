@@ -1,13 +1,15 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const app = express();
 
 const controllers = require('./controllers/mainController');
 
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.raw({ type: () => true }));
+// app.use(bodyParser.raw({ type: () => true }));
 
 app.set('port', process.env.PORT || 4000);
 

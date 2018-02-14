@@ -1,21 +1,41 @@
-const formidable = require('formidable');
-const fs = require('fs');
+// const fs = require('fs');
+// // const path = require('path');
+// module.exports = (req, res, next) => {
+//   const ws = fs.createWriteStream('something.pdf');
+//   console.log(' recieved!!!!');
+//   console.log('uploaded');
+//   ws.write(req.body);
+//   ws.end();
+//   next();
+// };
+
+const multer = require('multer');
 const path = require('path');
-module.exports = (req, res, next) => {
-  console.log('fiiiiiiiile', req.file);
-  const form = new formidable.IncomingForm();
-  console.log(req.body);
-  form.parse(req, (err, fields, files) => {
-    const oldpath = files.filetoupload.path;
-    const newpath = path.join(__dirname, files.filetoupload.name);
-    fs.rename(oldpath, newpath, renameErr => {
-      if (renameErr) throw renameErr;
-      res.write('File uploaded and moved!');
-      console.log('File uploaded and moved!');
-      res.end();
-    });
-    console.log('ok so far');
-    if (err) throw new Error(err);
-  });
-  next();
+const uuid = require('uuid');
+const mime = require('mime');
+const uploadFields = multer.diskStorage({
+  destination: path.resolve('public', 'uploads'),
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === 'application/pdf')
+      cb(null, true);
+    else
+      cb(null, false);
+  },
+  filename: (req, file, cb) => {
+    const file_name = `${uuid()}.${mime.getExtension(file.mimetype)}`;
+    // req.body.file_name = file_name;
+    // req.body.original_name = file.originalname;
+    cb(null,file_name);
+  }
+
+});
+const uploading = multer({ storage: uploadFields }).single('file');
+const uploadFile = (req, res) => {
+  // uploading(req, res, (response, err) => {
+  //   if (err)
+  //     return res.status(500).json({ msg: 'error uploading the file' });
+  //   const { file_name, original_name, project_name, ip, country } = req.body;
+  // });
 };
+
+module.exports = { uploadFile,uploading };
