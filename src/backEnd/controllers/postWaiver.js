@@ -5,10 +5,7 @@ const mime = require('mime');
 const uploadFields = multer.diskStorage({
   destination: path.resolve('public', 'uploads'),
   fileFilter: (req, file, cb) => {
-    if (file.mimetype === 'application/pdf')
-      cb(null, true);
-    else
-      cb(null, false);
+    cb(null, file.mimetype === 'application/pdf');
   },
   filename: (req, file, cb) => {
     const file_name = `${uuid()}.${mime.getExtension(file.mimetype)}`;
