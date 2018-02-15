@@ -15,7 +15,9 @@ const getEmailTest = () => {
         }
         t.equal(res.statusCode, 200, 'statusCode should equal 200');
         t.equal(res.type, 'application/json', 'should return res.type application/json');
-        t.equal(res.body.data.subject, '#mentor_name#, Time to Apply for Your Permit!', 'respose body subject should be #mentor-name#, Time to Apply for Your Permit!');
+        t.equal(res.body.data.subject,
+          '#mentor_name#, Time to Apply for Your Permit!',
+          'respose body subject should be #mentor-name#, Time to Apply for Your Permit!');
 
         return t.end();
       });
