@@ -1,9 +1,42 @@
 {
 "permitEmail": {
-    "content": "Hi #mentor_name#, \nWe are really excited that you’ve chosen to come mentor at Gaza Sky Geeks! \nWe would like to start the process of applying for a permit right away. \nThe Israeli Gaza entry permit typically takes 4 weeks to obtain but can take longer. \nPlease send the following ASAP so we can have your permit application ready to submit: \nA color scan (or good picture) of your passport \nNB: all permits are issued based on the passport details you send me, \nso you need to cross using the same passport. \nAny changes to the current passport should be reported to me immediately.​ \nFill out this Google form with all info required (this will take 5 minutes) \nA color headshot photo with white background. \nSince things in Gaza are always subject to change and we cannot guarantee that your permit will be granted. \nWe have almost always been able to secure permits, \nbut it is very common that we don’t find out until days before your trip. \nI will be in contact shortly with detailed information on visiting Gaza, \nsecurity information, mentorship/workshop content. \nI remain available for any questions you may have in the meantime! \nThanks, \nSara",
-    "subject": "#mentor_name#, Time to Apply for Your Permit!",
-    "to":"#mentor_email#",
-    "cc": "#cc_email#",
-    "bcc": "#bcc_email#"
+  "emailTitle": "Permit Email",
+  "content": "Hi #mentor_name#, #new_line#We are really excited that you’ve chosen to come mentor at Gaza Sky Geeks! #new_line#We would like to start the process of applying for a permit right away. #new_line#The Israeli Gaza entry permit typically takes 4 weeks to obtain but can take longer. #new_line#Please send the following ASAP so we can have your permit application ready to submit: #new_line#A color scan (or good picture) of your passport #new_line#NB: all permits are issued based on the passport details you send me, #new_line#so you need to cross using the same passport. #new_line#Any changes to the current passport should be reported to me immediately.​ #new_line#Fill out this Google form with all info required (this will take 5 minutes) #new_line#A color headshot photo with white background. #new_line#Since things in Gaza are always subject to change and we cannot guarantee that your permit will be granted. #new_line#We have almost always been able to secure permits, #new_line#but it is very common that we don’t find out until days before your trip. #new_line#I will be in contact shortly with detailed information on visiting Gaza, #new_line#security information, mentorship/workshop content. #new_line#I remain available for any questions you may have in the meantime! #new_line#Thanks, #new_line#Sara",
+  "subject": "#mentor_name#, Time to Apply for Your Permit!",
+  "to":"#mentor_email#",
+  "cc": "#cc_email#",
+  "bcc": "#bcc_email#"
+},
+"permissionEmail": {
+  "emailTitle": "Permission Email",
+  "content": "Hi Andy,#new_line# May we apply for #mentor_name#, who would like to mentor at Gaza Sky Geeks in the period of #date_of_arrival# - #date_of_departure#. #new_line# #purpose_of_visit# #new_line# Let me know if anything else is needed. #new_line# All the best, #new_line#Sara",
+  "subject": "Permission to Apply for Permit",
+  "to":"#mc_director#",
+  "cc": "#cc_email#",
+  "bcc": "#bcc_email#"
+},
+"permitRequestEmail": {
+  "emailTitle": "Permit Request Email",
+  "content": "Hi Adham, #new_line# Could you please apply for the CLA permit of XXX ? Here are the details of their visit dates and their purpose of visit: #new_line# XXXX will be entering GAZA on #date_of_arrival# #new_line# You can use the following for her purpose of visit: #new_line# #purpose_of_visit# #new_line# You can find their inoformation in mentors pipeline spreadsheet (link), entry #: #new_line# Please let me know if there is anything else needed. #new_line# My best, #new_line# Sara",
+  "subject": "Apply for GSG's Visitors CLA Permit",
+  "to":"#mc_permit_officer#",
+  "cc": "#cc_email#",
+  "bcc": "#bcc_email#"
+},
+"checkListEmail": {
+  "emailTitle": "Checklist Email",
+  "content": "Hi [ ], #new_line# We are really looking forward to having you in Gaza soon! I’m following up with you on the logistics of your upcoming trip. Would you please carefully review the below items that need to be read and completed by you: #new_line# Visitor Checklist and Info Request Form: This form contains essential reading and questions we need you to answer to plan your visit. Please fill this out ASAP. #new_line# Required Reading Acknowledgement: Part of Visitor Checklist form is confirming you have #new_line# read our guides on logistics, security, travel, and structure of your trip, in addition to Mercy #new_line# Corps own security briefing and Gaza border crossing information. Most of your questions can #new_line# be answered by reading these documents! You can access this reading here or through the Visitor Checklist Form above. #new_line# Purchase plane tickets and accommodation outside Gaza: Please send us your flight info (date, time, flight number), once you have booked your flight. Please let us know your hotel arrangements before/after your time in Gaza to help us coordinate possible carpools to/from the Gaza border. #new_line# Accommodation: [We will book you a room at Al-Deira Hotel during your stay in Gaza (around 100$ per night). This is a secure hotel used by most diplomats and journalists in Gaza.] #new_line# Waiver form: Mercy Corps requires that all visitors fill this out this waiver before coming to Gaza. Please print, fill out, scan, and email this to us. #new_line# Your Mercy Corps invitation letter: Attached is a letter you should print and bring with you to the airport/border just in case you are asked about the purpose of your visit by Israeli border authorities. #new_line# Thanks much!",
+  "subject": "Gaza Sky Geeks: Preparing your trip",
+  "to":"#mentor_email#",
+  "cc": "#cc_email#",
+  "bcc": "#bcc_email#"
+},
+"scheduling": {
+  "emailTitle": "Scheduling Email",
+  "content": "Hi ( ), #new_line# We are so excited to start working on designing your trip content. #new_line# In addition to one-on-one mentoring, we also ask visiting mentors to teach classroom-style workshops or labs. Would you please suggest a few topics you’d like to teach a workshop on while you are in Gaza? These are 1-2 hour presentations and Q&As with our startups, or with the larger startup community in Gaza. #new_line# In general, workshops should be no longer than 40 minutes long + 10 min for translation (most people speak good English but some help is often needed in complex topics) + 20-30 min for questions. When thinking about slides to prepare, use lots of examples - pictures, case studies, templates. This is how our teams learn the best. More text-heavy slides are ok, since that way they can refer to the slides for guidance later on. #new_line# Currently, we have 5 accelerated startup teams. They are in the stage of working on marketing, growth hacking, product testing, and are also meeting with investors. Workshops centered on these areas will be most useful. #new_line# For more context on the composition of the accelerated startup cohort, you can have a look at their product demo videos and their pitch decks. #new_line# Gaza Coding Academy: GSG runs a regular six months intensive, full-time coding education program that produces 16 full stack developers per cohort with relevant skills for the job market.. This training combines work on real projects and a cutting edge curriculum developed by a top London-based coding academy. #new_line# We'd love to organize a special meeting/workshop while you're in Gaza. #new_line# Can you please send us suggested workshop topics with 2-3 sentence descriptions for each workshop idea by [ADD DEADLINE]. We would then hope to review a draft of your presentation by [Add Deadline]. #new_line# Please don't start working on your workshops until we confirm the topics! We will make sure they align well with our entrepreneurs' needs and other content that has been recently taught. #new_line# We can't wait to welcome you soon in Gaza! #new_line# Best regards,",
+  "subject": "Gaza Sky Geeks: Designing Your Trip!",
+  "to":"#mentor_email#",
+  "cc": "#cc_email#",
+  "bcc": "#bcc_email#"
 }
 }
