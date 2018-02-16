@@ -11,8 +11,8 @@ const selectMentorByEmailTest = () => {
 
         return t.end();
       }
-      t.equal(res.rows[0].id, 1, 'id should equal 1');
       t.equal(res.rowCount, 1, 'rowCount should equal 1');
+      t.equal(res.rows[0].id, 1, 'id should equal 1');
       t.equal(res.rows[0].email, 'email@host.ext', 'should equal email@host.ext');
       return t.end();
     });

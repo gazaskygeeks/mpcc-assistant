@@ -11,7 +11,7 @@ class Check extends Component {
         <div className='head-box'>
           <div className='stage-top'>
             <i className='fa fa-circle mr-5'></i>
-            <h3 className='sub-title'>{checkTitle}: <h5>{checkStatus? ' CHECKED':' NOT CHECKED'}</h5></h3>
+            <h3 className='sub-title'>{checkTitle}: <span>{checkStatus? ' CHECKED':' NOT CHECKED'}</span></h3>
           </div>
           <Button className='ml-5 small bg-red' size='small'>
           Check</Button>

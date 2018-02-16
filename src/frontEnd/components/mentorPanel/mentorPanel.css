@@ -165,7 +165,7 @@ body {
   flex-direction: column!important;
 }
 
-.m-h500x textarea{
+.m-span00x textarea{
   outline: none;
   min-height: 500px
 }
@@ -180,4 +180,8 @@ body {
   outline: none;
   width: 75%;
   min-height: 100px
+}
+
+.success-msg {
+  color: green
 }

@@ -8,6 +8,8 @@ import postLogin from './usersReducers/postLogin';
 import postFlightInfo from './flightInfoReducers/flightInfo';
 import getCurrentMentor from './mentorsReducers/getCurrentMentor';
 import editBio from './usersReducers/editBio';
+import getEmails from './mentorsReducers/getEmails';
+import postEmail from './mentorsReducers/postEmail';
 
 export default combineReducers({
   getAllMentors,
@@ -17,5 +19,7 @@ export default combineReducers({
   updateMentor,
   dropState,
   getCurrentMentor,
-  editBio
+  editBio,
+  getEmails,
+  postEmail
 });

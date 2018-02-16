@@ -2,7 +2,7 @@ const supertest = require('supertest');
 const app = require('../../app');
 const test = require('tape');
 
-const postFlightInfo = () => {
+const postFlightInfoTest = () => {
   test('test post /submit/flight-info/confirm', t => {
     supertest(app)
       .post('/submit/flight-info/confirm')
@@ -55,5 +55,5 @@ const postFlightInfo = () => {
 };
 
 module.exports = {
-  postFlightInfo
+  postFlightInfoTest
 };
