@@ -37,7 +37,6 @@ class SendEmail extends Component {
   render() {
     const { email, to, cc, bcc, error, sendEmailResponse } = this.props;
     const { emailTitle, subject, content } = email;
-    console.log(this.props);
 
     return (
       <Modal trigger={ <Button className='ml-5 large' size='small'>

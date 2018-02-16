@@ -27,7 +27,6 @@ module.exports = (req, res) => {
     }
   }));
   transporter.sendMail(message, error => {
-    console.log(error);
     if (error) {
       res.status(500).json({ message: 'ErrorSendingEmail' });
     } else {
