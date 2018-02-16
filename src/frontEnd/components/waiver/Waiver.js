@@ -12,9 +12,14 @@ class Waiver extends Component {
 
   upload(e) {
     e.preventDefault();
-    const { data, email, headers } = this.state;
-    if (this.state.data) {
-      axios.post('/submit/signed-waiver/confirm', { data, email, headers });
+    const { data } = this.state;
+    console.log(data);
+    if (data) {
+      axios({
+        method: 'post',
+        url: '/submit/signed-waiver/confirm',
+        data
+      });
     } else {
       const h1 = document.createElement('h1');
       h1.textContent = 'Please choose data to upload';
@@ -24,20 +29,20 @@ class Waiver extends Component {
 
   handleUploadFile(event) {
     const data = new FormData();
-    const headers = {
-      'Content-Type': 'multipart/form-data'
-    };
     data.append('file', event.target.files[0]);
-    const email = event.target.parentNode.childNodes[0].value;
-    this.setState({ data, headers, email });
+    const mentor_email = event.target.parentNode.childNodes[0].value;
+    data.append('mentor_email', mentor_email);
+    this.setState({ data });
   };
 
   render() {
     return (
-      <div id='uploader'>
-        <input type='text' name='email' placeholder='Please enter your email...'/>
-        <input type='file' name='upload' onChange={this.handleUploadFile} />
-        <input type='submit' name='submit' value='submit' onClick={this.upload} />
+      <div className='container'>
+        <div id='uploader'>
+          <input type='text' name='email' placeholder='Please enter your email...'/>
+          <input type='file' name='upload' onChange={this.handleUploadFile} />
+          <input type='submit' name='submit' value='submit' onClick={this.upload} />
+        </div>
       </div>
     );
   }
