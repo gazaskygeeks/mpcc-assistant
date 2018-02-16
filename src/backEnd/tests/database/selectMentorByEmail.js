@@ -13,7 +13,7 @@ const selectMentorByEmailTest = () => {
       }
       t.equal(res.rows[0].id, 1, 'id should equal 1');
       t.equal(res.rowCount, 1, 'rowCount should equal 1');
-      t.equal(res.rows[0].email, 'Smart@smart', 'should equal Smart@smart');
+      t.equal(res.rows[0].email, 'smart@smart', 'should equal smart@smart');
       return t.end();
     });
   });

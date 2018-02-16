@@ -6,7 +6,7 @@ const app = express();
 
 const controllers = require('./controllers/mainController');
 
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.raw({ type: 'application/pdf' }));
