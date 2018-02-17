@@ -19,11 +19,11 @@ class App extends Component {
           <HostNewMentorModal/>
           <UpdateMentorModal/>
           <Switch>
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/submit/waiver' component={Waiver} />
-            <Route path='/submit/flight-info' component={FlightInfo} />
+            <Route exact path='/' component={Login} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/dashboard/panel/:id' component={MentorPanel} />
+            <Route exact path='/submit/waiver' component={Waiver} />
+            <Route exact path='/submit/flight-info' component={FlightInfo} />
           </Switch>
         </div>
       </BrowserRouter>
