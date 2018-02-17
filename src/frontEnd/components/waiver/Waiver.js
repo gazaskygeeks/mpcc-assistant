@@ -12,24 +12,27 @@ class Waiver extends Component {
 
   upload(e) {
     e.preventDefault();
-    const { data } = this.state;
-    if (data) {
-      axios({
-        method: 'post',
-        url: '/submit/signed-waiver/confirm',
-        data
-      });
-    } else {
+    const { data, error } = this.state;
+    if (error) {
       const h1 = document.createElement('h1');
       h1.textContent = 'Please choose data to upload';
       document.getElementById('uploader').appendChild(h1);
     }
+    axios({
+      method: 'post',
+      url: '/submit/signed-waiver/confirm',
+      data
+    });
   }
 
   handleUploadFile(event) {
-    const data = new FormData();
-    data.append('file', event.target.files[0]);
+    const file = event.target.files[0];
+    if (!file) return this.setState({ error: 'missingFile' });
     const mentor_email = event.target.parentNode.childNodes[0].value;
+    console.log('mentoremail: ', mentor_email);
+    if (mentor_email === '') return this.setState({ error: 'missingEmail' });
+    const data = new FormData();
+    data.append('file', file);
     data.append('mentor_email', mentor_email);
     this.setState({ data });
   };
