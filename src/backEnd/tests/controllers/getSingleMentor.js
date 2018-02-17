@@ -5,7 +5,7 @@ const test = require('tape');
 const getSingleMentorTest = () => {
   test('test get /dashboard/mentor-panel/:mentorSelector', t => {
     supertest(app)
-      .get('/dashboard/mentor-panel/salam-dalloul-93')
+      .get('/dashboard/mentor-panel/93')
       .expect(200)
       .end((err, res) => {
         if (err) {

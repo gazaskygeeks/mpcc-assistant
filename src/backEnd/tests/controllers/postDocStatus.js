@@ -3,9 +3,9 @@ const app = require('../../app');
 const test = require('tape');
 
 const postDocStatusTest = () => {
-  test('test get /dashboard/mentor-panel/Smart-Smarter-1/check/singned_waver', t => {
+  test('test get /dashboard/mentor-panel/1/check/singned_waver', t => {
     supertest(app)
-      .get('/dashboard/mentor-panel/Smart-Smarter-1/check/singned_waver')
+      .get('/dashboard/mentor-panel/1/check/singned_waiver')
       .expect(200)
       .end((err, res) => {
         if (err) {

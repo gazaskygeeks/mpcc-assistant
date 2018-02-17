@@ -15,7 +15,7 @@ CREATE TABLE mentors (
   last_name VARCHAR NOT NULL,
   email VARCHAR NOT NULL,
   date_of_arrival VARCHAR NOT NULL,
-  date_of_birth VARCHAR,
+  date_of_departure VARCHAR,
   current_stage VARCHAR NOT NULL,
   info JSON
 );
