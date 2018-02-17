@@ -2,7 +2,7 @@ const supertest = require('supertest');
 const app = require('../../app');
 const test = require('tape');
 
-const postLogin = () => {
+const postLoginTest = () => {
   test('test post /login', t => {
     supertest(app)
       .post('/login')
@@ -74,5 +74,5 @@ const postLogin = () => {
   });
 };
 module.exports = {
-  postLogin
+  postLoginTest
 };

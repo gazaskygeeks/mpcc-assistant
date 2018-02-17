@@ -2,12 +2,12 @@ const supertest = require('supertest');
 const app = require('../../app');
 const test = require('tape');
 
-const postFlightInfo = () => {
+const postFlightInfoTest = () => {
   test('test post /submit/flight-info/confirm', t => {
     supertest(app)
       .post('/submit/flight-info/confirm')
       .send({
-        mentor_email: 'Smart@smart',
+        mentor_email: 'email@host.ext',
         date_of_arrival: '12/12/1212',
         time_of_arrival: '01:22',
         flight_number: '112233'
@@ -55,5 +55,5 @@ const postFlightInfo = () => {
 };
 
 module.exports = {
-  postFlightInfo
+  postFlightInfoTest
 };

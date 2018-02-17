@@ -11,12 +11,11 @@ module.exports = (req, res, next) => {
     }
     const mentorData = data.rows[0];
     const info = mentorData.info;
-    const newInfo = {
-      ...info,
-      fi_date_of_arrival: date_of_arrival,
-      fi_time_of_arrival: time_of_arrival,
-      fi_flight_number: flight_number
-    };
+    const newInfo = Object.assign({}, info,
+      { fi_date_of_arrival: date_of_arrival,
+        fi_time_of_arrival: time_of_arrival,
+        fi_flight_number: flight_number }
+    );
     mentorData.info = newInfo;
     updateMentor(mentorData, error => {
       if (error) return next(error);

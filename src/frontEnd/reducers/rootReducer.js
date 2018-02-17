@@ -6,6 +6,10 @@ import updateMentor from './updateMentorReducer';
 import dropState from './modalDropReducer';
 import postLogin from './usersReducers/postLogin';
 import postFlightInfo from './flightInfoReducers/flightInfo';
+import getCurrentMentor from './mentorsReducers/getCurrentMentor';
+import editBio from './usersReducers/editBio';
+import getEmails from './mentorsReducers/getEmails';
+import postEmail from './mentorsReducers/postEmail';
 
 export default combineReducers({
   getAllMentors,
@@ -13,5 +17,9 @@ export default combineReducers({
   postFlightInfo,
   modalState,
   updateMentor,
-  dropState
+  dropState,
+  getCurrentMentor,
+  editBio,
+  getEmails,
+  postEmail
 });

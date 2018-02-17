@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './dashboard.css';
 import { Button, Card, Image, Icon, Message } from 'semantic-ui-react';
@@ -30,11 +31,11 @@ class Home extends Component {
           )}
           {mentors[0] && (
             mentors.map((mentor, index) => (
-              <Card key={index}>
+              <Card key={index} >
                 <Card.Content>
                   <Image floated='right' size='mini' src={mentor.info.photo}/>
                   <Card.Header>
-                    {mentor.first_name} {mentor.last_name}
+                    <span>{mentor.first_name} {mentor.last_name}</span>
                   </Card.Header>
                   <Card.Meta>
                     {mentor.info.job_title}
@@ -45,7 +46,7 @@ class Home extends Component {
                 </Card.Content>
                 <Card.Content extra>
                   <div className='ui two buttons'>
-                    <Button basic color='green'>Reschedule</Button>
+                    <Link to={`/dashboard/panel/${mentor.id}`} className='w-x100'><Button basic color='green' className='w-x100'>View Panel</Button></Link>
                   </div>
                 </Card.Content>
               </Card>
@@ -61,7 +62,8 @@ Home.propTypes = {
   mentors: PropTypes.array,
   getAllMentors: PropTypes.func,
   error: PropTypes.object,
-  isFetching: PropTypes.bool
+  isFetching: PropTypes.bool,
+  getCurrentMentor: PropTypes.func
 };
 
 export default Home;

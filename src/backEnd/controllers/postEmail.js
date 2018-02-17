@@ -3,9 +3,9 @@ const smtpTransport = require('nodemailer-smtp-transport');
 require('env2')('./config.env');
 
 module.exports = (req, res) => {
-  const emailInfo = req.body.emailInfo;
+  const emailInfo = req.body;
   const message = {
-    from: `"alan claynce" ${process.env.MAIL_EMAIL}`,
+    from: `"Sarah Al-Afifi" ${process.env.MAIL_EMAIL}`,
     to: emailInfo.to,
     cc: emailInfo.cc,
     bcc: emailInfo.bcc,

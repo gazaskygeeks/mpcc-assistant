@@ -2,7 +2,7 @@ const dbConnection = require('../dbConnection');
 
 const updateMentorField = (mentorObj, cb) => {
   const { first_name, last_name, email, date_of_arrival,
-    date_of_birth, current_stage, info, id } = mentorObj;
+    date_of_departure, current_stage, info, id } = mentorObj;
   const query = {
     text: `update mentors set
     first_name=$1, last_name=$2,
