@@ -12,7 +12,7 @@ class Editable extends Component {
         <div className='head-box'>
           <div className='stage-top'>
             <i className='fa fa-circle mr-5'></i>
-            <h3 className='sub-title'>{editableTitle}</h3>
+            <h3 className='sub-title fs-18'>{editableTitle}</h3>
           </div>
           <Modal trigger={
             <Button className='ml-5 small bg-red' size='small'>

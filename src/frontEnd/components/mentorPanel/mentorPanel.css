@@ -89,7 +89,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 100%;
 }
 
 .stage-box {
@@ -117,6 +117,7 @@ body {
 .stage-top {
   display: flex;
   justify-content: flex-start;
+  width: 50%
 }
 
 .stage-header {
@@ -138,7 +139,7 @@ body {
 
 .ml-5 {
   margin: 0;
-  margin-left: 6.5vw!important;
+  margin-left: 5vw!important;
 }
 
 .para {
@@ -184,4 +185,16 @@ body {
 
 .success-msg {
   color: green
+}
+
+.error-msg {
+  color: red
+}
+
+.fs-18 {
+  font-size: 18px
+}
+
+.mt-0x {
+  margin-top: 0!important;
 }

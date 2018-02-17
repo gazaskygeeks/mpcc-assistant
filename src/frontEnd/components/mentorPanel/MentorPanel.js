@@ -15,7 +15,6 @@ class MentorPanel extends Component {
   }
   render() {
     const { currentMentor, emails, isFetching } = this.props;
-
     return (
       <div>
         {isFetching && (
@@ -78,7 +77,7 @@ class MentorPanel extends Component {
                     mentorInfo={currentMentor}
                     headTitle='Scheduling:' />
                   <Status
-                    statusTitle='Mentor Schedulte Build:'
+                    statusTitle='Mentor Schedule Build:'
                     statusValue={currentMentor.info.mentor_schedule_status}/>
                 </div>
                 <div className='stage-holder'>
@@ -108,7 +107,7 @@ class MentorPanel extends Component {
                 <div className='stage-holder'>
                   <StageHead headTitle='Transfer Schedule:' />
                   <Check
-                    checkTitle='Schduled on Google Calender'
+                    checkTitle='Google Calender Status:'
                     checkStatus={currentMentor.info.schedule_to_google_status}/>
                 </div>
                 <div className='stage-holder'>
@@ -126,7 +125,7 @@ class MentorPanel extends Component {
                 <div className='stage-holder'>
                   <StageHead headTitle='Thanks Email:' />
                   <Status
-                    statusTitle='Sent'
+                    statusTitle='Thanks Email Status:'
                     statusValue={currentMentor.info.thanks_email}/>
                 </div>
               </div>
