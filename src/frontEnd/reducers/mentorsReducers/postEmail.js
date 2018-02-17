@@ -26,13 +26,15 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isFetching: false,
+        error: '',
         response: payload
       };
     case POST_EMAIL_FAILURE:
       return {
         ...state,
         isFetching: false,
-        error: payload
+        error: payload,
+        response: ''
       };
     case HANDLE_INPUT_CHANGE: {
       return {
