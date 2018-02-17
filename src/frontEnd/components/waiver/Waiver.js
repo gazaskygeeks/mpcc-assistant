@@ -7,43 +7,46 @@ class Waiver extends Component {
     super(props);
     this.upload = this.upload.bind(this);
     this.handleUploadFile = this.handleUploadFile.bind(this);
-    this.state = {};
+    this.state = {
+      error: 'missing Email'
+    };
   }
 
   upload(e) {
     e.preventDefault();
     const { data, error } = this.state;
     if (error) {
-      const h1 = document.createElement('h1');
-      h1.textContent = 'Please choose data to upload';
-      document.getElementById('uploader').appendChild(h1);
+      document.getElementById('irr').textContent = `Please fill out the ${error} field`;
+    } else {
+      axios({
+        method: 'POST',
+        url: '/submit/signed-waiver/confirm',
+        data
+      });
     }
-    axios({
-      method: 'post',
-      url: '/submit/signed-waiver/confirm',
-      data
-    });
   }
 
   handleUploadFile(event) {
     const file = event.target.files[0];
-    if (!file) return this.setState({ error: 'missingFile' });
+    if (!file) return this.setState({ error: 'missing File' });
     const mentor_email = event.target.parentNode.childNodes[0].value;
     console.log('mentoremail: ', mentor_email);
-    if (mentor_email === '') return this.setState({ error: 'missingEmail' });
+    if (mentor_email === '') return this.setState({ error: 'missing Email' });
     const data = new FormData();
     data.append('file', file);
     data.append('mentor_email', mentor_email);
-    this.setState({ data });
+    this.setState({ data, error: null });
   };
 
   render() {
     return (
       <div className='container'>
         <div id='uploader'>
+          <h1>Upload your signed waiver</h1>
           <input type='text' name='email' placeholder='Please enter your email...'/>
           <input type='file' name='upload' onChange={this.handleUploadFile} />
-          <input type='submit' name='submit' value='submit' onClick={this.upload} />
+          <input type='submit' name='submit' value='Upload' onClick={this.upload} />
+          <h3 id='irr'></h3>
         </div>
       </div>
     );
