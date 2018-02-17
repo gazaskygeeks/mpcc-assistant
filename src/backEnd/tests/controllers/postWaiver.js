@@ -4,7 +4,6 @@ const test = require('tape');
 const path = require('path');
 const fs = require('fs');
 
-console.log(path.join(__dirname, 'testfile.pdf'));
 const somepdf = fs.readFileSync(path.join(__dirname, 'testfile.pdf'));
 const postWaiverTest = () => {
   test('test /submit/signed-waiver/confirm', t => {

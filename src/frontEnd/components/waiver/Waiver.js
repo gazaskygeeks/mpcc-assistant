@@ -13,7 +13,6 @@ class Waiver extends Component {
   upload(e) {
     e.preventDefault();
     const { data } = this.state;
-    console.log(data);
     if (data) {
       axios({
         method: 'post',

@@ -19,17 +19,16 @@ const uploading = multer({ storage: uploadFields }).single('file');
 
 const pusher = (req, res, next) => {
   selectMentorByEmail(req.body.mentor_email, (selectErr, selectRes) => {
-    if (selectErr) throw new Error(selectErr);
+    if (selectErr) return next(new Error(selectErr));
     if (selectRes.rows.length > 0) {
       const mentorData = selectRes.rows[0];
       mentorData.info.signed_waiver = `public/uploads/${req.file_name}`;
       updateMentorField(mentorData, (updateErr, updateRes) => {
-        if (updateErr) throw new Error(updateErr);
+        if (updateErr) return next(new Error(updateErr));
         if (updateRes.rows.length > 0) {
           res.send({ msg: 'waiverSentSuccessfully' });
         }
       });
-      next();
     } else res.send({ msg: 'emailNotFound' });
   });
 };
