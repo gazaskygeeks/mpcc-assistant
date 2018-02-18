@@ -1,18 +1,21 @@
 .container {
   width: 100%;
   display: flex;
-  padding-top: 20%;
+  padding-top: 5%;
   align-items: center;
   justify-content: center;
 }
 
 #uploader {
+  background: white;
+  text-align: center;
   width: 80%;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 #uploader input {
-  padding: 5px;
+  padding: 10px;
   margin: 8px;
 }
