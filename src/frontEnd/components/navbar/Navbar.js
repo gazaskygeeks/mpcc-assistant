@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { showCreateMentorDrop, hideCreateMentorDrop } from '../../actions/modalDropActions';
 import { showCreateMentorModal } from '../../actions/createMentorModalActions';
 import { showUpdateMentorModal } from '../../actions/updateMentorModalActions';
-import './navbar.css';
 import { Dropdown, Menu } from 'semantic-ui-react';
+
+import './navbar.css';
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { active: '' };
     this.toggleDrop = this.toggleDrop.bind(this);
+    this.showMentorModal = this.showMentorModal.bind(this);
   }
 
   toggleDrop() {
@@ -23,25 +25,29 @@ class Navbar extends React.Component {
     }
   }
 
+  showMentorModal(e, data) {
+    switch (data.value) {
+      case 1: this.props.showCreateMentorModal(); break;
+      case 2: this.props.showUpdateMentorModal(); break;
+    }
+  }
+
   render() {
     return (
       <nav className='navbar'>
         <div className='nav-left logo'><h1>MPCC Assistant</h1></div>
         <div className='nav-right'>
-          <Menu compact>
-            <Dropdown text=' ' className='fa fa-home fa-2x wi'
-              options={[{ key: 1, text: 'host new', value: 1 },
-                { key: 2, text: 'host exi', value: 2 }]}
-              simple item />
-          </Menu>
           <ul className='list'>
             <li><a href='/dashboard'><i className='fa fa-home fa-2x wi'></i></a></li>
-            <li><i onClick={this.toggleDrop} className='fa fa-plus fa-2x wi'></i>
+            <li>
+              <Dropdown text=' ' className='dropdown fa fa-plus fa-2x wi'
+                options={[{ key: 1, text: 'Host new mentor', value: 1 },
+                  { key: 2, text: 'Host existing mentor', value: 2 }]}
+                compact
+                icon='none'
+                onChange={this.showMentorModal}
+              />
             </li>
-            <ul className={`hr-drop ${this.state.active}`}>
-              <li><a onClick={this.props.showCreateMentorModal}>Host new mentor</a></li>
-              <li><a onClick={this.props.showUpdateMentorModal}>Sechedule with existing</a></li>
-            </ul>
           </ul>
         </div>
       </nav>

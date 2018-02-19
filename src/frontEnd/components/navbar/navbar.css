@@ -33,7 +33,7 @@
 }
 
 .navbar .nav-right .list li {
-  margin: 0 15px 0 15px;
+  margin: 0 15px;
 }
 
 .navbar .nav-right .list li a {
@@ -45,25 +45,18 @@
   color: #55635C;
 }
 
-.hr-drop {
-  right: 0;
-  top: 40px;
-  width: 250px;
-  height: 55px;
-  display: flex;
-  font-size: 18px;
-  position: absolute;
-  align-items: center;
-  list-style-type: none;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgba(0,0,0,0.3);
+.list {
+  padding: 0;
+  margin: 60px 20px 0 0;
 }
 
-.hr-drop.active {
-  visibility: visible;
+.ui.dropdown .menu {
+  margin: 40px 0 0 -11vw;
 }
 
-.hr-drop:not(.active) {
-  visibility: hidden;
+.dropdown {
+  padding: 0;
+  margin: 0;
+  width: 10px;
+  height: 10px
 }
