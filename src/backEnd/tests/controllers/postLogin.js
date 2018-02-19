@@ -74,4 +74,4 @@ const postLoginTest = () => {
       });
   });
 };
-module.exports = postLogin;
+module.exports = postLoginTest;

@@ -54,4 +54,4 @@ const postFlightInfoTest = () => {
   });
 };
 
-module.exports = postFlightInfo;
+module.exports = postFlightInfoTest;
