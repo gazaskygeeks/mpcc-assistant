@@ -1,6 +1,5 @@
 const test = require('tape');
 const insertSingleMentor = require('../../database/queries/insertSingleMentor');
-
 const userObject = {
   date_of_arrival: '17/02/2018',
   first_name: 'Someone',

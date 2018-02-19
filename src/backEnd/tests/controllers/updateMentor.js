@@ -3,9 +3,9 @@ const app = require('../../app');
 const test = require('tape');
 
 const updateMentorTest = () => {
-  test('test get /dashboard/mentor-panel/Smart-Smarter-1/edit/bio', t => {
+  test('test get /dashboard/mentor-panel/1/edit/bio', t => {
     supertest(app)
-      .post('/dashboard/mentor-panel/Smart-Smarter-1/edit/bio')
+      .post('/dashboard/mentor-panel/1/edit/bio')
       .send({
         bio: 'new bio'
       })

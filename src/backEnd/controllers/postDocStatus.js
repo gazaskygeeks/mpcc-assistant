@@ -2,8 +2,7 @@ const updateMentor = require('../database/queries/updateMentor');
 const selectSingleMentor = require('../database/queries/selectSingleMentor');
 
 module.exports = (req, res, next) => {
-  const { mentorSelector } = req.params;
-  const mentorId = mentorSelector.split('-')[2];
+  const mentorId = req.params.mentorSelector;
   selectSingleMentor(mentorId, (err, data) => {
     const { docType } = req.params;
     if (err) return next(err);

@@ -10,7 +10,6 @@ const selectMentorByEmailTest = () => {
         t.fail();
         return t.end();
       }
-      t.equal(res.rows[0].id, 1, 'id should equal 1');
       t.equal(res.rowCount, 1, 'rowCount should equal 1');
       t.equal(res.rows[0].email, email.toLowerCase(), `should equal ${email.toLowerCase()}`);
       return t.end();
