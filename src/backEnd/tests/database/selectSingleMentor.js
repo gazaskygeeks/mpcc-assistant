@@ -19,4 +19,4 @@ const selectSingleMentorTest = () => {
   });
 };
 
-module.exports = { selectSingleMentorTest };
+module.exports = selectSingleMentorTest;

@@ -9,14 +9,11 @@ const selectMentorsTest = () => {
 
         return t.end();
       }
-      t.equal(res.rowCount, 1, 'rowCount should equal 1');
-      t.deepEqual(res.rows[0].id, 1, 'id should equal 1');
-
+      t.equal(res.rowCount, 3, 'rowCount should equal 3');
+      t.deepEqual(res.rows[0].id, 2, 'id should equal 1');
       return t.end();
     });
   });
 };
 
-module.exports = {
-  selectMentorsTest
-};
+module.exports = selectMentorsTest;

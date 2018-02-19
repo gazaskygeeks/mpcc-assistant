@@ -4,6 +4,7 @@ import { showCreateMentorDrop, hideCreateMentorDrop } from '../../actions/modalD
 import { showCreateMentorModal } from '../../actions/createMentorModalActions';
 import { showUpdateMentorModal } from '../../actions/updateMentorModalActions';
 import './navbar.css';
+import { Dropdown, Menu } from 'semantic-ui-react';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -27,6 +28,12 @@ class Navbar extends React.Component {
       <nav className='navbar'>
         <div className='nav-left logo'><h1>MPCC Assistant</h1></div>
         <div className='nav-right'>
+          <Menu compact>
+            <Dropdown text=' ' className='fa fa-home fa-2x wi'
+              options={[{ key: 1, text: 'host new', value: 1 },
+                { key: 2, text: 'host exi', value: 2 }]}
+              simple item />
+          </Menu>
           <ul className='list'>
             <li><a href='/dashboard'><i className='fa fa-home fa-2x wi'></i></a></li>
             <li><i onClick={this.toggleDrop} className='fa fa-plus fa-2x wi'></i>

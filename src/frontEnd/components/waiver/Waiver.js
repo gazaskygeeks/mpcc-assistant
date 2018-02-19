@@ -30,7 +30,6 @@ class Waiver extends Component {
     const file = event.target.files[0];
     if (!file) return this.setState({ error: 'missing File' });
     const mentor_email = event.target.parentNode.childNodes[0].value;
-    console.log('mentoremail: ', mentor_email);
     if (mentor_email === '') return this.setState({ error: 'missing Email' });
     const data = new FormData();
     data.append('file', file);

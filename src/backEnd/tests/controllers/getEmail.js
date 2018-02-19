@@ -42,6 +42,4 @@ const getEmailTest = () => {
   });
 };
 
-module.exports = {
-  getEmailTest
-};
+module.exports = getEmailTest;

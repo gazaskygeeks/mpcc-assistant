@@ -20,6 +20,4 @@ const getSingleMentorTest = () => {
       });
   });
 };
-module.exports = {
-  getSingleMentorTest
-};
+module.exports = getSingleMentorTest;

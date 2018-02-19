@@ -22,6 +22,4 @@ const insertSingleMentorTest = () => {
   });
 };
 
-module.exports = {
-  insertSingleMentorTest
-};
+module.exports = insertSingleMentorTest;

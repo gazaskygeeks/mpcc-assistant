@@ -20,6 +20,4 @@ const getMentorsTest = () => {
       });
   });
 };
-module.exports = {
-  getMentorsTest
-};
+module.exports = getMentorsTest;
