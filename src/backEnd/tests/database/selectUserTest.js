@@ -31,6 +31,4 @@ const selectUserTest = () => {
   });
 };
 
-module.exports = {
-  selectUserTest
-};
+module.exports = selectUserTest;

@@ -1,27 +1,18 @@
-const { selectMentorsTest } = require('./database/selectMentors');
-const { selectSingleMentorTest } = require('./database/selectSingleMentor');
-const { insertSingleMentorTest } = require('./database/insertSingleMentor');
-const { updateMentorQueryTest } = require('./database/updateMentor');
-const { getMentorsTest } = require('./controllers/getMentors');
-const { getSingleMentorTest } = require('./controllers/getSingleMentor');
-const { getEmailTest } = require('./controllers/getEmail');
-const { selectUserTest } = require('./database/selectUserTest');
-const { postLoginTest } = require('./controllers/postLogin');
-const { updateMentorTest } = require('./controllers/updateMentor');
-const { postDocStatusTest } = require('./controllers/postDocStatus');
-const { postFlightInfoTest } = require('./controllers/postFlightInfo');
-const { selectMentorByEmailTest } = require('./database/selectMentorByEmail');
-
-getMentorsTest();
-getSingleMentorTest();
-getEmailTest();
-postLoginTest();
-postDocStatusTest();
-postFlightInfoTest();
-selectMentorByEmailTest();
-selectMentorsTest();
-selectSingleMentorTest();
-selectUserTest();
-updateMentorTest();
-updateMentorQueryTest();
-insertSingleMentorTest();
+// GET tests (Controller)
+require('./controllers/getEmail')();
+require('./controllers/getMentors')();
+require('./controllers/getSingleMentor')();
+// POST tests (Controller)
+require('./controllers/postLogin')();
+require('./controllers/postDocStatus')();
+require('./controllers/postFlightInfo')();
+require('./controllers/updateMentor')();
+// SELECT tests (DB)
+require('./database/selectMentors')();
+require('./database/selectUserTest')();
+require('./database/selectSingleMentor')();
+require('./database/selectMentorByEmail')();
+// UPDATE tests (DB)
+require('./database/updateMentor')();
+// INSERT tests (DB)
+require('./database/insertSingleMentor')();

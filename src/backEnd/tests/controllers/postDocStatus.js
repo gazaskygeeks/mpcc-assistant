@@ -20,6 +20,4 @@ const postDocStatusTest = () => {
       });
   });
 };
-module.exports = {
-  postDocStatusTest
-};
+module.exports = postDocStatusTest;

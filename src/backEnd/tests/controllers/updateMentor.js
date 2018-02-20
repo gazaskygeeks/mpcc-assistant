@@ -26,6 +26,4 @@ const updateMentorTest = () => {
       });
   });
 };
-module.exports = {
-  updateMentorTest
-};
+module.exports = updateMentorTest;
