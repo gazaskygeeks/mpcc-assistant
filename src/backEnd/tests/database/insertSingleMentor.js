@@ -12,7 +12,7 @@ const insertSingleMentorTest = () => {
     insertSingleMentor(userObject, (err, res) => {
       if (err) {
         t.fail();
-        t.end();
+        return t.end();
       }
       t.equal(res.rowCount, 1, 'rowCount should equal 1');
       t.deepEqual(res.command, 'INSERT', 'the command should equal INSERT');

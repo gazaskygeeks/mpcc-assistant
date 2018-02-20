@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     } else {
       insertSingleMentor(mentorData, (dbErr, dbRes) => {
         if (dbErr) return next(new Error(`Error inserting mentor: ${dbErr.message}`));
-        res.send(dbRes);
+        res.send(dbRes.rows[0]);
       });
     }
   } else res.send('Mentor\'s data missing from request');
