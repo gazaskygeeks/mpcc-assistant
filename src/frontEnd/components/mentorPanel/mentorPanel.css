@@ -78,7 +78,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   width: 70vw;
-  padding-left: 5.5vw;
 }
 
 .stage-holder{
@@ -188,13 +187,13 @@ body {
 }
 
 .error-msg {
-  color: red
+  color: #ae0001
 }
 
 .fs-18 {
   font-size: 18px
 }
 
-.mt-0x {
+.mt-0x, .ui.button {
   margin-top: 0!important;
 }
