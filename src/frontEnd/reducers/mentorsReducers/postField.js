@@ -1,40 +1,45 @@
-import {
-  GET_CURRENT_MENTOR_IN_PROGRESS,
-  GET_CURRENT_MENTOR_SUCCESS,
+import { POST_FIELD_IN_PROGRESS,
   POST_FIELD_SUCCESS,
-  GET_CURRENT_MENTOR_FAILURE
+  POST_FIELD_FAILURE,
+  HANDLE_INPUT_CHANGE
 } from '../../constants/actionTypes.js';
 
 const initialState = {
   isFetching: false,
-  currentMentor: {}
+  response: '',
+  error: '',
+  fieldType: '',
+  fieldValue: ''
 };
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_CURRENT_MENTOR_IN_PROGRESS:
+    case POST_FIELD_IN_PROGRESS:
       return {
         ...state,
         isFetching: true
-      };
-    case GET_CURRENT_MENTOR_SUCCESS:
-      return {
-        ...state,
-        isFetching: false,
-        currentMentor: payload
       };
     case POST_FIELD_SUCCESS:
       return {
         ...state,
         isFetching: false,
-        currentMentor: payload
+        error: '',
+        response: payload
       };
-    case GET_CURRENT_MENTOR_FAILURE:
+    case POST_FIELD_FAILURE:
       return {
         ...state,
         isFetching: false,
-        currentMentor: payload
+        error: payload,
+        response: ''
       };
+    case HANDLE_INPUT_CHANGE: {
+      return {
+        ...state,
+        fieldType: payload.name,
+        fieldValue: payload.value
+      };
+    }
     default:
       return state;
   }

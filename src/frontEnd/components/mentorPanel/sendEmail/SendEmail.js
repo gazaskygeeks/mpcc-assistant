@@ -6,21 +6,14 @@ class SendEmail extends Component {
   constructor() {
     super();
     this._handleInputChange = this._handleInputChange.bind(this);
-    this.replaceVars = this.replaceVars.bind(this);
     this._postEmail = this._postEmail.bind(this);
-  }
-  replaceVars(value) {
-    // not Working? any idea why??
-    const { mentorInfo } = this.props;
-    value.replace(/#mentor_name#/gi, `${mentorInfo.first_name} ${mentorInfo.last_name}`);
-    value.replace(/#mentor_email#/gi, mentorInfo.email);
-    return value;
   }
 
   _handleInputChange(e, { name, value }) {
     const { handleInputChange } = this.props;
     handleInputChange(name, value);
   }
+
   _postEmail() {
     const { email, mentorInfo, postEmail } = this.props;
     const emailType = email.type;
@@ -58,11 +51,11 @@ class SendEmail extends Component {
                   defaultValue={bcc} name='bcc'
                   onChange={this._handleInputChange}/>
                 <Form.Input fluid label='Subject' placeholder='Email Subject' className='se-gf'
-                  defaultValue={this.replaceVars(subject)} name='subject'
+                  defaultValue={subject} name='subject'
                   onChange={this._handleInputChange}/>
                 <Form.TextArea fluid label='Message' placeholder='Email Message'
                   className='m-span00x se-gf'
-                  defaultValue={this.replaceVars(content)} name='content'
+                  defaultValue={content} name='content'
                   onChange={this._handleInputChange}/>
               </Form.Group>
             </Form>

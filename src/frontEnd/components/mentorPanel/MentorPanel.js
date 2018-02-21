@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ProfileHeader from './profileHeader/ProfileHeader';
+import { StageHead, Status, Check } from './Stages';
+import { Icon, Message } from 'semantic-ui-react';
+import Editable from '../../containers/Editable';
 
 import './mentorPanel.css';
-import ProfileHeader from './profileHeader/ProfileHeader';
-import { StageHead, Status, Editable, Check } from './Stages';
-import { Icon, Message } from 'semantic-ui-react';
 
 class MentorPanel extends Component {
   componentDidMount() {
