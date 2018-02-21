@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape ./src/backEnd/tests/tests.js | tap-spec",
-    "pretest": "node src/backEnd/database/dbBuild.js",
-    "start": "node ./src/backEnd/server.js",
+    "test": "tape ./src/server/tests/tests.js | tap-spec",
+    "pretest": "node src/server/database/dbBuild.js",
+    "start": "node ./src/server/server.js",
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
     "dev:build": "webpack --watch",
-    "dev:start": "nodemon --exec babel-node ./src/backEnd/server.js",
-    "watch": "nodemon ./src/backEnd/server.js"
+    "dev:start": "nodemon --exec babel-node ./src/server/server.js",
+    "watch": "nodemon ./src/server/server.js"
   },
   "repository": {
     "type": "git",
