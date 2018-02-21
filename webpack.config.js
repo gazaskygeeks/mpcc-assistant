@@ -21,13 +21,13 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|ico)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              context: path.resolve(__dirname, 'src/server/')
+              context: path.resolve(__dirname, 'src/client/')
             }
           }
         ]
@@ -37,5 +37,6 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true
-  }
+  },
+  watch: false
 };
