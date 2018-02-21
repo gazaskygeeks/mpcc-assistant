@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { showCreateMentorDrop, hideCreateMentorDrop } from '../../actions/modalDropActions';
 import { showCreateMentorModal } from '../../actions/createMentorModalActions';
 import { showUpdateMentorModal } from '../../actions/updateMentorModalActions';
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 
 import './navbar.css';
 

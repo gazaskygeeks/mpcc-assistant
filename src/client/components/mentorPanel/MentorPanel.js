@@ -54,7 +54,6 @@ class MentorPanel extends Component {
                 statusTitle='Permission Status:'
                 statusValue={currentMentor.info.permission_email_status}/>
             </div>
-            <div className='horizontal-divider'></div>
             <div className='stage-holder'>
               <StageHead email={emails.permitRequestEmail}
                 mentorInfo={currentMentor}

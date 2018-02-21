@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Form, Header, Icon } from 'semantic-ui-react';
+import { Button, Modal, Form, Header, Icon, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 class Editable extends Component {
@@ -51,12 +51,14 @@ class Editable extends Component {
             <Modal.Actions>
               <Button onClick={this._postField}
                 primary className='mt-0x'>
-                Submit Email <Icon name='right chevron' />
+                Submit <Icon name='right chevron' />
               </Button>
             </Modal.Actions>
           </Modal>
         </div>
-        <p className='ml-5 para'>{defaultContent}</p>
+        <Container className='no-pad' fluid>
+          <p className='ml-5 para'>{defaultContent}</p>
+        </Container>
         <div className='ml-5 sticky-divider'></div>
       </div>
     );
