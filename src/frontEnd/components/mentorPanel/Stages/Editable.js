@@ -72,7 +72,7 @@ Editable.propTypes = {
   postField: PropTypes.func,
   mentorID: PropTypes.number,
   isFetching: PropTypes.bool,
-  postFieldResponse: PropTypes.string,
+  postFieldResponse: PropTypes.object,
   error: PropTypes.string
 };
 export default Editable;

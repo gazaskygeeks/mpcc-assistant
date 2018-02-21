@@ -18,7 +18,7 @@ export const postFieldFailure = error => ({
   payload: error
 });
 
-export const postField = (fieldType, value, mentorID) => (dispatch, setState) => {
+export const postField = (fieldType, value, mentorID) => dispatch => {
   dispatch(postFieldInProgress());
   const fieldDetails = {};
   fieldDetails[fieldType] = value;
@@ -28,8 +28,8 @@ export const postField = (fieldType, value, mentorID) => (dispatch, setState) =>
       if (response.data.msg !== 'MENTOR_UPDATED') {
         throw new Error('Error Updating Field');
       }
-      setState().getCurrentMentor.currentMentor = response.data.updatedMentor;
-      return dispatch(postFieldSuccess('Field Was Updated Successfully'));
+      const currentMentor = response.data.updatedMentor;
+      return dispatch(postFieldSuccess(currentMentor));
     })
     .catch(err => {
       return dispatch(postFieldFailure(`Error Updating Field: ${err.message}`));
