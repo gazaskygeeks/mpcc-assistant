@@ -10,6 +10,7 @@ import getCurrentMentor from './mentorsReducers/getCurrentMentor';
 import editBio from './usersReducers/editBio';
 import getEmails from './mentorsReducers/getEmails';
 import postEmail from './mentorsReducers/postEmail';
+import postField from './mentorsReducers/postField';
 
 export default combineReducers({
   getAllMentors,
@@ -21,5 +22,6 @@ export default combineReducers({
   getCurrentMentor,
   editBio,
   getEmails,
-  postEmail
+  postEmail,
+  postField
 });

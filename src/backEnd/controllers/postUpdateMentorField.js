@@ -8,12 +8,12 @@ module.exports = (req, res, next) => {
     const { fieldType } = req.params;
     const mentorData = data.rows[0];
     const info = mentorData.info;
-    info.fieldType = req.body.fieldType;
+    info[fieldType] = req.body[fieldType];
     mentorData.info = JSON.stringify(info);
-    updateMentor(mentorData, error => {
+    updateMentor(mentorData, (error, newData) => {
       if (error) return next(error);
 
-      return res.send({ msg: 'MENTOR_UPDATED' });
+      return res.send({ msg: 'MENTOR_UPDATED', updatedMentor: newData.rows[0] });
     });
   });
 };
