@@ -6,7 +6,7 @@ import { POST_FIELD_IN_PROGRESS,
 
 const initialState = {
   isFetching: false,
-  response: '',
+  response: {},
   error: '',
   fieldType: '',
   fieldValue: ''

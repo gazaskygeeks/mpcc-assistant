@@ -9,7 +9,7 @@ class StageHead extends Component {
     return (
       <div className='stage-header'>
         <div className='stage-top'>
-          <i className='far fa-dot-circle fa-5x mr-5'></i>
+          <i className='far fa-dot-circle fa-3x mr-5'></i>
           <h3 className='stage-title'>{headTitle}</h3>
         </div>
         {email && (
