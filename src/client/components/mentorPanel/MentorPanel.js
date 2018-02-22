@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ProfileHeader from './profileHeader/ProfileHeader';
-import { StageHead, Status, Check } from './Stages';
+import { StageHead, Status } from './Stages';
 import { Icon, Message } from 'semantic-ui-react';
 import Editable from '../../containers/Editable';
+import Check from '../../containers/Check';
 
 import './mentorPanel.css';
 

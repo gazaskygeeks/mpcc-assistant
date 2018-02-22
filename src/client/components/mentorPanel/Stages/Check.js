@@ -3,9 +3,19 @@ import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 class Check extends Component {
+  constructor() {
+    super();
+    this._postCheck = this._postCheck.bind(this);
+  }
+
+  _postCheck() {
+    const { docType, mentorID } = this.props;
+    postCheck(docType, mentorID);
+  }
+
   render() {
     const { checkTitle, checkStatus } = this.props;
-
+    console.log(this.props);
     return (
       <div className='stage-box'>
         <div className='editable__left'>
