@@ -9,7 +9,8 @@
     "start": "node ./src/server/server.js",
     "heroku-postbuild": "webpack -p --config webpack.config.js --progress",
     "dev:build": "webpack --watch",
-    "dev:start": "nodemon --exec babel-node ./src/server/server.js",
+    "dev:start": "node --exec babel-node ./src/server/server.js",
+    "dev:watch": "nodemon --exec babel-node ./src/server/server.js",
     "watch": "nodemon ./src/server/server.js"
   },
   "repository": {
