@@ -8,12 +8,13 @@ module.exports = (req, res, next) => {
     if (err) return next(err);
     const mentorData = data.rows[0];
     const info = mentorData.info;
-    info.docType = !info.docType;
+    info[docType] = !info[docType];
     mentorData.info = JSON.stringify(info);
-    updateMentor(mentorData, error => {
+    updateMentor(mentorData, (error, result) => {
+      console.log(error);
       if (error) return next(error);
 
-      return res.send({ update: true });
+      return res.send({ update: true, currentMentor: result.rows[0] });
     });
   });
 };

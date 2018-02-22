@@ -115,25 +115,31 @@ class MentorPanel extends Component {
                 <StageHead headTitle='Transfer Schedule:' />
                 <Check
                   checkTitle='Google Calender Status:'
-                  checkStatus={currentMentor.info.schedule_to_google_status}/>
+                  checkStatus={currentMentor.info.schedule_to_google_status}
+                  mentorID={currentMentor.id}
+                  docType='schedule_to_google_status' />
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Whatsapp Group:' />
                 <Check
                   checkTitle='Whatsapp Group Created:'
-                  checkStatus={currentMentor.info.whatsapp_group_status}/>
+                  checkStatus={currentMentor.info.whatsapp_group_status}
+                  mentorID={currentMentor.id}
+                  docType='whatsapp_group_status' />
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Share Final Files:' />
                 <Check
                   checkTitle='Files Share Completed:'
-                  checkStatus={currentMentor.info.share_final_files_status}/>
+                  checkStatus={currentMentor.info.share_final_files_status}
+                  mentorID={currentMentor.id}
+                  docType='share_final_files_status' />
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Thanks Email:' />
                 <Status
                   statusTitle='Thanks Email Status:'
-                  statusValue={currentMentor.info.thanks_email}/>
+                  statusValue={currentMentor.info.thanks_email} />
               </div>
             </div>
           </div>

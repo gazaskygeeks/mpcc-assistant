@@ -9,13 +9,13 @@ class Check extends Component {
   }
 
   _postCheck() {
-    const { docType, mentorID } = this.props;
+    const { postCheck, docType, mentorID } = this.props;
     postCheck(docType, mentorID);
   }
 
   render() {
     const { checkTitle, checkStatus } = this.props;
-    console.log(this.props);
+
     return (
       <div className='stage-box'>
         <div className='editable__left'>
@@ -32,7 +32,9 @@ class Check extends Component {
                 :
                 <span className='head-box'>
                   <i className='fas fa-times-circle fa-1x error-msg ml-5'></i>
-                  <Button className='ml-5 small bg-red mt-0x' size='small'>
+                  <Button className='ml-5 small bg-red mt-0x'
+                    size='small'
+                    onClick={this._postCheck}>
                 Check</Button>
                 </span>
             }</p>
@@ -45,6 +47,9 @@ class Check extends Component {
 
 Check.propTypes = {
   checkTitle: PropTypes.string,
-  checkStatus: PropTypes.bool
+  checkStatus: PropTypes.bool,
+  docType: PropTypes.string,
+  mentorID: PropTypes.number,
+  postCheck: PropTypes.func
 };
 export default Check;

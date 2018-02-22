@@ -6,6 +6,7 @@ import { POST_CHECK_IN_PROGRESS,
 const initialState = {
   isFetching: false,
   responseStatus: false,
+  currentMentor: {},
   error: ''
 };
 
@@ -20,8 +21,9 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         isFetching: false,
+        responseStatus: true,
         error: '',
-        responseStatus: payload
+        currentMentor: payload
       };
     case POST_CHECK_FAILURE:
       return {

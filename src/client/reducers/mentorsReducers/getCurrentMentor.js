@@ -2,6 +2,7 @@ import {
   GET_CURRENT_MENTOR_IN_PROGRESS,
   GET_CURRENT_MENTOR_SUCCESS,
   POST_FIELD_SUCCESS,
+  POST_CHECK_SUCCESS,
   GET_CURRENT_MENTOR_FAILURE
 } from '../../constants/actionTypes.js';
 
@@ -24,6 +25,12 @@ export default (state = initialState, { type, payload }) => {
         currentMentor: payload
       };
     case POST_FIELD_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        currentMentor: payload
+      };
+    case POST_CHECK_SUCCESS:
       return {
         ...state,
         isFetching: false,

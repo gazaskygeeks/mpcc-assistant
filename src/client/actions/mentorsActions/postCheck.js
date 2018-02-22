@@ -24,7 +24,11 @@ export const postCheck = (docType, mentorID) => dispatch => {
     .post(`/dashboard/mentor-panel/${mentorID}/check/${docType}`)
     .then(response => {
       const responseStatus = response.data.update;
-      return dispatch(postCheckSuccess(responseStatus));
+      if (!responseStatus) {
+        return dispatch(postCheckFailure('Error Occured'));
+      }
+      const currentMentor = response.data.currentMentor;
+      return dispatch(postCheckSuccess(currentMentor));
     })
     .catch(err => {
       return dispatch(postCheckFailure(`Error Updating Check: ${err.message}`));
