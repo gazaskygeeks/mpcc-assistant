@@ -20,7 +20,7 @@ class Editable extends Component {
   }
 
   render() {
-    const { editableTitle, defaultContent } = this.props;
+    const { editableTitle, defaultContent, postFieldResponse, error } = this.props;
     const fieldType = editableTitle.toLowerCase().replace(/ /g, '_');
 
     return (
@@ -47,6 +47,18 @@ class Editable extends Component {
                   </Form.Group>
                 </Form>
               </Modal.Description>
+              {postFieldResponse.id && (
+                <div className='success-msg'>
+                  <span>Updated Successfully</span>
+                </div>
+              )}
+              {error.length > 1 && (
+                <div className='err-msg'>
+                  <span>Updated Failed!
+                  {error}
+                  </span>
+                </div>
+              )}
             </Modal.Content>
             <Modal.Actions>
               <Button onClick={this._postField}

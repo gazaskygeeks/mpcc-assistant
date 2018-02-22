@@ -41,7 +41,7 @@ class Home extends Component {
                     {mentor.info.job_title}
                   </Card.Meta>
                   <Card.Description>
-                    {mentor.info.bio}
+                    {mentor.info.bio && mentor.info.bio.slice(0, 35)}
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
