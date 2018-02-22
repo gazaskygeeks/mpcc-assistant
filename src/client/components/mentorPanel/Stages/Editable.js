@@ -25,53 +25,57 @@ class Editable extends Component {
 
     return (
       <div className='stage-box'>
-        <div className='head-box'>
-          <div className='stage-top'>
-            <i className='fa fa-circle mr-5'></i>
-            <h3 className='sub-title fs-18'>{editableTitle}</h3>
-          </div>
-          <Modal trigger={
-            <Button className='ml-5 small bg-red' size='small'>
-            Edit</Button>
-          }>
-            <Modal.Header>Edit:</Modal.Header>
-            <Modal.Content>
-              <Modal.Description>
-                <Header>{editableTitle}</Header>
-                <Form className='se-f'>
-                  <Form.Group className='se-gf'>
-                    <Form.TextArea fluid
-                      name={fieldType}
-                      defaultValue={defaultContent}
-                      onChange={this._handleInputChange} />
-                  </Form.Group>
-                </Form>
-              </Modal.Description>
-              {postFieldResponse.id && (
-                <div className='success-msg'>
-                  <span>Updated Successfully</span>
-                </div>
-              )}
-              {error.length > 1 && (
-                <div className='err-msg'>
-                  <span>Updated Failed!
-                  {error}
-                  </span>
-                </div>
-              )}
-            </Modal.Content>
-            <Modal.Actions>
-              <Button onClick={this._postField}
-                primary className='mt-0x'>
-                Submit <Icon name='right chevron' />
-              </Button>
-            </Modal.Actions>
-          </Modal>
+        <div className='editable__left'>
+          <hr /> <i className='fa fa-circle small-circle'></i>
         </div>
-        <Container className='no-pad' fluid>
-          <p className='ml-5 para'>{defaultContent}</p>
-        </Container>
-        <div className='ml-5 sticky-divider'></div>
+        <div className='editable__right'>
+          <div className='head-box'>
+            <div className='stage-top'>
+              <h3 className='sub-title'>{editableTitle}</h3>
+            </div>
+            <Modal trigger={
+              <Button className='ml-5 small bg-red' size='small'>
+              Edit</Button>
+            }>
+              <Modal.Header>Edit:</Modal.Header>
+              <Modal.Content>
+                <Modal.Description>
+                  <Header>{editableTitle}</Header>
+                  <Form className='se-f'>
+                    <Form.Group className='se-gf'>
+                      <Form.TextArea fluid
+                        name={fieldType}
+                        defaultValue={defaultContent}
+                        onChange={this._handleInputChange} />
+                    </Form.Group>
+                  </Form>
+                </Modal.Description>
+                {postFieldResponse.id && (
+                  <div className='success-msg'>
+                    <span>Updated Successfully</span>
+                  </div>
+                )}
+                {error.length > 1 && (
+                  <div className='err-msg'>
+                    <span>Updated Failed!
+                    {error}
+                    </span>
+                  </div>
+                )}
+              </Modal.Content>
+              <Modal.Actions>
+                <Button onClick={this._postField}
+                  primary className='mt-0x'>
+                  Submit <Icon name='right chevron' />
+                </Button>
+              </Modal.Actions>
+            </Modal>
+          </div>
+          <Container className='no-pad' fluid>
+            <p className='para'>{defaultContent}</p>
+          </Container>
+          <div className='sticky-divider'></div>
+        </div>
       </div>
     );
   }

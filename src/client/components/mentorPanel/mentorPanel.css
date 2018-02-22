@@ -7,26 +7,70 @@ body {
   background-color: #3E5771
 }
 
-.container {
+.mentorPanel__main {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
+  margin-top: 15px
+}
+
+.mentorPanel__container{
+  max-width: 975px;
+  width: 100%;
+  background-color: white;
+  padding: 100px 0px 100px 66px;
+  display: flex;
   align-items: center;
-  background: whitesmoke;
-  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
-  margin: 7.5vh 0 0 20vw;
-  width: 75vw;
+  flex-direction: column;
 }
 
 .profile-info {
   display: flex;
   align-items: center;
-  min-width: 65vw;
+  max-width: 693px;
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  padding-left: 150px;
+}
+
+.ui.small.button, .ui.small.buttons .button, .ui.small.buttons .or {
+    font-size: .92857143rem;
+    line-height: 0px;
 }
 
 .circle-img {
-  border-radius: 12vw;
-  width: 12vw;
+  border-radius: 50%;
+  width: 240px;
+  position: absolute;
+  left: -123px;
+}
+
+.editable__left {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.editable__left hr {
+  flex-grow: 1;
+  margin-top: 2px;
+}
+
+.stage__head-title {
+  padding-left: 50px;
+  font-size: 28px!important;
+  line-height: 60px;
+}
+
+.editable__right {
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.small-circle {
+  font-size: 10px !important;
+  color: lightgray
 }
 
 .w-x100 {
@@ -75,13 +119,15 @@ body {
 .stages-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 62vw;
+  align-items: center;
+  max-width: 693px;
+  width: 100%;
 }
 
 .stage-holder{
-  margin-bottom: 10vh;
+  max-width: 693px;
   width: 100%;
+  border-left: 6px solid lightgray
 }
 .head-box {
   display: flex;
@@ -92,12 +138,15 @@ body {
 
 .stage-box {
   width: 100%;
+  display: flex;
 }
 
 .stage-title {
   font-size: 1.5em;
   color: #3E5771;
-  margin-top: 7.5px
+  margin: 0;
+  line-height: 60px;
+  padding-left: 40px;
 }
 
 .fa-circle{
@@ -110,13 +159,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0
+  margin: 0;
 }
 
 .stage-top {
   display: flex;
   justify-content: flex-start;
-  width: 50%
+  width: 50%;
+  padding-top: 18px!important;
 }
 
 .stage-header {
@@ -124,25 +174,24 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .mr-5 {
   color: lightgray;
-  width: 70px;
-  height: 40px;
   display: flex;
   align-items: center;
+  position: absolute;
   justify-content: center;
-}
-
-.ml-5 {
-  margin: 0;
-  margin-left: 5vw!important;
+  font-size: 60px;
+  left: -33px;
+  background: white;
 }
 
 .para {
   font-size: 1em;
-  width: 70%
+  width: 70%;
+  padding-top: 18px!important;
 }
 
 .small {

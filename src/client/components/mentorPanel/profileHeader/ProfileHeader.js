@@ -8,7 +8,6 @@ class ProfileHeader extends Component {
     return (
       <div className='profile-info'>
         <img className='circle-img' src={photo} alt={`${first_name} ${last_name}`}></img>
-        <div className='space'></div>
         <div className='right-side'>
           <h2 className='name-feild'>{`${first_name} ${last_name}`}</h2>
           <div className='ui inverted divider'></div>
