@@ -3,9 +3,9 @@ const app = require('../../app');
 const test = require('tape');
 
 const postDocStatusTest = () => {
-  test('test get /dashboard/mentor-panel/1/check/singned_waver', t => {
+  test('test get /dashboard/mentor-panel/1/check/signed_waiver', t => {
     supertest(app)
-      .get('/dashboard/mentor-panel/1/check/singned_waiver')
+      .post('/dashboard/mentor-panel/1/check/signed_waiver')
       .expect(200)
       .end((err, res) => {
         if (err) {

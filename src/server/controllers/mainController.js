@@ -15,7 +15,7 @@ const postFlightInfo = require('./postFlightInfo');
 router.get('/get-mentors', getMentors);
 router.get('/dashboard/mentor-panel/get-emails', getEmails);
 router.get('/dashboard/mentor-panel/:mentorSelector', getSingleMentor);
-router.get('/dashboard/mentor-panel/:mentorSelector/check/:docType', postDocStatus);
+router.post('/dashboard/mentor-panel/:mentorSelector/check/:docType', postDocStatus);
 router.post('/submit/signed-waiver/confirm', uploading, pusher);
 router.post('/submit/flight-info/confirm', postFlightInfo);
 router.post('/dashboard/mentor-panel/:mentorSelector/sendEmail/:emailType/confirm', postEmail);
