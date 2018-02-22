@@ -11,7 +11,6 @@ module.exports = (req, res, next) => {
     info[docType] = !info[docType];
     mentorData.info = JSON.stringify(info);
     updateMentor(mentorData, (error, result) => {
-      console.log(error);
       if (error) return next(error);
 
       return res.send({ update: true, currentMentor: result.rows[0] });
