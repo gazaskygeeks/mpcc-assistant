@@ -33,8 +33,9 @@ class Navbar extends React.Component {
   }
 
   render() {
-    return (
-      <nav className='navbar'>
+    let content = '';
+    if (window.location.pathname !== '/') {
+      content = (<nav className='navbar'>
         <div className='nav-left logo'><h1>MPCC Assistant</h1></div>
         <div className='nav-right'>
           <ul className='list'>
@@ -50,7 +51,10 @@ class Navbar extends React.Component {
             </li>
           </ul>
         </div>
-      </nav>
+      </nav>);
+    }
+    return (
+      content
     );
   }
 }
