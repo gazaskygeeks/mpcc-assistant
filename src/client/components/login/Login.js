@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 import './Login.css';
@@ -23,30 +23,32 @@ class Login extends Component {
 
     return (
       <div className='login'>
-
         <Form className='form-signin'>
-          <Form.Field>
-            <label>Username:</label>
-            <Form.Input type='text'
-              name='username'
-              onChange={this._handleInputChange}
-              placeholder='username'/>
-          </Form.Field>
-          <Form.Field>
-            <label>Password:</label>
-            <Form.Input type='text' onChange={this._handleInputChange}
-              name='password' type='password' placeholder='password'/>
-          </Form.Field>
-          {!loginResult.loggedin &&
-            <div className='err-msg'>
-              <span>{loginResult.msg}</span>
-            </div>
-          }
-          <Button
-            onClick={this._handleSubmit}
-            type='submit'>Submit</Button>
+          <Header as='h1'>Login</Header>
+          <div className='login__container'>
+            <Form.Field>
+              <label>Username:</label>
+              <Form.Input type='text'
+                name='username'
+                onChange={this._handleInputChange}
+                placeholder='username'/>
+            </Form.Field>
+            <Form.Field>
+              <label>Password:</label>
+              <Form.Input type='text' onChange={this._handleInputChange}
+                name='password' type='password' placeholder='password'/>
+            </Form.Field>
+            {!loginResult.loggedin &&
+              <div className='err-msg'>
+                <span>{loginResult.msg}</span>
+              </div>
+            }
+            <Button
+              onClick={this._handleSubmit}
+              type='submit'>Submit</Button>
+            {loginResult.loggedin? this.props.history.push('/dashboard'):null}
+          </div>
         </Form>
-        {loginResult.loggedin? this.props.history.push('/dashboard'):null}
       </div>
     );
   }

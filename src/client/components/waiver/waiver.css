@@ -9,13 +9,20 @@
 #uploader {
   background: white;
   text-align: center;
-  width: 80%;
+  width: 50%;
   height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 #uploader input {
   padding: 10px;
   margin: 8px;
+  border: 1px solid gray;
+}
+
+.w-50-fields {
+  width: 75%;
+  outline: none;
 }

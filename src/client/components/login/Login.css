@@ -7,8 +7,13 @@
 }
 
 .ui.form {
-    width: 500px;
-    margin-top: 20vh;
+  width: 500px;
+  margin-top: 20vh;
+  padding-top: 35px
+}
+
+.login__container {
+  padding-top: 20px;
 }
 
 .input {

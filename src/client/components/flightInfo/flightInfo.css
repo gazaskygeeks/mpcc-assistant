@@ -42,3 +42,9 @@
 .ui.button {
   margin-top: 5vh;
 }
+
+.inline {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}

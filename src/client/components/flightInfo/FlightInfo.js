@@ -31,15 +31,15 @@ class FlightInfo extends Component {
                 name='mentor_email'
                 onChange={this._handleInputChange}
                 type='text'
-                placeholder='Flight Number'/>
+                placeholder='Flight Number:'/>
             </div>
             <div className='inline field'>
               <label>Date</label>
               <Form.Input className='input'
                 name='date_of_arrival'
                 onChange={this._handleInputChange}
-                type='text'
-                placeholder='Date'/>
+                type='date'
+                placeholder='Date:'/>
             </div>
             <div className='inline field'>
               <label>Time</label>
@@ -47,7 +47,7 @@ class FlightInfo extends Component {
                 name='time_of_arrival'
                 onChange={this._handleInputChange}
                 type='text'
-                placeholder='Time'/>
+                placeholder='Time:'/>
             </div>
             <div className='inline field'>
               <label>Flight Number</label>
@@ -55,7 +55,7 @@ class FlightInfo extends Component {
                 name='flight_number'
                 onChange={this._handleInputChange}
                 type='text'
-                placeholder='Flight Number'/>
+                placeholder='Flight Number:'/>
             </div>
           </div>
           {!flightInfoResult.exists &&
