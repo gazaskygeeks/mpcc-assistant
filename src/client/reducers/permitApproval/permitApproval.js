@@ -1,30 +1,32 @@
 import {
-  EDIT_IN_PROGRESS,
-  EDIT_SUCCESS,
-  EDIT_FAILURE,
+  POST_PERMIT_APPROVAL_IN_PROGRESS,
+  POST_PERMIT_APPROVAL_SUCCESS,
+  POST_PERMIT_APPROVAL_FAILURE,
   HANDLE_INPUT_CHANGE
 } from '../../constants/actionTypes.js';
 
 const initialState = {
   isFetching: false,
-  updateResult: {},
-  name: ''
+  permitApprovalResult: {},
+  _permit_approval_status: false,
+  _permit_number: '',
+  error: {}
 };
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case EDIT_IN_PROGRESS:
+    case POST_PERMIT_APPROVAL_IN_PROGRESS:
       return {
         ...state,
         isFetching: true
       };
-    case EDIT_SUCCESS:
+    case POST_PERMIT_APPROVAL_SUCCESS:
       return {
         ...state,
         isFetching: false,
-        updateResult: payload
+        permitApprovalResult: payload
       };
-    case EDIT_FAILURE:
+    case POST_PERMIT_APPROVAL_FAILURE:
       return {
         ...state,
         isFetching: false,
