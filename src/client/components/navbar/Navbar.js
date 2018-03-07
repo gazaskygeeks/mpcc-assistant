@@ -45,7 +45,7 @@ class Navbar extends React.Component {
                 options={[{ key: 1, text: 'Host new mentor', value: 1 },
                   { key: 2, text: 'Host existing mentor', value: 2 }]}
                 compact
-                icon='none'
+                icon=''
                 onChange={this.showMentorModal}
               />
             </li>

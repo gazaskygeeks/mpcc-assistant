@@ -1,0 +1,111 @@
+{
+  "name": "permitBiodata",
+  "title": "Gaza Sky Geeks - Permit Biodata Form",
+  "description": "International visitors applying for a permit from the Israeli military to enter Gaza with Mercy Corps/Gaza Sky Geeks must provide the info requested on this form.\n\n\nAt the same time you fill our this form, you must email to visitors@gazaskygeeks.com:\n1) A COLOR SCAN OF THE PASSPORT YOU PLAN TO USE TO ENTER GAZA\n2) A COLOR PASSPORT-STYLE HEADSHOT PHOTO WITH WHITE BACKGROUND",
+  "nodes": [
+    { "title": "Basic Information" },
+    {
+      "title": "First Name",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Surname",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Mother's Name",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Father's Name",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Your Paternal Grandfather's Name",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Email Address",
+      "type": "email",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Nationality",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Place of Birth",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Current Address",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Permanent Address",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Land Line Home Phone Number (or any other land line, e.g. office, parents' phone, etc)",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Mobile Phone (include country code, which should be in compliance with Temporary/Current Address)",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "Job Title / Profession",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "3 to 4 Sentences Bio",
+      "type": "text",
+      "value": "",
+      "required": true,
+      "description": "It should include where you currently work,\nwhere you worked in 1 previous job (choose the most relevant one),\n1 relevant extracurricular if applicable (e.g., \"I mentored at Startup Weekend Nepal\"),\nand where you went to university."
+    },
+    {
+      "title": "Previous Nationality (if any  )",
+      "type": "text",
+      "value": "",
+      "required": false
+    },
+    {
+      "title": "Marital Status",
+      "type": "text",
+      "value": "",
+      "required": true
+    },
+    {
+      "title": "LinkedIn URL",
+      "type": "text",
+      "value": "",
+      "required": true
+    }
+  ]
+}

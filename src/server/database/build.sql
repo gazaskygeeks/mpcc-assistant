@@ -22,7 +22,7 @@ CREATE TABLE mentors (
 
 CREATE TABLE forms (
   id SERIAL PRIMARY KEY,
-  form_name JSON NOT NULL,
+  form_name VARCHAR NOT NULL,
   vars JSON
 );
 

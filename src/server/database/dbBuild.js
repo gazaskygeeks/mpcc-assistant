@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const connection = require('./dbConnection');
+const insertForms = require('./queries/insertForms');
 
 const buildScripts = fs.readFileSync(path.join(__dirname, 'build.sql')).toString();
 const testsScripts = fs.readFileSync(path.join(__dirname, 'test.sql')).toString();
@@ -13,4 +14,9 @@ connection.query(buildScripts, buildErr => {
     console.log('Tests queries put.');
     connection.end();
   });
+});
+
+insertForms(err => {
+  if (err) throw new Error(err);
+  console.log('Database initialized with forms.');
 });
