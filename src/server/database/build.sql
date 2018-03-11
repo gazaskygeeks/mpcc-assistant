@@ -20,10 +20,12 @@ CREATE TABLE mentors (
   info JSON
 );
 
-CREATE TABLE forms (
+CREATE TABLE notifications (
   id SERIAL PRIMARY KEY,
-  form_name JSON NOT NULL,
-  vars JSON
+  type VARCHAR NOT NULL,
+  mentor_id REFERENCES mentos(id) NOT NULL,
+  form_id INTEGER,
+  seen boolean default FALSE;
 );
 
 COMMIT;

@@ -40,6 +40,7 @@ class Navbar extends React.Component {
         <div className='nav-right'>
           <ul className='list'>
             <li><a href='/dashboard'><i className='fa fa-home fa-2x wi'></i></a></li>
+            <li><a href='/dashboard/notifications'><i className='fas fa-bell fa-2x wi'></i></a></li>
             <li>
               <Dropdown text=' ' className='dropdown fa fa-plus fa-2x wi'
                 options={[{ key: 1, text: 'Host new mentor', value: 1 },
