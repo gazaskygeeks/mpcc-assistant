@@ -8,6 +8,7 @@ class MentorForm extends Component {
     super();
     this.state = {
       form: {
+        id: 0,
         title: 'Form title',
         description: 'Form desription',
         nodes: [
@@ -26,50 +27,46 @@ class MentorForm extends Component {
   }
 
   submitForm() {
-
+    this.props.postMentorForm(this.state.form);
   }
 
   handleInputChange(event) {
     event.preventDefault();
     const form = { ...this.state.form };
     for (let i = 0; i < form.nodes.length; i++) {
-      if (form.nodes.title === event.target.name) {
-        form.nodes.value = event.target.value;
+      if (form.nodes[i].title === event.target.name) {
+        form.nodes[i].value = event.target.value;
         break;
       }
     }
-    this.setState({ ...form });
+    this.setState({ form });
   }
 
   componentDidMount() {
-    this.setState(this.props.form);
+    this.setState({ form: this.props.form });
+    console.log('myid', this.props.match.params.formID);
     return this.props.getMentorForm(this.props.match.params.formID);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('this.state1', this.state);
-    console.log('this.props.form', this.props.form);
-    console.log('nextProps.form', nextProps.form);
     this.setState({
       ...this.state,
       form: nextProps.form
     });
-    console.log('this.state2', this.state);
   }
 
   render() {
-    console.log('<-----------------render break--------------------->');
     if (this.props.isFetching) {
       return <p>loading</p>;
     } else {
-      const form = this.props.form;
+      const { form } = this.props;
       return (
         <div className='wrapper'>
           <section>
             <h1>{form.title}</h1>
             <h3>{form.description}</h3>
             {
-              form.nodes.map(({ title, type, description, warn, value }, index) => (
+              form.nodes.map(({ title, type, description, warn }, index) => (
                 <section key={index} className='query'>
                   <h4>{title}</h4>
                   { description && <p>{description}</p>}
@@ -77,7 +74,6 @@ class MentorForm extends Component {
                   { type && <input
                     name={title}
                     type={type}
-                    value={value}
                     onBlur={this.handleInputChange}/>}
                 </section>
               ))
@@ -93,6 +89,7 @@ class MentorForm extends Component {
 MentorForm.propTypes = {
   getMentorForm: PropTypes.func,
   match: PropTypes.object,
+  postMentorForm: PropTypes.func,
   isFetching: PropTypes.bool,
   form: PropTypes.object
 };

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MentorForm from '../components/mentorForm/MentorForm';
-import { getMentorForm } from '../actions/mentorsActions/getMentorForm';
+import { getMentorForm, postMentorForm } from '../actions/mentorsActions/getMentorForm';
 
 const mapStateToProps = ({ mentorFormReducer }) => ({
   isFetching: mentorFormReducer.isFetching,
@@ -8,7 +8,8 @@ const mapStateToProps = ({ mentorFormReducer }) => ({
 });
 
 const mapDispatchToProps = {
-  getMentorForm
+  getMentorForm,
+  postMentorForm
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MentorForm);

@@ -1,11 +1,11 @@
 import {
-  GET_FORM_PROGRESS, GET_FORM_SUCCESS, GET_FORM_FAILURE,
-  POST_FORM_PROGRESS, POST_FORM_SUCCESS, POST_FORM_FAILURE
+  GET_FORM_PROGRESS, GET_FORM_SUCCESS, GET_FORM_FAILURE
 } from '../../constants/actionTypes.js';
 
 const initialState = {
   isFetching: false,
   form: {
+    id: 0,
     title: 'Form title',
     description: 'Form desription',
     nodes: [

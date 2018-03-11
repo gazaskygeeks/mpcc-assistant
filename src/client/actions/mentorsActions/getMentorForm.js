@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-import {
-  GET_FORM_PROGRESS,
-  GET_FORM_SUCCESS,
-  GET_FORM_FAILURE
+import { GET_FORM_PROGRESS, GET_FORM_SUCCESS, GET_FORM_FAILURE,
+  POST_FORM_PROGRESS, POST_FORM_SUCCESS, POST_FORM_FAILURE
 } from '../../constants/actionTypes.js';
 
 const getMentorFormInProgress = () => ({
@@ -19,18 +17,38 @@ const getMentorFormFailure = err => ({
   msg: err
 });
 
+const postMentorFormInProgress = () => ({
+  type: POST_FORM_PROGRESS
+});
+
+const postMentorFormSuccess = () => ({
+  type: POST_FORM_SUCCESS
+});
+
+const postMentorFormFailure = () => ({
+  type: POST_FORM_FAILURE
+});
+
 export const getMentorForm = formID => dispatch => {
   dispatch(getMentorFormInProgress());
   axios
-    .get(`/form/${formID}`)
+    .get(`/dashboard/ms/get/form/${formID}`)
     .then(response => {
       const { form } = response.data;
+      console.log('myform', form);
       if (form) {
         return dispatch(getMentorFormSuccess(form));
       }
       return dispatch(getMentorFormFailure('GetFormFailure'));
     })
-    .catch(err => {
-      return dispatch(getMentorFormFailure(err.message));
-    });
+    .catch(err => dispatch(getMentorFormFailure(err.message)));
+};
+
+export const postMentorForm = formData => dispatch => {
+  dispatch(postMentorFormInProgress());
+  console.log('formDataformDataformData', formData);
+  axios
+    .post(`/dashboard/ms/post/form/${formData.id}`, formData)
+    .then(response => console.log(response))
+    .catch(err => dispatch(postMentorFormFailure(err.message)));
 };
