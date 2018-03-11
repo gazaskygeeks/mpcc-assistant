@@ -8,7 +8,8 @@ class MentorForm extends Component {
     super();
     this.state = {
       form: {
-        id: 0,
+        formID: 0,
+        mentorID: 0,
         title: 'Form title',
         description: 'Form desription',
         nodes: [
@@ -27,7 +28,7 @@ class MentorForm extends Component {
   }
 
   submitForm() {
-    this.props.postMentorForm(this.state.form);
+    this.props.postMentorForm(this.state.form, this.props.match.params);
   }
 
   handleInputChange(event) {
@@ -44,7 +45,6 @@ class MentorForm extends Component {
 
   componentDidMount() {
     this.setState({ form: this.props.form });
-    console.log('myid', this.props.match.params.formID);
     return this.props.getMentorForm(this.props.match.params.formID);
   }
 

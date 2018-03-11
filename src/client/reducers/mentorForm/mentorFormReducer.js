@@ -5,7 +5,8 @@ import {
 const initialState = {
   isFetching: false,
   form: {
-    id: 0,
+    formID: 0,
+    mentorID: 0,
     title: 'Form title',
     description: 'Form desription',
     nodes: [

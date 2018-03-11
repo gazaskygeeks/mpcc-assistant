@@ -25,7 +25,7 @@ class App extends Component {
             <Route exact path='/dashboard/panel/:id' component={MentorPanel} />
             <Route exact path='/submit/waiver' component={Waiver} />
             <Route exact path='/submit/flight-info' component={FlightInfo} />
-            <Route exact path='/dashboard/ms/post/form/:formID' component={MentorForm} />
+            <Route exact path='/submit/forms/:formID/:mentorID' component={MentorForm} />
           </Switch>
         </div>
       </BrowserRouter>

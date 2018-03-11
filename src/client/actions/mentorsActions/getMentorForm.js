@@ -35,7 +35,6 @@ export const getMentorForm = formID => dispatch => {
     .get(`/dashboard/ms/get/form/${formID}`)
     .then(response => {
       const { form } = response.data;
-      console.log('myform', form);
       if (form) {
         return dispatch(getMentorFormSuccess(form));
       }
@@ -44,11 +43,11 @@ export const getMentorForm = formID => dispatch => {
     .catch(err => dispatch(getMentorFormFailure(err.message)));
 };
 
-export const postMentorForm = formData => dispatch => {
+export const postMentorForm = (formData, { formID, mentorID }) => dispatch => {
   dispatch(postMentorFormInProgress());
-  console.log('formDataformDataformData', formData);
+  formData.mentorID = mentorID;
   axios
-    .post(`/dashboard/ms/post/form/${formData.id}`, formData)
+    .post(`/dashboard/ms/post/form/${formID}`, formData)
     .then(response => console.log(response))
     .catch(err => dispatch(postMentorFormFailure(err.message)));
 };
