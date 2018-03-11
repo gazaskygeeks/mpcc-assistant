@@ -42,9 +42,12 @@ class Waiver extends Component {
       <div className='container'>
         <div id='uploader'>
           <h1 className='w-50-fields'>Upload your signed waiver</h1>
-          <input className='w-50-fields' type='text' name='email' placeholder='Please enter your email...'/>
-          <input className='w-50-fields' type='file' name='upload' onChange={this.handleUploadFile} />
-          <input className='w-50-fields' type='submit' name='submit' value='Upload' onClick={this.upload} />
+          <input className='w-50-fields' type='text'
+            name='email' placeholder='Please enter your email...'/>
+          <input className='w-50-fields' type='file'
+            name='upload' onChange={this.handleUploadFile} />
+          <input className='w-50-fields' type='submit'
+            name='submit' value='Upload' onClick={this.upload} />
           <h3 id='irr'></h3>
         </div>
       </div>

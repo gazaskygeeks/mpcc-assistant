@@ -9,6 +9,7 @@ import Login from '../containers/Login';
 import Waiver from '../containers/Waiver';
 import MentorPanel from '../containers/MentorPanel';
 import FlightInfo from '../containers/FlightInfo';
+import PermitApproval from '../containers/PermitApproval';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path='/dashboard/panel/:id' component={MentorPanel} />
             <Route exact path='/submit/waiver' component={Waiver} />
             <Route exact path='/submit/flight-info' component={FlightInfo} />
+            <Route exact path='/mc/submit/permit-approval/:mentorID' component={PermitApproval} />
           </Switch>
         </div>
       </BrowserRouter>
