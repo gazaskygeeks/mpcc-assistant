@@ -6,9 +6,7 @@ import {
 
 const initialState = {
   isFetching: false,
-  currentMentor: {},
-  permissionApprovalResult: {},
-  _permission_approval_status: false
+  permissionApprovalResult: {}
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -27,7 +25,8 @@ export default (state = initialState, { type, payload }) => {
     case POST_PERMISSION_APPROVAL_FAILURE:
       return {
         ...state,
-        isFetching: false
+        isFetching: false,
+        permissionApprovalResult: payload
       };
     default:
       return state;

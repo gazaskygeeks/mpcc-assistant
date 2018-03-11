@@ -22,7 +22,7 @@ export const postPermissionApprovalFailure = err => ({
 
 export const postPermissionApproval =
 (_permission_approval_status, mentorID) => dispatch => {
-  dispatch(postPermissionApprovalInProgress);
+  dispatch(postPermissionApprovalInProgress());
   axios.post(`/dashboard/mc/permission-approval/${mentorID}`, {
     _permission_approval_status
   }).then(response => {

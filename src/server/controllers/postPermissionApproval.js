@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     const mentorData = data.rows[0];
     const info = mentorData.info;
     const newInfo = Object.assign({}, info,
-      { permission_approval_status: _permission_approval_status
+      { permission_approval_status: !!_permission_approval_status.includes('true')
       });
     mentorData.info = newInfo;
     updateMentor(mentorData, error => {

@@ -13,6 +13,7 @@ import postEmail from './mentorsReducers/postEmail';
 import postField from './mentorsReducers/postField';
 import postCheck from './mentorsReducers/postCheck';
 import postPermitApproval from './permitApproval/permitApproval';
+import postPermissionApproval from './permissionApproval/permissionApproval';
 
 export default combineReducers({
   getAllMentors,
@@ -27,5 +28,6 @@ export default combineReducers({
   postEmail,
   postField,
   postCheck,
-  postPermitApproval
+  postPermitApproval,
+  postPermissionApproval
 });

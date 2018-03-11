@@ -8,8 +8,7 @@ import { getCurrentMentor } from '../actions/mentorsActions/getCurrentMentor';
 const mapStateToProps = state => ({
   isFetching: state.getCurrentMentor.isFetching,
   currentMentor: state.getCurrentMentor.currentMentor,
-  permissionApprovalResult: state.postPermissionApproval.permissionApprovalResult,
-  _permission_approval_status: state.postPermissionApproval._permission_approval_status
+  permissionApprovalResult: state.postPermissionApproval.permissionApprovalResult
 });
 
 const mapDispatchToProps = {
