@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Navbar from './navbar/Navbar';
+import Navbar from '../containers/Navbar';
 import Dashboard from '../containers/Dashboard';
 import HostNewMentorModal from './hostMentor/hostNewMentorModal';
 import UpdateMentorModal from './hostMentor/hostExistingMentorModal';
@@ -9,7 +9,7 @@ import Login from '../containers/Login';
 import Waiver from '../containers/Waiver';
 import MentorPanel from '../containers/MentorPanel';
 import FlightInfo from '../containers/FlightInfo';
-import Notifications from './notifications/notifications.js';
+import Notifications from '../containers/Notifications';
 
 class App extends Component {
   render() {

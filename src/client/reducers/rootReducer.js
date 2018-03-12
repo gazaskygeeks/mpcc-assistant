@@ -12,6 +12,8 @@ import getEmails from './mentorsReducers/getEmails';
 import postEmail from './mentorsReducers/postEmail';
 import postField from './mentorsReducers/postField';
 import postCheck from './mentorsReducers/postCheck';
+import getNotifications from './mentorsReducers/getNotifications';
+import putNotification from './mentorsReducers/putNotification';
 
 export default combineReducers({
   getAllMentors,
@@ -25,5 +27,7 @@ export default combineReducers({
   getEmails,
   postEmail,
   postField,
-  postCheck
+  postCheck,
+  getNotifications,
+  putNotification
 });

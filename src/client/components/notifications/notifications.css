@@ -59,3 +59,34 @@
   border-radius: 8px;
   margin-bottom: 5px;
 }
+
+.notifications__loading, .notifications__empty {
+  display: flex;
+  align-self: center;
+}
+
+.notifications__empty {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 40vw;
+  min-height: 40vh!important;
+  font-size: 2rem!important;
+  font-weight: lighter;
+  color: #FF5722!important;
+  padding: 25px 0px!important;
+}
+
+.notifications__container ul li p a {
+  font-size: 1.2rem;
+  color: #3e5771;
+}
+
+.notifications__container ul li p a:visited {
+  text-decoration: none;
+  color: #3e5771;
+}
+
+.notifications__container ul li p {
+  margin: 0!important
+}
