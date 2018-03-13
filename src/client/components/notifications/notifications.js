@@ -52,7 +52,7 @@ class Notifications extends Component {
             onClick={this._handleSubmit.bind(this)}
             type='submit'
             value={0}>
-            Read All
+            Mark All As Read
           </Button>
           <ul className='notifications__list'>
             {notifications.map((notification, index) => {
@@ -68,8 +68,9 @@ class Notifications extends Component {
                   </p>
                   {fetchingPut && (
                     <Button
+                      className='notification__button__nobg'
                       loading>
-                      Read
+                      <i className='fas fa-check'></i>
                     </Button>
 
                   )}
@@ -78,7 +79,7 @@ class Notifications extends Component {
                       onClick={this._handleSubmit.bind(this)}
                       type='submit'
                       value={notification.id}>
-                      Read
+                      <i className='fas fa-check'></i>
                     </Button>
                   )}
                 </li>

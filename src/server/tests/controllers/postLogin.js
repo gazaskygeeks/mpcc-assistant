@@ -7,7 +7,7 @@ const postLoginTest = () => {
     supertest(app)
       .post('/login')
       .send({
-        username: 'Someone',
+        username: 'sarah',
         password: '123456'
       })
       .set('Accept', 'application/json, text/plain, */*')

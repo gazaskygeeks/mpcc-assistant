@@ -45,9 +45,7 @@
 }
 
 .notifications__list button {
-  padding: 3px 10px!important;
-  background-color: #fff!important;
-  color: #3e5771!important
+  padding: 3px 5px!important;
 }
 
 .notifications__list li {

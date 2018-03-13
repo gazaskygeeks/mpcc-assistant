@@ -13,10 +13,11 @@ import Notifications from '../containers/Notifications';
 
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
       <BrowserRouter>
         <div>
-          <Navbar />
+          <Route component={Navbar}/>
           <HostNewMentorModal/>
           <UpdateMentorModal/>
           <Switch>
