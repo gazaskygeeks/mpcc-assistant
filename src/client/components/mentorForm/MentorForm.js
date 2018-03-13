@@ -1,42 +1,32 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import { Form, Radio } from 'semantic-ui-react';
 import './mentorForm.css';
 
 class MentorForm extends Component {
   constructor() {
     super();
-    this.state = {
-      form: {
-        formID: 0,
-        mentorID: 0,
-        title: 'Form title',
-        description: 'Form desription',
-        nodes: [
-          {
-            title: 'node label',
-            type: 'input type',
-            value: '',
-            description: 'optional',
-            warn: 'optional'
-          }
-        ]
-      }
-    };
+    this.state = { };
     this.submitForm = this.submitForm.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   submitForm() {
-    this.props.postMentorForm(this.state.form, this.props.match.params);
+    console.log('this.state.form', this.state.form);
+    console.log('this.props.form', this.props.form);
+    this.props.postMentorForm(this.props.form, this.props.match.params);
   }
 
-  handleInputChange(event) {
+  handleInputChange({ target }) {
     event.preventDefault();
-    const form = { ...this.state.form };
+    const form = { ...this.props.form };
+    const input = target.parentNode.children[0];
     for (let i = 0; i < form.nodes.length; i++) {
-      if (form.nodes[i].title === event.target.name) {
-        form.nodes[i].value = event.target.value;
+      if (form.nodes[i].title === input.name) {
+        form.nodes[i].value = input.value;
+        if (form.nodes[i].type === 'radio')
+          form.nodes[i].options
+            .map(option => option.checked = option.optionName === input.value);
         break;
       }
     }
@@ -65,19 +55,34 @@ class MentorForm extends Component {
           <section>
             <h1>{form.title}</h1>
             <h3>{form.description}</h3>
-            {
-              form.nodes.map(({ title, type, description, warn }, index) => (
-                <section key={index} className='query'>
-                  <h4>{title}</h4>
-                  { description && <p>{description}</p>}
-                  { warn && <p>{warn}</p>}
-                  { type && <input
-                    name={title}
-                    type={type}
-                    onBlur={this.handleInputChange}/>}
-                </section>
-              ))
-            }
+            <Form>
+              {
+                form.nodes.map(({ title, type, description, warn, options }, index) => (
+                  <section key={index} className='query'>
+                    <h4>{title}</h4>
+                    { description && <p>{description}</p>}
+                    { warn && <p>{warn}</p>}
+                    <Form.Field>
+                      { type === 'radio' && options && options.map((option, lowerIndex) => (
+                        <Radio
+                          name={title}
+                          key={lowerIndex}
+                          checked={option.checked}
+                          value={option.optionName}
+                          label={option.optionName}
+                          onChange={this.handleInputChange}
+                        />
+                      ))}
+                      { type === 'text' &&
+                        <input
+                          type={type}
+                          name={title}
+                          onBlur={this.handleInputChange}/>}
+                    </Form.Field>
+                  </section>
+                ))
+              }
+            </Form>
             <button onClick={this.submitForm} type='button'>Submit</button>
           </section>
         </div>

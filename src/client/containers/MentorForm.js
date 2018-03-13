@@ -5,7 +5,8 @@ import postMentorForm from '../actions/formActions/postMentorForm';
 
 const mapStateToProps = ({ mentorFormReducer }) => ({
   isFetching: mentorFormReducer.isFetching,
-  form: mentorFormReducer.form
+  form: mentorFormReducer.form,
+  msg: ''
 });
 
 const mapDispatchToProps = {

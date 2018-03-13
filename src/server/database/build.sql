@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, mentors, forms;
+DROP TABLE IF EXISTS users, mentors, forms CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
