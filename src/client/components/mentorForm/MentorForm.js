@@ -12,8 +12,6 @@ class MentorForm extends Component {
   }
 
   submitForm() {
-    console.log('this.state.form', this.state.form);
-    console.log('this.props.form', this.props.form);
     this.props.postMentorForm(this.props.form, this.props.match.params);
   }
 

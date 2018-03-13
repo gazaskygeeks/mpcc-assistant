@@ -7,15 +7,15 @@ const initialState = {
   form: {
     formID: 0,
     mentorID: 0,
-    title: 'Form title',
-    description: 'Form desription',
+    title: 'FORM TITLE',
+    description: 'FORM DESCRIPTION',
     nodes: [
       {
-        title: 'node label',
-        type: 'input type',
+        title: 'NODE LABEL',
+        type: 'INPUT TYPE',
         value: '',
-        description: 'optional',
-        warn: 'optional'
+        description: 'OPTIONAL',
+        warn: 'OPTIONAL'
       }
     ]
   }
