@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, mentors, forms;
+DROP TABLE IF EXISTS users, mentors;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -18,12 +18,6 @@ CREATE TABLE mentors (
   date_of_departure VARCHAR,
   current_stage VARCHAR NOT NULL,
   info JSON
-);
-
-CREATE TABLE forms (
-  id SERIAL PRIMARY KEY,
-  form_name JSON NOT NULL,
-  vars JSON
 );
 
 COMMIT;
