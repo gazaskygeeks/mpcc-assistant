@@ -36,7 +36,8 @@ class MentorPanel extends Component {
           </div>
           <div className='mentorPanel__container'>
             <ProfileHeader
-              mentorInfo={currentMentor}/>
+              mentorInfo={currentMentor}
+            />
             <div className='stages-container'>
               <div className='stage-holder'>
                 <StageHead email={emails.permitEmail}
