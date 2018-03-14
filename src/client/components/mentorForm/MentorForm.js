@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Radio } from 'semantic-ui-react';
+import { Form, Radio, Checkbox } from 'semantic-ui-react';
 import './mentorForm.css';
 
 class MentorForm extends Component {
@@ -21,7 +21,7 @@ class MentorForm extends Component {
     const input = target.parentNode.children[0];
     for (let i = 0; i < form.nodes.length; i++) {
       if (form.nodes[i].title === input.name) {
-        form.nodes[i].value = input.value;
+        form.nodes[i].value = input.type === 'checkbox' ? !form.nodes[i].value : input.value;
         if (form.nodes[i].type === 'radio')
           form.nodes[i].options
             .map(option => option.checked = option.optionName === input.value);
@@ -55,9 +55,9 @@ class MentorForm extends Component {
             <h3>{form.description}</h3>
             <Form>
               {
-                form.nodes.map(({ title, type, description, warn, options }, index) => (
+                form.nodes.map(({ title, type, description, warn, options, value }, index) => (
                   <section key={index} className='query'>
-                    <h4>{title}</h4>
+                    {type !== 'checkbox' && <h4>{title}</h4>}
                     { description && <p>{description}</p>}
                     { warn && <p>{warn}</p>}
                     <Form.Field>
@@ -76,6 +76,14 @@ class MentorForm extends Component {
                           type={type}
                           name={title}
                           onBlur={this.handleInputChange}/>}
+                      { type === 'checkbox' &&
+                        <Checkbox
+                          name={title}
+                          label={title}
+                          checked={value}
+                          onChange={this.handleInputChange}
+                        />
+                      }
                     </Form.Field>
                   </section>
                 ))

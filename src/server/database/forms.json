@@ -182,35 +182,41 @@
         "value": "",
         "required": true
       },
+      { "title": "Things you need to send to us / confirm doing:" },
       {
-        "title": "Things you need to send to us / confirm doing:",
-        "type": "checklist",
-        "nodes": [
-          {
-            "nodeDescription": "You have sent us a color scan (or good picture) of your passport you'll use to enter Gaza to visitors@gazaskygeeks.com",
-            "nodeChecked": false
-          },
-          {
-            "nodeDescription": "Filled out the Permit Biodata sheet (http://goo.gl/forms/TSm4Sc6mdS)",
-            "nodeChecked": false
-          },
-          {
-            "nodeDescription": "Sent us a clear color headshot photo of yourself with white background to visitors@gazaskygeeks.com",
-            "nodeChecked": false
-          },
-          {
-            "nodeDescription": "Sent us a signed Mercy Corps waiver form (https://goo.gl/Nb7DnF)",
-            "nodeChecked": false
-          },
-          {
-            "nodeDescription": "Confirm reading ALL the Gaza Sky Geeks essential instructions for visiting Gaza and Mercy Corps security documents (https://goo.gl/FDEC6A) and understand all of the rules and guidelines therein. By submitting this form, I acknowledge that I fully understand these rules and guidelines and agree to follow them fully while travelling in Palestine as a participant in Mercy Corps and Gaza Sky Geeks programming.",
-            "nodeChecked": false
-          },
-          {
-            "nodeDescription": "Received your personalized Mercy Corps invitation letter for possible use at Israeli border crossings",
-            "nodeChecked": false
-          }
-        ],
+        "title": "You have sent us a color scan (or good picture) of your passport you'll use to enter Gaza to visitors@gazaskygeeks.com",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Filled out the Permit Biodata sheet (http://goo.gl/forms/TSm4Sc6mdS)",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Sent us a clear color headshot photo of yourself with white background to visitors@gazaskygeeks.com",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Sent us a signed Mercy Corps waiver form (https://goo.gl/Nb7DnF)",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Confirm reading ALL the Gaza Sky Geeks essential instructions for visiting Gaza and Mercy Corps security documents (https://goo.gl/FDEC6A) and understand all of the rules and guidelines therein. By submitting this form, I acknowledge that I fully understand these rules and guidelines and agree to follow them fully while travelling in Palestine as a participant in Mercy Corps and Gaza Sky Geeks programming.",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Received your personalized Mercy Corps invitation letter for possible use at Israeli border crossings",
+        "type": "checkbox",
+        "value": false,
         "required": true
       },
       { "title": "To make sure you are not just checking boxes and have actually read the required reading, please answer the below true/false questions" },
