@@ -7,6 +7,7 @@ require('./controllers/postLogin')();
 require('./controllers/postDocStatus')();
 require('./controllers/postFlightInfo')();
 require('./controllers/updateMentor')();
+require('./controllers/postPermitApproval')();
 // SELECT tests (DB)
 require('./database/selectMentors')();
 require('./database/selectUserTest')();

@@ -1,5 +1,4 @@
 BEGIN;
-
 DROP TABLE IF EXISTS users, mentors, forms CASCADE;
 
 CREATE TABLE users (
@@ -9,6 +8,7 @@ CREATE TABLE users (
   email VARCHAR NOT NULL,
   role VARCHAR NOT NULL
 );
+
 CREATE TABLE mentors (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR NOT NULL,
