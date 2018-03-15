@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ProfileHeader from './profileHeader/ProfileHeader';
-import { StageHead, Status } from './Stages';
+import { StageHead, Status, ParaLink, Para } from './Stages';
 import { Icon, Message } from 'semantic-ui-react';
 import Editable from '../../containers/Editable';
 import Check from '../../containers/Check';
@@ -39,20 +39,27 @@ class MentorPanel extends Component {
               mentorInfo={currentMentor}/>
             <div className='stages-container'>
               <div className='stage-holder'>
-                <StageHead email={emails.permitEmail}
+                <StageHead
+                  email={emails.permitEmail}
                   mentorInfo={currentMentor}
                   headTitle='Permit Email:' />
-                <Editable mentorID={currentMentor.id}
+                <Editable
+                  mentorID={currentMentor.id}
                   editableTitle='Bio:'
                   defaultContent={currentMentor.info.bio} />
-                <Editable mentorID={currentMentor.id}
+                <Editable
+                  mentorID={currentMentor.id}
                   editableTitle='Purpose Of Visit:'
                   defaultContent={currentMentor.info.purpose_of_visit} />
               </div>
               <div className='stage-holder'>
-                <StageHead email={emails.permissionEmail}
+                <StageHead
+                  email={emails.permissionEmail}
                   mentorInfo={currentMentor}
                   headTitle='Permission Email:' />
+                <ParaLink
+                  mentorID={currentMentor.id}
+                  editableTitle='Permission Approval Link:' />
                 <Status
                   statusTitle='Permission Status:'
                   statusValue={currentMentor.info.permission_email_status}/>
@@ -80,36 +87,52 @@ class MentorPanel extends Component {
                   statusValue={currentMentor.info.fligh_information_status}/>
               </div>
               <div className='stage-holder'>
+                <StageHead email={emails.checkListEmail}
+                  mentorInfo={currentMentor}
+                  headTitle='Inform MC HQ:' />
+                <Status
+                  statusTitle='Email Sent:'
+                  statusValue={currentMentor.info.mchq_email_status}/>
+              </div>
+              <div className='stage-holder'>
                 <StageHead email={emails.scheduling}
                   mentorInfo={currentMentor}
                   headTitle='Scheduling:' />
-                <Status
-                  statusTitle='Mentor Schedule Build:'
-                  statusValue={currentMentor.info.mentor_schedule_status}/>
+                <Check
+                  checkTitle='Mentor Schedule Build:'
+                  checkStatus={currentMentor.info.mentor_schedule_status}
+                  mentorID={currentMentor.id}
+                  docType='mentor_schedule_status' />
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Permit Approval:' />
                 <Status
                   statusTitle='Approval Status:'
                   statusValue={currentMentor.info.permit_approval_status}/>
-                <Status
-                  statusTitle='Permission Status:'
-                  statusValue={currentMentor.info.permit_number}/>
+                <Para
+                  paraTitle='Permission Status:'
+                  defaultContent={currentMentor.info.permit_number || 'Not Available Yet'}/>
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Book Hotel:' />
-                <Status
-                  statusTitle='Booking Status:'
-                  statusValue={currentMentor.info.book_hotel_status}/>
+                <Check
+                  checkTitle='Hotel Booked:'
+                  checkStatus={currentMentor.info.book_hotel_status}
+                  mentorID={currentMentor.id}
+                  docType='book_hotel_status' />
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Inform Mentor:' />
-                <Status
-                  statusTitle='Informed:'
-                  statusValue={currentMentor.info.schedule_inform_status}/>
-                <Status
-                  statusTitle='Approval Status:'
-                  statusValue={currentMentor.info.schedule_approval_status}/>
+                <Check
+                  checkTitle='Email Sent:'
+                  checkStatus={currentMentor.info.schedule_inform_status}
+                  mentorID={currentMentor.id}
+                  docType='schedule_inform_status' />
+                <Check
+                  checkTitle='Schedule Approved:'
+                  checkStatus={currentMentor.info.schedule_approval_status}
+                  mentorID={currentMentor.id}
+                  docType='schedule_approval_status' />
               </div>
               <div className='stage-holder'>
                 <StageHead headTitle='Transfer Schedule:' />
@@ -130,7 +153,7 @@ class MentorPanel extends Component {
               <div className='stage-holder'>
                 <StageHead headTitle='Share Final Files:' />
                 <Check
-                  checkTitle='Files Share Completed:'
+                  checkTitle='Email Sent:'
                   checkStatus={currentMentor.info.share_final_files_status}
                   mentorID={currentMentor.id}
                   docType='share_final_files_status' />
@@ -138,7 +161,7 @@ class MentorPanel extends Component {
               <div className='stage-holder'>
                 <StageHead headTitle='Thanks Email:' />
                 <Status
-                  statusTitle='Thanks Email Status:'
+                  statusTitle='Email Sent:'
                   statusValue={currentMentor.info.thanks_email} />
               </div>
             </div>
