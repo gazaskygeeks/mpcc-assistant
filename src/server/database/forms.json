@@ -1,0 +1,261 @@
+{
+  "1": {
+    "name": "permitBiodata",
+    "title": "Gaza Sky Geeks - Permit Biodata Form",
+    "description": "International visitors applying for a permit from the Israeli military to enter Gaza with Mercy Corps/Gaza Sky Geeks must provide the info requested on this form.\n\n\nAt the same time you fill our this form, you must email to visitors@gazaskygeeks.com:\n1) A COLOR SCAN OF THE PASSPORT YOU PLAN TO USE TO ENTER GAZA\n2) A COLOR PASSPORT-STYLE HEADSHOT PHOTO WITH WHITE BACKGROUND",
+    "nodes": [
+      { "title": "Basic Information" },
+      {
+        "title": "First Name",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Surname",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Mother's Name",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Father's Name",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Your Paternal Grandfather's Name",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Email Address",
+        "type": "email",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Nationality",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Place of Birth",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Current Address",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Permanent Address",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Land Line Home Phone Number (or any other land line, e.g. office, parents' phone, etc)",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Mobile Phone (include country code, which should be in compliance with Temporary/Current Address)",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Job Title / Profession",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "3 to 4 Sentences Bio",
+        "type": "text",
+        "value": "",
+        "required": true,
+        "description": "It should include where you currently work,\nwhere you worked in 1 previous job (choose the most relevant one),\n1 relevant extracurricular if applicable (e.g., \"I mentored at Startup Weekend Nepal\"),\nand where you went to university."
+      },
+      {
+        "title": "Previous Nationality (if any  )",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "title": "Marital Status",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "LinkedIn URL",
+        "type": "text",
+        "value": "",
+        "required": true
+      }
+    ]
+  },
+  "2": {
+    "name": "Checklist",
+    "title": "GSG International Mentors/Visitors Info Form and Checklist",
+    "description": "By now your Gaza permit should be in process. To be help prepare for your actual trip to Gaza to mentor at or visit Gaza Sky Geeks, please help us by answering the following questions.",
+    "nodes": [
+      {
+        "title": "First and last Names",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Flight itinerary and hotels before/after Gaza (if known)",
+        "description": "If already known, please provide us your flight dates, flight numbers, and the addresses of where you will be staying immediately before and after of Gaza to help us with transportation planning",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "International mobile number (include country code)",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Will your international number be roaming in Israel?",
+        "description": "Knowing that you have mobile data makes it easier to communicate after you land and for meeting up with GSG staff at checkpoints. No worries if you won't have this though.",
+        "type": "radio",
+        "options": [
+          {"optionName":"Yes", "checked": false},
+          {"optionName":"No", "checked": false},
+          {"optionName":"I Don't Know", "checked": false}],
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Whatsapp Number (including country code)",
+        "description": "Whatsapp groups are the most efficient way for us to communicate in the office and across Gaza, as we'll almost always be on Wi-Fi. Please make sure you have Whatsapp installed on your mobile: https://www.whatsapp.com/",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Do you have any dietary restrictions, allergies, or medical conditions we should know about? ",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Social media handles (Twitter, Facebook, etc.)",
+        "description": "If you prefer that we NOT post about you / your visit on our social media, let us know here now!",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Workshop topics",
+        "description": "If you are coming to mentor or teach at GSG, please let us know 2-3 topics you feel comfortable presenting (workshops are 1-2 hours). Please don't start working on your workshops or slides until we confirm the topics with you.",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Are you willing to bring items ordered from your home country for Gazan startups?",
+        "description": "Sometimes our community need items not available in Gaza or are far cheaper elsewhere (e.g., a new laptop, books). This most typically involves ordering items on Amazon to your home and bringing them with you to Gaza. This is absolutely not expected of visitors, but sometimes people ask and we can follow up with you.",
+        "type": "radio",
+        "options": [
+          {"optionName":"Yes", "checked": false},
+          {"optionName":"No", "checked": false}],
+        "value": "",
+        "required": true
+      },
+      { "title": "Things you need to send to us / confirm doing:" },
+      {
+        "title": "You have sent us a color scan (or good picture) of your passport you'll use to enter Gaza to visitors@gazaskygeeks.com",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Filled out the Permit Biodata sheet (http://goo.gl/forms/TSm4Sc6mdS)",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Sent us a clear color headshot photo of yourself with white background to visitors@gazaskygeeks.com",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Sent us a signed Mercy Corps waiver form (https://goo.gl/Nb7DnF)",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Confirm reading ALL the Gaza Sky Geeks essential instructions for visiting Gaza and Mercy Corps security documents (https://goo.gl/FDEC6A) and understand all of the rules and guidelines therein. By submitting this form, I acknowledge that I fully understand these rules and guidelines and agree to follow them fully while travelling in Palestine as a participant in Mercy Corps and Gaza Sky Geeks programming.",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      {
+        "title": "Received your personalized Mercy Corps invitation letter for possible use at Israeli border crossings",
+        "type": "checkbox",
+        "value": false,
+        "required": true
+      },
+      { "title": "To make sure you are not just checking boxes and have actually read the required reading, please answer the below true/false questions" },
+      {
+        "title": "Taking photographs anywhere in the vicinity of Erez crossing is forbidden",
+        "type": "radio",
+        "options": [
+          {"optionName": "True", "checked":false},
+          {"optionName": "False", "checked": false}],
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "SLR cameras and lenses are permitted to enter Gaza",
+        "type": "radio",
+        "options": [
+          {"optionName": "True", "checked":false},
+          {"optionName": "False", "checked": false}],
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "You are allowed to bring food into and out of Gaza",
+        "type": "radio",
+        "options": [
+          {"optionName": "True", "checked":false},
+          {"optionName": "False", "checked": false}],
+        "value": "",
+        "required": true
+      },
+      {
+        "title": "Israel will stamp your passport entering or exiting from Gaza",
+        "type": "radio",
+        "options": [
+          {"optionName": "True", "checked":false},
+          {"optionName": "False", "checked": false}],
+        "value": "",
+        "required": true
+      }
+    ]
+  }
+}

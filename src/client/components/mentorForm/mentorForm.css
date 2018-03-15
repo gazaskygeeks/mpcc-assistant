@@ -1,0 +1,21 @@
+.query {
+  display: flex;
+  padding: 10px 5px;
+  flex-direction: column;
+}
+
+.query input {
+  padding: 10px 5px;
+}
+
+.wrapper button {
+  padding: 15px 45px;
+  background-color: lightblue;
+  margin-left: 10%;
+  border-radius: 8px;
+  border-style: none;
+}
+
+.wrapper h3 {
+  white-space: pre-line;
+}

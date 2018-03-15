@@ -12,7 +12,14 @@ const updateMentorField = (mentorObj, cb) => {
     current_stage=$6,
     info=$7
     where id=$8 returning *`,
-    values: [first_name, last_name, email, date_of_arrival, date_of_departure, current_stage, info, id]
+    values: [first_name,
+      last_name,
+      email,
+      date_of_arrival,
+      date_of_departure,
+      current_stage,
+      info,
+      id]
   };
   dbConnection.query(query, cb);
 };

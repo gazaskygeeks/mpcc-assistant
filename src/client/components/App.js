@@ -9,6 +9,7 @@ import Login from '../containers/Login';
 import Waiver from '../containers/Waiver';
 import MentorPanel from '../containers/MentorPanel';
 import FlightInfo from '../containers/FlightInfo';
+import MentorForm from '../containers/MentorForm';
 import MentorProfile from '../containers/mentorProfile';
 import PermitApproval from '../containers/PermitApproval';
 import PermissionApproval from '../containers/permissionApproval';
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path='/dashboard/panel/:id' component={MentorPanel} />
             <Route exact path='/submit/waiver' component={Waiver} />
             <Route exact path='/submit/flight-info' component={FlightInfo} />
+            <Route exact path='/submit/forms/:formID/:mentorID' component={MentorForm} />
             <Route exact path='/panel/:mentorID' component={MentorProfile} />
             <Route exact path='/mc/submit/permit-approval/:mentorID' component={PermitApproval} />
             <Route exact path='/dashboard/mc/permission-approval/:mentorID'
