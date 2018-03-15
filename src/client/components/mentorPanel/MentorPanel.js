@@ -87,6 +87,14 @@ class MentorPanel extends Component {
                   statusValue={currentMentor.info.fligh_information_status}/>
               </div>
               <div className='stage-holder'>
+                <StageHead email={emails.checkListEmail}
+                  mentorInfo={currentMentor}
+                  headTitle='Inform MC HQ:' />
+                <Status
+                  statusTitle='Email Sent:'
+                  statusValue={currentMentor.info.mchq_email_status}/>
+              </div>
+              <div className='stage-holder'>
                 <StageHead email={emails.scheduling}
                   mentorInfo={currentMentor}
                   headTitle='Scheduling:' />
