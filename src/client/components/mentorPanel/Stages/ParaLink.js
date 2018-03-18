@@ -17,7 +17,7 @@ class ParaLink extends Component {
               <h3 className='sub-title'>{editableTitle}</h3>
               <a
                 target='_blank'
-                href={`/dashboard/mc/permission-approval/${mentorID}`}>
+                href={`/mc/submit/permission-approval/${mentorID}`}>
                 View
               </a>
               <Button className='ml-5 small bg-red' size='small'>

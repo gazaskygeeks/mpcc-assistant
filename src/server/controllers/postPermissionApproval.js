@@ -1,5 +1,6 @@
 const updateMentor = require('../database/queries/updateMentor');
 const selectSingleMentor = require('../database/queries/selectSingleMentor');
+const insertNotification = require('../database/queries/insertNotification');
 
 module.exports = (req, res, next) => {
   const { mentorID } = req.params;
@@ -14,7 +15,16 @@ module.exports = (req, res, next) => {
     mentorData.info = newInfo;
     updateMentor(mentorData, error => {
       if (error) return next(error);
-      return res.send({ status: true , msg: 'Permission Approval Sent Successfully' });
+      const notificationObj = {
+        ref: 'permission',
+        mentor_id: mentorData.id
+      };
+      insertNotification(notificationObj, notifyErr => {
+        if (!!notifyErr) {
+          return next(notifyErr);
+        }
+        return res.send({ status: true, msg: 'Permission Approval Sent Successfully', notifyStatus: true });
+      });
     });
   });
 };
