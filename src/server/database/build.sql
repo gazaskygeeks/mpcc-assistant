@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, mentors, notifications CASCADE;
+DROP TABLE IF EXISTS users, mentors, notifications, forms CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -9,6 +9,7 @@ CREATE TABLE users (
   email VARCHAR NOT NULL,
   role VARCHAR NOT NULL
 );
+
 CREATE TABLE mentors (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR NOT NULL,
@@ -27,5 +28,12 @@ CREATE TABLE notifications (
   form_id INTEGER,
   seen boolean
 );
+
+CREATE TABLE forms (
+  id SERIAL PRIMARY KEY,
+  form_name VARCHAR NOT NULL,
+  vars JSON
+);
+
 
 COMMIT;

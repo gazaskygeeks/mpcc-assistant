@@ -14,9 +14,13 @@ import postField from './mentorsReducers/postField';
 import postCheck from './mentorsReducers/postCheck';
 import getNotifications from './mentorsReducers/getNotifications';
 import putNotification from './mentorsReducers/putNotification';
+import mentorFormReducer from './mentorForm/mentorFormReducer';
+import postPermitApproval from './permitApproval/permitApproval';
+import postPermissionApproval from './permissionApproval/permissionApproval';
 
 export default combineReducers({
   getAllMentors,
+  mentorFormReducer,
   postLogin,
   postFlightInfo,
   modalState,
@@ -29,5 +33,7 @@ export default combineReducers({
   postField,
   postCheck,
   getNotifications,
-  putNotification
+  putNotification,
+  postPermitApproval,
+  postPermissionApproval
 });

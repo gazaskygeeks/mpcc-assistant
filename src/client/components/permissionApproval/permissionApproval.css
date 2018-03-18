@@ -1,0 +1,30 @@
+.card-style{
+    display: flex;
+    justify-content: center;
+    padding: 20vh;
+}
+
+.uicard{
+  width: 60% !important;
+}
+
+  .cardHeader {
+      text-align: left;
+      margin-top: 0.78575em !important;
+  }
+
+  .cardImage {
+    width: 80px !important;
+  }
+
+
+
+.cardContent {
+    margin: 15px !important;
+}
+
+.cardButtons {
+  width: 50% !important;
+  margin-left: 25% !important;;
+
+}

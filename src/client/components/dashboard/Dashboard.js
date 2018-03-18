@@ -46,7 +46,8 @@ class Home extends Component {
                 </Card.Content>
                 <Card.Content extra>
                   <div className='ui two buttons'>
-                    <Link to={`/dashboard/panel/${mentor.id}`} className='w-x100'><Button basic color='green' className='w-x100'>View Panel</Button></Link>
+                    <Link to={`/dashboard/panel/${mentor.id}`} className='w-x100'>
+                      <Button basic color='green' className='w-x100'>View Panel</Button></Link>
                   </div>
                 </Card.Content>
               </Card>

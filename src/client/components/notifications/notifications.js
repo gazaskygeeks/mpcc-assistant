@@ -11,16 +11,19 @@ class Notifications extends Component {
 
   _handleSubmit(event) {
     const { putNotification } = this.props;
-    const notificationID = event.target.value;
+    const notificationID = event.target.parentElement.value || event.target.value;
     putNotification(notificationID);
   }
 
   render() {
     const { isFetching, fetchingPut, notifications } = this.props;
     const refKeys = {
-      permit: 'Permit Request Updated',
-      permission: 'Permission Request Updated',
-      form: {}
+      permit: 'Permit Request Updated.',
+      permission: 'Permission Request Updated.',
+      form: {
+        permitBiodata: 'Mentor\s Bio Data Recieved.',
+        Checklist: 'Mentor Submitted Check-list Form.'
+      }
     };
 
     let content = '';
