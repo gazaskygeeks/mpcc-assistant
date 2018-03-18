@@ -23,7 +23,6 @@ export const putNotification = notificationID => dispatch => {
   axios
     .put(`/dashboard/notification/${notificationID}/`)
     .then(response => {
-      console.log(response.data);
       const responseStatus = response.data.status;
       if (!responseStatus) {
         return dispatch(putNotificationFailure('Error Occured'));
@@ -31,7 +30,6 @@ export const putNotification = notificationID => dispatch => {
       return dispatch(putNotificationSuccess(response.data));
     })
     .catch(err => {
-      console.log(err);
       return dispatch(putNotificationFailure(`Error Updating Notification: ${err.message}`));
     });
 };

@@ -7,7 +7,7 @@ module.exports = (req, res) => {
     entryDate: new Date().toString().slice(0, 24),
     nodes: req.body.nodes.map(node => {
       return ({
-        fieldName: (node.title !== undefined ? node.title : 'NOT AVAIL'),
+        fieldName: (node.composed !== undefined ? node.composed : 'NOT AVAIL'),
         fieldValue: (node.value !== undefined ? node.value : 'NOT AVAIL'),
         fieldRequired: (node.required !== undefined ? node.required : 'NOT AVAIL')
       });

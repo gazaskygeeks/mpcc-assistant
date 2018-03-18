@@ -26,7 +26,6 @@ class MentorProfile extends Component {
     } else if (!isFetching && !currentMentor.id) {
       content = (<Message color='red'>Mentor Was Not Found</Message>);
     } else {
-      console.log(currentMentor);
       content = (
         <div className='mentorProfile__main'>
           <div className='mentorProfile__container'>

@@ -41,7 +41,6 @@ class Navbar extends React.Component {
 
   render() {
     const { notifications, location } = this.props;
-    console.log(this.props);
     let content = '';
     if (location.pathname !== '/') {
       content = (
