@@ -7,10 +7,10 @@ const buildScripts = fs.readFileSync(path.join(__dirname, 'build.sql')).toString
 const testsScripts = fs.readFileSync(path.join(__dirname, 'test.sql')).toString();
 
 connection.query(buildScripts, buildErr => {
-  if (buildErr) return buildErr;
+  if (buildErr) return console.log(buildErr);
   console.log('\x1b[36m%s\x1b[0m', 'Database have been built.');
   connection.query(testsScripts, testsErr => {
-    if (testsErr) return testsErr;
+    if (testsErr) return console.log(testsErr);
     console.log('\x1b[36m%s\x1b[0m', 'Tests queries put.');
     connection.end();
   });

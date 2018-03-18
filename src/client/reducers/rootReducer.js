@@ -12,6 +12,8 @@ import getEmails from './mentorsReducers/getEmails';
 import postEmail from './mentorsReducers/postEmail';
 import postField from './mentorsReducers/postField';
 import postCheck from './mentorsReducers/postCheck';
+import getNotifications from './mentorsReducers/getNotifications';
+import putNotification from './mentorsReducers/putNotification';
 import mentorFormReducer from './mentorForm/mentorFormReducer';
 import postPermitApproval from './permitApproval/permitApproval';
 import postPermissionApproval from './permissionApproval/permissionApproval';
@@ -30,6 +32,8 @@ export default combineReducers({
   postEmail,
   postField,
   postCheck,
+  getNotifications,
+  putNotification,
   postPermitApproval,
   postPermissionApproval
 });

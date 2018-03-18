@@ -1,0 +1,90 @@
+.notifications__wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 50vh;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 25vh;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.notifications__wrapper h1 {
+  font-size: 1.6rem!important;
+}
+
+.notifications__container {
+  min-height: 15vh;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notifications__container button {
+  margin: 0!important
+}
+
+.notifications__container button {
+  padding: 5px 15px!important;
+  color: #3e5771!important;
+  align-self: flex-end;
+}
+
+.notifications__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px 0px;
+  font-size: 1.2rem;
+  list-style-type: none;
+}
+
+.notifications__list button {
+  padding: 3px 5px!important;
+}
+
+.notifications__list li {
+  padding: 10px 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #e2e2e2;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.notifications__loading, .notifications__empty {
+  display: flex;
+  align-self: center;
+}
+
+.notifications__empty {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 40vw;
+  min-height: 40vh!important;
+  font-size: 2rem!important;
+  font-weight: lighter;
+  color: #FF5722!important;
+  padding: 25px 0px!important;
+}
+
+.notifications__container ul li p a {
+  font-size: 1.2rem;
+  color: #3e5771;
+}
+
+.notifications__container ul li p a:visited {
+  text-decoration: none;
+  color: #3e5771;
+}
+
+.notifications__container ul li p {
+  margin: 0!important
+}
