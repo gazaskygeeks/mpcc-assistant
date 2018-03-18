@@ -11,7 +11,7 @@ module.exports = (req, res) => {
         (node.value !== undefined ? node.value : 'NOT AVAIL'),
         required: (node.required !== undefined ? node.required : 'NOT AVAIL')
       });
-    }).filter(node => node),
+    }).filter(node => Object.keys(node)[0] !== 'undefined' && Object.keys(node)[0] !== 'null'),
     mentorID: req.body.mentorID
   };
   delete formattedBody.nodes.null;
