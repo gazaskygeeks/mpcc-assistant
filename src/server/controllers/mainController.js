@@ -6,7 +6,7 @@ const postEmail = require('./postEmail');
 const postLogin = require('./postLogin');
 const getMentors = require('./getMentors');
 const postDocStatus = require('./postDocStatus');
-const { uploading, pusher } = require('./postWaiver');
+const upload = require('./postUpload');
 const postHostMentor = require('./postHostMentor');
 const getSingleMentor = require('./getSingleMentor');
 const postUpdateMentorField = require('./postUpdateMentorField');
@@ -25,7 +25,8 @@ router.post('/dashboard/mentor-panel/:mentorSelector/sendEmail/:emailType/confir
 router.post('/dashboard/mentor-panel/:mentorSelector/edit/:fieldType', postUpdateMentorField);
 router.post('/dashboard/host-mentor', postHostMentor);
 router.post('/dashboard/ms/post/form/:formID', postForm);
-router.post('/submit/signed-waiver/confirm', uploading, pusher);
+router.post('/submit/signed-waiver/confirm', upload);
+router.post('/submit/offer-picture/confirm', upload);
 router.post('/submit/flight-info/confirm', postFlightInfo);
 router.post('/dashboard/mc/permit-approval/:mentorID', postPermitApproval);
 router.post('/dashboard/mc/permission-approval/:mentorID', postPermissionApproval);
