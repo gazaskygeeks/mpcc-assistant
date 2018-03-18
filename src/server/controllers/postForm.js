@@ -7,13 +7,14 @@ module.exports = (req, res) => {
     entryDate: new Date().toString().slice(0, 24),
     nodes: req.body.nodes.map(node => {
       return ({
-        fieldName: (node.composed !== undefined ? node.composed : 'NOT AVAIL'),
-        fieldValue: (node.value !== undefined ? node.value : 'NOT AVAIL'),
-        fieldRequired: (node.required !== undefined ? node.required : 'NOT AVAIL')
+        [node.composed]:
+        (node.value !== undefined ? node.value : 'NOT AVAIL'),
+        required: (node.required !== undefined ? node.required : 'NOT AVAIL')
       });
-    }),
+    }).filter(node => Object.keys(node)[0] !== 'undefined' && Object.keys(node)[0] !== 'null'),
     mentorID: req.body.mentorID
   };
+  delete formattedBody.nodes.null;
   selectSingleMentor(formattedBody.mentorID, (selectErr, selectRes) => {
     if (selectErr) throw new Error(selectErr);
     const singleMentor = selectRes.rows[0];
