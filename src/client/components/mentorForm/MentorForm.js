@@ -76,6 +76,11 @@ class MentorForm extends Component {
                           type={type}
                           name={title}
                           onBlur={this.handleInputChange}/>}
+                      { type === 'email' &&
+                        <input
+                          type={type}
+                          name={title}
+                          onBlur={this.handleInputChange}/>}
                       { type === 'checkbox' &&
                         <Checkbox
                           name={title}
