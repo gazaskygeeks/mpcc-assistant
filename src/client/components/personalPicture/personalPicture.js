@@ -41,16 +41,26 @@ class MentorForm extends Component {
     } else {
       return (
         <div className='wrapper'>
-          <div id='uploader'>
+          <form
+            id='uploadForm'
+            action='/submit/offer-picture/confirm'
+            method='post'
+            encType='multipart/form-data'>
             <h1 className='w-50-fields'>Upload an image of yours</h1>
-            <input className='w-50-fields' type='text'
-              name='email' placeholder='Please enter your email...'/>
-            <input className='w-50-fields' type='file'
-              name='upload' onChange={this.handleUploadFile} />
-            <input className='w-50-fields' type='submit'
-              name='submit' value='Upload' onClick={this.upload} />
+            <input
+              className='w-50-fields'
+              type='text'
+              name='email'
+              placeholder='Please enter your email...'/>
+            <input
+              type='file'
+              onChange={this.handleUploadFile}
+              name='personalPicture'/>
+            <input
+              type='submit'
+              value='Upload!'/>
             <h3 id='irr'></h3>
-          </div>
+          </form>
         </div>
       );
     }
