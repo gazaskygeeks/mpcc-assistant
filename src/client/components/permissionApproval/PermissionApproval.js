@@ -23,7 +23,6 @@ class PermissionApproval extends Component {
   render() {
     const { currentMentor, isFetching, permissionApprovalResult } = this.props;
 
-    console.log(permissionApprovalResult);
     let content = '';
     if (isFetching) {
       content=(

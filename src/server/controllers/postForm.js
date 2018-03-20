@@ -5,13 +5,20 @@ module.exports = (req, res) => {
   const formattedBody = {
     formName: `${req.body.name} : ${req.body.title}`,
     entryDate: new Date().toString().slice(0, 24),
-    nodes: req.body.nodes.map(node => {
-      return ({
-        fieldName: (node.title !== undefined ? node.title : 'NOT AVAIL'),
-        fieldValue: (node.value !== undefined ? node.value : 'NOT AVAIL'),
-        fieldRequired: (node.required !== undefined ? node.required : 'NOT AVAIL')
-      });
-    }),
+    nodes: req.body.nodes
+      .map(node => {
+        return ({
+          [node.composed]:
+        (node.value !== undefined ? node.value : 'NOT AVAIL'),
+          required: (node.required !== undefined ? node.required : 'NOT AVAIL')
+        });
+      }).filter(node => {
+        return Object.keys(node)[0] !== 'undefined' &&
+      Object.keys(node)[0] !== 'null' &&
+      Object.keys(node)[0] !== 'first_name' &&
+      Object.keys(node)[0] !== 'surname' &&
+      Object.keys(node)[0] !== 'email_address';
+      }),
     mentorID: req.body.mentorID
   };
   selectSingleMentor(formattedBody.mentorID, (selectErr, selectRes) => {
@@ -27,8 +34,11 @@ module.exports = (req, res) => {
       date_of_departure: singleMentor.date_of_departure,
       info: singleMentor.info
     };
-    const index = Object.keys(mentorObj).length;
-    mentorObj.info[index] = formattedBody;
+    const lastSavedInfo = { ...mentorObj.info };
+    formattedBody.nodes.forEach(node => {
+      mentorObj.info[Object.keys(node)[0]] = Object.values(node)[0];
+    });
+    mentorObj.info.lastSavedInfo = lastSavedInfo;
     updateMentor(mentorObj, (updateErr, updateRes) => {
       if (updateErr) throw new Error(updateErr);
       res.send(updateRes.rowCount === 1 ? 'MentorUpdated' : 'MentorNotFound');

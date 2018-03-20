@@ -50,6 +50,30 @@
   margin: 60px 20px 0 0;
 }
 
+.list li a {
+  color: #adb!important;
+  position: relative;
+}
+
+.list li a span {
+  display: inline-block;
+  position: absolute;
+  line-height: 16px;
+  top: -9px;
+  left: +12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: white;
+  background: red;
+  text-align: center;
+}
+
+.list li a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 .ui.dropdown .menu {
   margin: 40px 0 0 -11vw;
 }

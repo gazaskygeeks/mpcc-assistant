@@ -7,84 +7,98 @@
       { "title": "Basic Information" },
       {
         "title": "First Name",
+        "composed": "first_name",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Surname",
+        "composed": "surname",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Mother's Name",
+        "composed": "mothers_name",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Father's Name",
+        "composed": "fathers_name",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Your Paternal Grandfather's Name",
+        "composed": "paternal_grand_fathers_name",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Email Address",
+        "composed": "email_address",
         "type": "email",
         "value": "",
         "required": true
       },
       {
         "title": "Nationality",
+        "composed": "nationality",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Place of Birth",
+        "composed": "place_of_birth",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Current Address",
+        "composed": "current_address",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Permanent Address",
+        "composed": "permanent_address",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Land Line Home Phone Number (or any other land line, e.g. office, parents' phone, etc)",
+        "composed": "land_phone_number",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Mobile Phone (include country code, which should be in compliance with Temporary/Current Address)",
+        "composed": "phone_number",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Job Title / Profession",
+        "composed": "job_title",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "3 to 4 Sentences Bio",
+        "composed": "bio",
         "type": "text",
         "value": "",
         "required": true,
@@ -92,18 +106,21 @@
       },
       {
         "title": "Previous Nationality (if any  )",
+        "composed": "previous_nationality",
         "type": "text",
         "value": "",
         "required": false
       },
       {
         "title": "Marital Status",
+        "composed": "marital_status",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "LinkedIn URL",
+        "composed": "linkedin_url",
         "type": "text",
         "value": "",
         "required": true
@@ -117,12 +134,14 @@
     "nodes": [
       {
         "title": "First and last Names",
+        "composed": "full_name",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Flight itinerary and hotels before/after Gaza (if known)",
+        "composed": "flight_itinerary",
         "description": "If already known, please provide us your flight dates, flight numbers, and the addresses of where you will be staying immediately before and after of Gaza to help us with transportation planning",
         "type": "text",
         "value": "",
@@ -130,12 +149,14 @@
       },
       {
         "title": "International mobile number (include country code)",
+        "composed": "international_phone_number",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Will your international number be roaming in Israel?",
+        "composed": "international_phone_number_roaming_in_israel",
         "description": "Knowing that you have mobile data makes it easier to communicate after you land and for meeting up with GSG staff at checkpoints. No worries if you won't have this though.",
         "type": "radio",
         "options": [
@@ -147,6 +168,7 @@
       },
       {
         "title": "Whatsapp Number (including country code)",
+        "composed": "whatsapp_number",
         "description": "Whatsapp groups are the most efficient way for us to communicate in the office and across Gaza, as we'll almost always be on Wi-Fi. Please make sure you have Whatsapp installed on your mobile: https://www.whatsapp.com/",
         "type": "text",
         "value": "",
@@ -154,12 +176,14 @@
       },
       {
         "title": "Do you have any dietary restrictions, allergies, or medical conditions we should know about? ",
+        "composed": "dietary_restrictions_and_medical_condition",
         "type": "text",
         "value": "",
         "required": true
       },
       {
         "title": "Social media handles (Twitter, Facebook, etc.)",
+        "composed": "social_media_handles",
         "description": "If you prefer that we NOT post about you / your visit on our social media, let us know here now!",
         "type": "text",
         "value": "",
@@ -167,6 +191,7 @@
       },
       {
         "title": "Workshop topics",
+        "composed": "workshop_topics",
         "description": "If you are coming to mentor or teach at GSG, please let us know 2-3 topics you feel comfortable presenting (workshops are 1-2 hours). Please don't start working on your workshops or slides until we confirm the topics with you.",
         "type": "text",
         "value": "",
@@ -174,6 +199,7 @@
       },
       {
         "title": "Are you willing to bring items ordered from your home country for Gazan startups?",
+        "composed": "bringing_items_to_startups",
         "description": "Sometimes our community need items not available in Gaza or are far cheaper elsewhere (e.g., a new laptop, books). This most typically involves ordering items on Amazon to your home and bringing them with you to Gaza. This is absolutely not expected of visitors, but sometimes people ask and we can follow up with you.",
         "type": "radio",
         "options": [
@@ -185,36 +211,42 @@
       { "title": "Things you need to send to us / confirm doing:" },
       {
         "title": "You have sent us a color scan (or good picture) of your passport you'll use to enter Gaza to visitors@gazaskygeeks.com",
+        "composed": "sent_passport_picture",
         "type": "checkbox",
         "value": false,
         "required": true
       },
       {
         "title": "Filled out the Permit Biodata sheet (http://goo.gl/forms/TSm4Sc6mdS)",
+        "composed": "filled_permit_biodata",
         "type": "checkbox",
         "value": false,
         "required": true
       },
       {
         "title": "Sent us a clear color headshot photo of yourself with white background to visitors@gazaskygeeks.com",
+        "composed": "sent_personal_picture",
         "type": "checkbox",
         "value": false,
         "required": true
       },
       {
         "title": "Sent us a signed Mercy Corps waiver form (https://goo.gl/Nb7DnF)",
+        "composed": "sent_signed_waiver",
         "type": "checkbox",
         "value": false,
         "required": true
       },
       {
         "title": "Confirm reading ALL the Gaza Sky Geeks essential instructions for visiting Gaza and Mercy Corps security documents (https://goo.gl/FDEC6A) and understand all of the rules and guidelines therein. By submitting this form, I acknowledge that I fully understand these rules and guidelines and agree to follow them fully while travelling in Palestine as a participant in Mercy Corps and Gaza Sky Geeks programming.",
+        "composed": "confirm_reading_all_gsg_insturctions",
         "type": "checkbox",
         "value": false,
         "required": true
       },
       {
         "title": "Received your personalized Mercy Corps invitation letter for possible use at Israeli border crossings",
+        "composed": "recieved_invitation_letter_mc",
         "type": "checkbox",
         "value": false,
         "required": true
@@ -222,6 +254,7 @@
       { "title": "To make sure you are not just checking boxes and have actually read the required reading, please answer the below true/false questions" },
       {
         "title": "Taking photographs anywhere in the vicinity of Erez crossing is forbidden",
+        "composed": "q1_taking_photos_of_erez",
         "type": "radio",
         "options": [
           {"optionName": "True", "checked":false},
@@ -231,6 +264,7 @@
       },
       {
         "title": "SLR cameras and lenses are permitted to enter Gaza",
+        "composed": "q2_slr_cameras_allowed",
         "type": "radio",
         "options": [
           {"optionName": "True", "checked":false},
@@ -240,6 +274,7 @@
       },
       {
         "title": "You are allowed to bring food into and out of Gaza",
+        "composed": "q3_food_allowed",
         "type": "radio",
         "options": [
           {"optionName": "True", "checked":false},
@@ -249,6 +284,7 @@
       },
       {
         "title": "Israel will stamp your passport entering or exiting from Gaza",
+        "composed": "q4_israel_stamping_passport",
         "type": "radio",
         "options": [
           {"optionName": "True", "checked":false},
